@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8B95AC7-BF36-4F05-AF34-C17ACB68486C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WEB_RENATA</RootNamespace>
+    <AssemblyName>WEB_RENATA</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADM\HomeADM.aspx" />
+    <Content Include="CSS\AjaxLoader.gif" />
+    <Content Include="CSS\animate.min.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\et-line.css" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\grabbing.png" />
+    <Content Include="CSS\login.css" />
+    <Content Include="CSS\magnific-popup.css" />
+    <Content Include="CSS\owl.carousel.css" />
+    <Content Include="CSS\owl.transitions.css" />
+    <Content Include="CSS\rev-slider.css" />
+    <Content Include="CSS\simpletextrotator.css" />
+    <Content Include="CSS\style-responsive.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\vertical-rhythm.min.css" />
+    <Content Include="CSS\YTPlayer.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="IMAGES\apple-touch-icon-114x114.png" />
+    <Content Include="IMAGES\apple-touch-icon-72x72.png" />
+    <Content Include="IMAGES\apple-touch-icon.png" />
+    <Content Include="IMAGES\bg-map.png" />
+    <Content Include="IMAGES\bgdestaque.jpg" />
+    <Content Include="IMAGES\bgevento.jpg" />
+    <Content Include="IMAGES\bgnegocios.jpg" />
+    <Content Include="IMAGES\carrousel\wall1.jpg" />
+    <Content Include="IMAGES\clientes felizes\1.jpg" />
+    <Content Include="IMAGES\clientes felizes\2.jpg" />
+    <Content Include="IMAGES\clientes felizes\3.jpg" />
+    <Content Include="IMAGES\destaque_artist.png" />
+    <Content Include="IMAGES\destaque_bandcamp.png" />
+    <Content Include="IMAGES\destaque_beatport.png" />
+    <Content Include="IMAGES\destaque_profile.png" />
+    <Content Include="IMAGES\destaque_soundcloud.png" />
+    <Content Include="IMAGES\destaque_toneden.png" />
+    <Content Include="IMAGES\evento_facebook.png" />
+    <Content Include="IMAGES\favicon.ico" />
+    <Content Include="IMAGES\favicon.png" />
+    <Content Include="IMAGES\footer-logo.png" />
+    <Content Include="IMAGES\glyphicons-halflings-white.png" />
+    <Content Include="IMAGES\glyphicons-halflings.png" />
+    <Content Include="IMAGES\list-style.png" />
+    <Content Include="IMAGES\loading.gif" />
+    <Content Include="IMAGES\logo-dark.png" />
+    <Content Include="IMAGES\logo-footer.png" />
+    <Content Include="IMAGES\logo-white.png" />
+    <Content Include="IMAGES\logo.png" />
+    <Content Include="IMAGES\map-marker.png" />
+    <Content Include="IMAGES\mobile-video-placeholder.jpg" />
+    <Content Include="IMAGES\pattern-bg-2.png" />
+    <Content Include="IMAGES\promo-1.png" />
+    <Content Include="IMAGES\promo-2.png" />
+    <Content Include="IMAGES\promo-3.png" />
+    <Content Include="IMAGES\promo-4.png" />
+    <Content Include="IMAGES\pw_maze_black.png" />
+    <Content Include="IMAGES\pw_maze_black_2X.png" />
+    <Content Include="IMAGES\res_nav_click.png" />
+    <Content Include="IMAGES\small-logo.png" />
+    <Content Include="IMAGES\time_1.jpg" />
+    <Content Include="IMAGES\time_2.jpg" />
+    <Content Include="IMAGES\time_3.jpg" />
+    <Content Include="IMAGES\user-avatar.png" />
+    <Content Include="JS\all.js" />
+    <Content Include="JS\bootstrap.js" />
+    <Content Include="JS\bootstrap.min.js" />
+    <Content Include="JS\classie.js" />
+    <Content Include="JS\contact-form.js" />
+    <Content Include="JS\contact-reservations-form.js" />
+    <Content Include="JS\gmap3.min.js" />
+    <Content Include="JS\html5element.js" />
+    <Content Include="JS\html5shiv.js" />
+    <Content Include="JS\imagesloaded.pkgd.min.js" />
+    <Content Include="JS\isotope.pkgd.min.js" />
+    <Content Include="JS\jquery-1.11.2.min.js" />
+    <Content Include="JS\jquery-scrolltofixed.js" />
+    <Content Include="JS\jquery.1.8.3.min.js" />
+    <Content Include="JS\jquery.ajaxchimp.min.js" />
+    <Content Include="JS\jquery.appear.js" />
+    <Content Include="JS\jquery.backgroundvideo.min.js" />
+    <Content Include="JS\jquery.countTo.js" />
+    <Content Include="JS\jquery.downCount.js" />
+    <Content Include="JS\jquery.easing.1.3.js" />
+    <Content Include="JS\jquery.fitvids.js" />
+    <Content Include="JS\jquery.isotope.js" />
+    <Content Include="JS\jquery.localScroll.min.js" />
+    <Content Include="JS\jquery.magnific-popup.min.js" />
+    <Content Include="JS\jquery.mb.YTPlayer.js" />
+    <Content Include="JS\jquery.mousewheel.min.js" />
+    <Content Include="JS\jquery.parallax-1.1.3.js" />
+    <Content Include="JS\jquery.scrollTo.min.js" />
+    <Content Include="JS\jquery.simple-text-rotator.min.js" />
+    <Content Include="JS\jquery.sticky.js" />
+    <Content Include="JS\jquery.viewport.mini.js" />
+    <Content Include="JS\lg-autoplay.js" />
+    <Content Include="JS\lg-autoplay.min.js" />
+    <Content Include="JS\lg-fullscreen.js" />
+    <Content Include="JS\lg-fullscreen.min.js" />
+    <Content Include="JS\lg-hash.js" />
+    <Content Include="JS\lg-hash.min.js" />
+    <Content Include="JS\lg-pager.js" />
+    <Content Include="JS\lg-pager.min.js" />
+    <Content Include="JS\lg-share.js" />
+    <Content Include="JS\lg-share.min.js" />
+    <Content Include="JS\lg-thumbnail.js" />
+    <Content Include="JS\lg-thumbnail.min.js" />
+    <Content Include="JS\lg-video.js" />
+    <Content Include="JS\lg-video.min.js" />
+    <Content Include="JS\lg-zoom.js" />
+    <Content Include="JS\lg-zoom.min.js" />
+    <Content Include="JS\lightgallery.js" />
+    <Content Include="JS\lightgallery.min.js" />
+    <Content Include="JS\masonry.pkgd.min.js" />
+    <Content Include="JS\owl.carousel.min.js" />
+    <Content Include="JS\placeholder.js" />
+    <Content Include="JS\respond-1.1.0.min.js" />
+    <Content Include="JS\rev-slider.js" />
+    <Content Include="JS\SmoothScroll.js" />
+    <Content Include="JS\tiltfx.js" />
+    <Content Include="JS\tooltip.js" />
+    <Content Include="JS\wow.js" />
+    <Content Include="JS\wow.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Home.Master" />
+    <Content Include="CSS\ytp-regular.eot" />
+    <Content Include="CSS\ytp-regular.ttf" />
+    <Content Include="CSS\ytp-regular.woff" />
+    <Content Include="ADM\Admin.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Servicos.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADM\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ADM\HomeADM.aspx.cs">
+      <DependentUpon>HomeADM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM\HomeADM.aspx.designer.cs">
+      <DependentUpon>HomeADM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos.aspx.cs">
+      <DependentUpon>Servicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Servicos.aspx.designer.cs">
+      <DependentUpon>Servicos.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FONTS\" />
+    <Folder Include="IMAGES\eventos\" />
+    <Folder Include="IMAGES\galeria\" />
+    <Folder Include="IMAGES\images\" />
+    <Folder Include="IMAGES\parceiros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_RENATA\DAL_RENATA.csproj">
+      <Project>{4fa2d618-18ee-4289-8e8a-5a3b0c4c809f}</Project>
+      <Name>DAL_RENATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\REGRA_RENATA\REGRA_RENATA.csproj">
+      <Project>{65bf2d86-58fd-402a-b0a3-ac630ecd5d72}</Project>
+      <Name>REGRA_RENATA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12451</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12451/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

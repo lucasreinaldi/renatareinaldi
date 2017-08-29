@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RR_DAL">
+  <DataContextMoniker Name="/RR_DALDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9339d2c4-433a-4323-b56d-698a63c49c85" absoluteBounds="0.625, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RR_DALDataContext/Atendimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="695d07e0-4d92-4641-9d05-5dcd6cc941ba" absoluteBounds="0.64000000000000012, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32fe887f-2dc6-46a1-bb44-bb1fc7cb3fff" absoluteBounds="3.375, 3.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/RR_DALDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9d68810-86fb-46b8-b9ce-7f18ffe7ed1e" absoluteBounds="3.39, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68be60c0-f78f-47fc-8724-b6c6d0e1a7cf" absoluteBounds="3.5, 0.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/RR_DALDataContext/CarrinhoCompra" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2f7593c-76fa-4f25-a816-c519637c2813" absoluteBounds="3.5150000000000006, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cfb5a77-60fc-4fd4-83fc-959821727544" absoluteBounds="0.75, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RR_DALDataContext/DetalheCompra" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61ba2690-ef10-4864-8f4c-e8ac6e1176d8" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="086b68a9-b1fa-4977-a4b6-bcb84603a86f" absoluteBounds="6.25, 3.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/RR_DALDataContext/Endereco" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87f60843-8d47-444a-99bd-358e5c5a2600" absoluteBounds="6.2650000000000006, 3.8350000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed073073-47a4-4a71-8d13-3c12e9a9103b" absoluteBounds="8.75, 3.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RR_DALDataContext/Imagens" />
+      <nestedChildShapes>
+        <elementListCompartment Id="483f3659-4afd-43b3-a48b-8d64d674ebec" absoluteBounds="8.765, 3.9600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56d51277-942c-4872-b17b-8497941440e8" absoluteBounds="6.125, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RR_DALDataContext/Newsletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5b55a2a-828a-4dc3-9827-6e186f61386b" absoluteBounds="6.14, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89199d08-dcfc-49f7-b12d-12af4f37d482" absoluteBounds="8.625, 1, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RR_DALDataContext/Noticia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3f425e9-4dbc-4882-82cb-5a84dd7fc47b" absoluteBounds="8.64, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0798f2fc-fa40-4156-b142-5715b0e522ef" absoluteBounds="6.375, 6.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/RR_DALDataContext/Produto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c14fd4c5-6379-4c73-91fa-7cfc2fd64ed8" absoluteBounds="6.3900000000000006, 6.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="819da6e2-e999-42be-bb95-328f98f72ab7" absoluteBounds="3.125, 6.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RR_DALDataContext/Servico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="294e6f70-67b0-40b0-80c1-bf58c2eb602d" absoluteBounds="3.14, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 4.39505126953125); (2.80208333333333 : 4.39505126953125 : JumpStart); (2.63541666666667 : 4.39505126953125 : JumpEnd); (1.625 : 4.39505126953125); (1.625 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Usuario/Usuario_Atendimento" />
+      <nodes>
+        <classShapeMoniker Id="32fe887f-2dc6-46a1-bb44-bb1fc7cb3fff" />
+        <classShapeMoniker Id="9339d2c4-433a-4323-b56d-698a63c49c85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4375 : 3.125); (4.4375 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Usuario/Usuario_CarrinhoCompra" />
+      <nodes>
+        <classShapeMoniker Id="32fe887f-2dc6-46a1-bb44-bb1fc7cb3fff" />
+        <classShapeMoniker Id="68be60c0-f78f-47fc-8724-b6c6d0e1a7cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.23202189127604); (3.5 : 2.23202189127604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RR_DALDataContext/DetalheCompra/DetalheCompra_CarrinhoCompra" />
+      <nodes>
+        <classShapeMoniker Id="4cfb5a77-60fc-4fd4-83fc-959821727544" />
+        <classShapeMoniker Id="68be60c0-f78f-47fc-8724-b6c6d0e1a7cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 4.52005126953125); (6.25 : 4.52005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Usuario/Usuario_Endereco" />
+      <nodes>
+        <classShapeMoniker Id="32fe887f-2dc6-46a1-bb44-bb1fc7cb3fff" />
+        <classShapeMoniker Id="086b68a9-b1fa-4977-a4b6-bcb84603a86f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 6.28125); (2.71875 : 6.28125); (2.71875 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Produto/Produto_DetalheCompra" />
+      <nodes>
+        <classShapeMoniker Id="0798f2fc-fa40-4156-b142-5715b0e522ef" />
+        <classShapeMoniker Id="4cfb5a77-60fc-4fd4-83fc-959821727544" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 7.16429768880208); (2.625 : 7.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Servico/Servico_Atendimento" />
+      <nodes>
+        <classShapeMoniker Id="819da6e2-e999-42be-bb95-328f98f72ab7" />
+        <classShapeMoniker Id="9339d2c4-433a-4323-b56d-698a63c49c85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 7.13544840494792); (9.75 : 7.13544840494792); (9.75 : 5.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RR_DALDataContext/Produto/Produto_Imagens" />
+      <nodes>
+        <classShapeMoniker Id="0798f2fc-fa40-4156-b142-5715b0e522ef" />
+        <classShapeMoniker Id="ed073073-47a4-4a71-8d13-3c12e9a9103b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
