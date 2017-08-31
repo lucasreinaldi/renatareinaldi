@@ -10,7 +10,7 @@
 namespace WEB_RENATA.ADM {
     
     
-    public partial class Admin {
+    public partial class ADM {
         
         /// <summary>
         /// head control.

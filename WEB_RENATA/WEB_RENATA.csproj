@@ -95,7 +95,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ADM\HomeADM.aspx" />
+    <Content Include="ADM\ADMservicos.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ADM\ADMnoticias.aspx" />
+    <Content Include="ADM\ADMprodutos.aspx" />
+    <Content Include="ADM\ADMnewsletter.aspx" />
     <Content Include="CSS\AjaxLoader.gif" />
     <Content Include="CSS\animate.min.css" />
     <Content Include="CSS\bootstrap.min.css" />
@@ -113,7 +118,6 @@
     <Content Include="CSS\vertical-rhythm.min.css" />
     <Content Include="CSS\YTPlayer.css" />
     <Content Include="Home.aspx" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="IMAGES\apple-touch-icon-114x114.png" />
     <Content Include="IMAGES\apple-touch-icon-72x72.png" />
     <Content Include="IMAGES\apple-touch-icon.png" />
@@ -219,6 +223,7 @@
     <Content Include="JS\wow.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Noticias.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -227,7 +232,7 @@
     <Content Include="CSS\ytp-regular.eot" />
     <Content Include="CSS\ytp-regular.ttf" />
     <Content Include="CSS\ytp-regular.woff" />
-    <Content Include="ADM\Admin.Master" />
+    <Content Include="ADM\ADM.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -240,19 +245,42 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADM\Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
+    <Compile Include="ADM\ADM.Master.cs">
+      <DependentUpon>ADM.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ADM\Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
+    <Compile Include="ADM\ADM.Master.designer.cs">
+      <DependentUpon>ADM.Master</DependentUpon>
     </Compile>
-    <Compile Include="ADM\HomeADM.aspx.cs">
-      <DependentUpon>HomeADM.aspx</DependentUpon>
+    <Compile Include="ADM\ADMservicos.aspx.cs">
+      <DependentUpon>ADMservicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ADM\ADMservicos.aspx.designer.cs">
+      <DependentUpon>ADMservicos.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ADM\ADMnoticias.aspx.cs">
+      <DependentUpon>ADMnoticias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ADM\HomeADM.aspx.designer.cs">
-      <DependentUpon>HomeADM.aspx</DependentUpon>
+    <Compile Include="ADM\ADMnoticias.aspx.designer.cs">
+      <DependentUpon>ADMnoticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM\ADMprodutos.aspx.cs">
+      <DependentUpon>ADMprodutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM\ADMprodutos.aspx.designer.cs">
+      <DependentUpon>ADMprodutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADM\ADMnewsletter.aspx.cs">
+      <DependentUpon>ADMnewsletter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADM\ADMnewsletter.aspx.designer.cs">
+      <DependentUpon>ADMnewsletter.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -281,6 +309,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Noticias.aspx.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Noticias.aspx.designer.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos.aspx.cs">

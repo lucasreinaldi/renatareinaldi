@@ -109,7 +109,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailBO.cs" />
+    <Compile Include="LoginBO.cs" />
+    <Compile Include="NewsletterBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBO.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_RENATA\DAL_RENATA.csproj">
+      <Project>{4fa2d618-18ee-4289-8e8a-5a3b0c4c809f}</Project>
+      <Name>DAL_RENATA</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

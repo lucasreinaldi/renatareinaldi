@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WEB_RENATA
+namespace WEB_RENATA.ADM
 {
-    public partial class Servicos1 : System.Web.UI.Page
+    public partial class ADM : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

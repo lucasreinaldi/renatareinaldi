@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WEB_RENATA
+namespace WEB_RENATA.ADM
 {
 
 
-    public partial class Servicos1
+    public partial class WebForm3
     {
     }
 }

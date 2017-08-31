@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WEB_RENATA.ADM
+namespace WEB_RENATA
 {
 
 
-    public partial class HomeADM
+    public partial class Noticias
     {
     }
 }
