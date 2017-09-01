@@ -64,6 +64,7 @@ C:\Users\Lucas\Google Drive\Lucas Reinaldi\Websites\03 RENATA ADESTRADORA\WEB_RE
 C:\Users\Lucas\Google Drive\Lucas Reinaldi\Websites\03 RENATA ADESTRADORA\WEB_RENATA\obj\Debug\WEB_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\Lucas Reinaldi\Websites\03 RENATA ADESTRADORA\WEB_RENATA\obj\Debug\WEB_RENATA.dll
 C:\Users\Lucas\Google Drive\Lucas Reinaldi\Websites\03 RENATA ADESTRADORA\WEB_RENATA\obj\Debug\WEB_RENATA.pdb
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\obj\Debug\WEB_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\ApplicationInsights.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn\csc.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -77,6 +78,9 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn\vbc.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn\VBCSCompiler.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\ADM\ADMservicos.aspx
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\ADM\ADMservicos.aspx.cs
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\ADM\ADMservicos.aspx.designer.cs
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\WEB_RENATA.dll.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\WEB_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\WEB_RENATA.pdb
@@ -98,6 +102,5 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\Micros
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\obj\Debug\WEB_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\obj\Debug\WEB_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\WEB_RENATA\obj\Debug\WEB_RENATA.pdb

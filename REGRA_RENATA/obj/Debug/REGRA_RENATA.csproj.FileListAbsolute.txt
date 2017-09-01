@@ -31,6 +31,7 @@ C:\Users\Lucas\Google Drive\LUCAS REINALDI\Websites\03 RENATA ADESTRADORA\REGRA_
 C:\Users\Lucas\Google Drive\LUCAS REINALDI\Websites\03 RENATA ADESTRADORA\REGRA_RENATA\obj\Debug\REGRA_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\LUCAS REINALDI\Websites\03 RENATA ADESTRADORA\REGRA_RENATA\obj\Debug\REGRA_RENATA.dll
 C:\Users\Lucas\Google Drive\LUCAS REINALDI\Websites\03 RENATA ADESTRADORA\REGRA_RENATA\obj\Debug\REGRA_RENATA.pdb
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\obj\Debug\REGRA_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\ApplicationInsights.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\roslyn\csc.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -47,6 +48,7 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\rosl
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\REGRA_RENATA.dll.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\REGRA_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\REGRA_RENATA.pdb
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\DAL_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -55,12 +57,12 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Micr
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.ApplicationInsights.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\DAL_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.Web.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\obj\Debug\REGRA_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\obj\Debug\REGRA_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\REGRA_RENATA\obj\Debug\REGRA_RENATA.pdb

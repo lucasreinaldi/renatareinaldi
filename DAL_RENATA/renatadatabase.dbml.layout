@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="renatadatabase">
+  <DataContextMoniker Name="/renatadatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ea3334cf-17a4-4eeb-b4d6-b12ae7b25fb8" absoluteBounds="4.625, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/renatadatabaseDataContext/Newsletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75cbd9d7-5946-4dc8-8f9d-163fc96ef33a" absoluteBounds="4.64, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

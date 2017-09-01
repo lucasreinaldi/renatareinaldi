@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="renatadb" Class="renatadatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NEBULUS_PC\SQLEXPRESS;Initial Catalog=renatadb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="renatadbConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Newsletter" Member="Newsletters">
+    <Type Name="Newsletter">
+      <Column Name="IdListaEmail" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

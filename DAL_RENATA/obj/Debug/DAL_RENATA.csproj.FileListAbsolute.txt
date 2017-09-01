@@ -61,6 +61,5 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\bin\Micros
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\obj\Debug\DAL_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\obj\Debug\DAL_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldi\DAL_RENATA\obj\Debug\DAL_RENATA.pdb

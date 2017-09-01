@@ -7,7 +7,7 @@ using System.Net.Mail;
 using System.Web.UI.WebControls;
 using System.Net;
 
-namespace REGRA_NEBULUS
+namespace REGRA_RENATA
 {
     public class Util
     {
