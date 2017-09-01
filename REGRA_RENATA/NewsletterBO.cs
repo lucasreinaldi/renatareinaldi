@@ -22,7 +22,7 @@ namespace REGRA_RENATA
 {
     public class NewsletterBO
     {
-        BancoLINQ<renatadatabaseDataContext> DataContext = new BancoLINQ<renatadatabaseDataContext>();
+        BancoLINQ<renataDBMLDataContext> DataContext = new BancoLINQ<renataDBMLDataContext>();
 
         public List<Newsletter> ConsultarTodos()
         {
@@ -53,8 +53,14 @@ namespace REGRA_RENATA
         }
 
 
-        private bool Inserir(Newsletter news)
+        public bool Inserir(Newsletter news)
         {
+            Util util = new Util();
+            String ip = util.PegarIp();
+
+            news.Data = DateTime.Now;
+            news.IP = ip;
+
             string msg;
             try
             {

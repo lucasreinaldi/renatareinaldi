@@ -1,17 +1,9 @@
 <?xml version="1.0"?>
-<doc xml:lang="en">
+<doc>
     <assembly>
         <name>Microsoft.AI.Web</name>
     </assembly>
     <members>
-        <member name="T:Microsoft.ApplicationInsights.Web.Implementation.HttpRequestExtensions">
-            <summary>
-            HttpRequest Extensions.
-            </summary>
-            <summary>
-            HttpRequest Extensions.
-            </summary>
-        </member>
         <member name="T:Microsoft.ApplicationInsights.Web.Implementation.RequestTrackingConstants">
             <summary>
             Request tracking constants and keys.
@@ -295,7 +287,12 @@
             Telemetry module to collect unhandled exceptions caught by http module.
             </summary>
         </member>
-        <member name="M:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule.OnError(System.Web.HttpContext)">
+        <member name="M:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule.OnError(System.Diagnostics.Tracing.EventWrittenEventArgs)">
             <summary>
             Implements on error callback of http module.
             </summary>
@@ -305,6 +302,17 @@
             Initializes the telemetry module.
             </summary>
             <param name="configuration">Telemetry configuration to use for initialization.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule.Dispose">
+            <summary>
+            Dispose method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule.ResolvePlatformContext">
+            <summary>
+            Returns current HttpContext.
+            </summary>
+            <returns>Current HttpContext.</returns>
         </member>
         <member name="T:Microsoft.ApplicationInsights.Web.OperationNameTelemetryInitializer">
             <summary>
@@ -326,18 +334,23 @@
             Telemetry module tracking requests using http module.
             </summary>
         </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule" /> class.
+            </summary>
+        </member>
         <member name="P:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.Handlers">
             <summary>
             Gets the list of handler types for which requests telemetry will not be collected
             if request was successful.
             </summary>
         </member>
-        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.OnBeginRequest(System.Web.HttpContext)">
+        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.OnBeginRequest(System.Diagnostics.Tracing.EventWrittenEventArgs)">
             <summary>
             Implements on begin callback of http module.
             </summary>
         </member>
-        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.OnEndRequest(System.Web.HttpContext)">
+        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.OnEndRequest(System.Diagnostics.Tracing.EventWrittenEventArgs)">
             <summary>
             Implements on end callback of http module.
             </summary>
@@ -348,12 +361,23 @@
             </summary>
             <param name="configuration">Telemetry configuration to use for initialization.</param>
         </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.Dispose">
+            <summary>
+            Dispose method.
+            </summary>
+        </member>
         <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.NeedProcessRequest(System.Web.HttpContext)">
             <summary>
             Verifies context to detect whether or not request needs to be processed.
             </summary>
             <param name="httpContext">Current http context.</param>
             <returns>True if request needs to be processed, otherwise - False.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.ResolvePlatformContext">
+            <summary>
+            Returns current HttpContext.
+            </summary>
+            <returns>Current HttpContext.</returns>
         </member>
         <member name="M:Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule.IsHandlerToFilter(System.Web.IHttpHandler)">
             <summary>
@@ -394,9 +418,14 @@
             A telemetry initializer that determines if the request came from a synthetic source based on the user agent string.
             </summary>
         </member>
+        <member name="M:Microsoft.ApplicationInsights.Web.SyntheticUserAgentTelemetryInitializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Web.SyntheticUserAgentTelemetryInitializer" /> class.
+            </summary>
+        </member>
         <member name="P:Microsoft.ApplicationInsights.Web.SyntheticUserAgentTelemetryInitializer.Filters">
             <summary>
-            Gets or sets the configured patterns for matching synthetic traffic filters through user agent string.
+            Gets the configured patterns for matching synthetic traffic filters through user agent string.
             </summary>
         </member>
         <member name="M:Microsoft.ApplicationInsights.Web.SyntheticUserAgentTelemetryInitializer.OnInitializeTelemetry(System.Web.HttpContext,Microsoft.ApplicationInsights.DataContracts.RequestTelemetry,Microsoft.ApplicationInsights.Channel.ITelemetry)">
