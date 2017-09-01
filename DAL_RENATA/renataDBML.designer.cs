@@ -33,6 +33,9 @@ namespace DAL_RENATA
     partial void InsertNewsletter(Newsletter instance);
     partial void UpdateNewsletter(Newsletter instance);
     partial void DeleteNewsletter(Newsletter instance);
+    partial void InsertServico(Servico instance);
+    partial void UpdateServico(Servico instance);
+    partial void DeleteServico(Servico instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -70,6 +73,14 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Newsletter>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Servico> Servicos
+		{
+			get
+			{
+				return this.GetTable<Servico>();
 			}
 		}
 	}
@@ -183,6 +194,164 @@ namespace DAL_RENATA
 					this._IP = value;
 					this.SendPropertyChanged("IP");
 					this.OnIPChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Servico")]
+	public partial class Servico : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdServicos;
+		
+		private string _Nome;
+		
+		private string _Descricao;
+		
+		private decimal _Valor;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdServicosChanging(int value);
+    partial void OnIdServicosChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnValorChanging(decimal value);
+    partial void OnValorChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Servico()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdServicos", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdServicos
+		{
+			get
+			{
+				return this._IdServicos;
+			}
+			set
+			{
+				if ((this._IdServicos != value))
+				{
+					this.OnIdServicosChanging(value);
+					this.SendPropertyChanging();
+					this._IdServicos = value;
+					this.SendPropertyChanged("IdServicos");
+					this.OnIdServicosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(100)")]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Money NOT NULL")]
+		public decimal Valor
+		{
+			get
+			{
+				return this._Valor;
+			}
+			set
+			{
+				if ((this._Valor != value))
+				{
+					this.OnValorChanging(value);
+					this.SendPropertyChanging();
+					this._Valor = value;
+					this.SendPropertyChanged("Valor");
+					this.OnValorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
 				}
 			}
 		}

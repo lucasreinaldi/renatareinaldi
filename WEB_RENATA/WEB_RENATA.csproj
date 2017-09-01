@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\GERservicos.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -129,6 +130,13 @@
     <Compile Include="Admin\GERnewsletter.aspx.designer.cs">
       <DependentUpon>GERnewsletter.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\GERservicos.aspx.cs">
+      <DependentUpon>GERservicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERservicos.aspx.designer.cs">
+      <DependentUpon>GERservicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,7 +156,7 @@
   <ItemGroup>
     <Folder Include="CSS\" />
     <Folder Include="FONTS\" />
-    <Folder Include="img\" />
+    <Folder Include="img\servicos\" />
     <Folder Include="JS\" />
   </ItemGroup>
   <ItemGroup>

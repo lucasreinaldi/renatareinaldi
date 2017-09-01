@@ -42,11 +42,11 @@ namespace REGRA_RENATA
             }
         }
 
-        public bool Excluir(Newsletter cliente)
+        public bool Excluir(Newsletter news)
         {
 
-            Newsletter clienteExcluir = this.ConsultarPorId(cliente.IdListaEmail);
-            DataContext.DataContext.Newsletters.DeleteOnSubmit(clienteExcluir);
+            Newsletter exclusao = this.ConsultarPorId(news.IdListaEmail);
+            DataContext.DataContext.Newsletters.DeleteOnSubmit(exclusao);
             DataContext.DataContext.SubmitChanges();
             return true;
 
