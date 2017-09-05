@@ -86,7 +86,7 @@
                             <%#Eval("data")%>
                         </td>
                         <td align="center">
-                            <%#Eval("caminho")%>
+                            <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
                             <asp:LinkButton ID="lblAlterar" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-wrench"></i></asp:LinkButton>

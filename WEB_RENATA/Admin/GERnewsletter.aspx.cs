@@ -51,7 +51,10 @@ namespace WEB_RENATA.Admin
             NewsletterBO newsletterBO = new NewsletterBO();
             Newsletter newsletter = new Newsletter();
 
-            newsletter.IdListaEmail = int.Parse(hidID.Value);
+            
+            int id = Int32.Parse(e.CommandArgument.ToString());
+
+            newsletter.IdListaEmail = id;
 
             if (newsletterBO.Excluir(newsletter) == true)
             {

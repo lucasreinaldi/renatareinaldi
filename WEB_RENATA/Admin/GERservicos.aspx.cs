@@ -46,15 +46,16 @@ namespace WEB_RENATA.Admin
         protected void imbExcluirEmail_Click(object sender, CommandEventArgs e)
         {
 
-            //if (this.hidID.Value != null && int.Parse(hidID.Value) > 0)
-            //{
+             
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = new Servico();
 
-            servico.IdServicos = int.Parse(hidID.Value);
+            int id = Int32.Parse(e.CommandArgument.ToString());
+            servico.IdServicos = id;
 
             if (servicoBO.Excluir(servico) == true)
             {
+                
                 // masterPage.DefinirMsgResultado(divResultado, TipoMensagemLabel.Sucesso, lblResultado, "Cliente excluído com sucesso!", null);
 
                 this.MontarRepeater();

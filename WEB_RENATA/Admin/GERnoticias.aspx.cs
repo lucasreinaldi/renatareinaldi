@@ -50,7 +50,8 @@ namespace WEB_RENATA.Admin
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = new Servico();
 
-            servico.IdServicos = int.Parse(hidID.Value);
+            servico.IdServicos =  Int32.Parse(e.CommandArgument.ToString());
+            
 
             if (servicoBO.Excluir(servico) == true)
             {
@@ -134,7 +135,7 @@ namespace WEB_RENATA.Admin
                 row["conteudo"] = lista.Conteudo;
                 row["descricao"] = lista.DescricaoBreve;
                 row["data"] = lista.DataPublicacao;
-                row["caminho"] = lista.CaminhoImagem;
+                row["caminho"] = "..\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }
