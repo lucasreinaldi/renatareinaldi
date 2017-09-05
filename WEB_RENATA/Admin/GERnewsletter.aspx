@@ -5,34 +5,35 @@
   
     
     
-    <section class="main-section paddind" id="Portfolio"><!--main-section-start-->
-	<div class="container">
+    <section class="main-section" id="Portfolio"> 
+	<div class="container gerNewsletter">
     	<h2>Base de dados de e-mails</h2>
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnNewsletter">
-                    <asp:TextBox ID="txtNewsletter" runat="server" CssClass="newsletterInput" placeholder="newsletter"
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnNewsletter" CssClass="divNewsletter">
+                    <asp:TextBox ID="txtNewsletter" runat="server" CssClass="form-control input-text" placeholder="newsletter"
                         MaxLength="50"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
                         runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RegularExpressionValidator>
-                    <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-info"
+                  
+                        <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="valNewsletter" OnClick="btnNewsletter_Click"
-                         ><i class="glyphicon glyphicon-ok"></i></asp:LinkButton>
+                         >Adicionar</asp:LinkButton>
                 </asp:Panel>
        
          
         
 	</div>
-    <div class="portfolioContainer wow fadeInUp delay-04s">
+    <div class="container wow fadeInUp delay-04s tabela">
             
         <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divEmail">
+       <div >
          
-        <table style="font-size: 10px;" cellpadding="3px" cellspacing="0px">
+        <table id="divTabela">
             <asp:Repeater ID="rptNewsletter" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">

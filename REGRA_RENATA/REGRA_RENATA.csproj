@@ -111,8 +111,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewsletterBO.cs" />
+    <Compile Include="NoticiaBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicoBO.cs" />
+    <Compile Include="UsuarioBO.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>

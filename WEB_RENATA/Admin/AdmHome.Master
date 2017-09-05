@@ -19,9 +19,11 @@
 
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link href="../CSS/font-awesome.css" rel="stylesheet" />
+ 
 <link href="../css/responsive.css" rel="stylesheet" type="text/css">
 <link href="../css/animate.css" rel="stylesheet" type="text/css">
+    <link href="../css/styleAdmin.css" rel="stylesheet" type="text/css">
 
 <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
 
@@ -46,13 +48,14 @@
     <form id="form1" runat="server">
     <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
-        <ul class="main-nav">
-        	<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-            <li><a href="#header">Home</a></li>
-            <li><a href="#service">Serviços</a></li>
-            <li><a href="#Portfolio">Notícias</a></li>                        
-            <li><a href="#contact">Contato</a></li>
-            <li><a href="#contact">Loja</a></li>
+        <ul class="main-nav">        	 
+            <li><a href="Home.aspx">Home</a></li>
+            <li><a href="GERhome.aspx">Alterar Home</a></li>
+            <li><a href="GERnewsletter.aspx">Newsletter</a></li>
+            <li><a href="GERservicos.aspx">Serviços</a></li>  
+            <li><a href="GERnoticias.aspx">Notícias</a></li>    
+            <li><a href="GERprodutos.aspx">Produtos</a></li>
+            <li><a href="GERusuarios.aspx">Usuários</a></li>                      
         </ul>
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>

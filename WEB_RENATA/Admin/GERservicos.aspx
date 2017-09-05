@@ -3,13 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
-    <section class="main-section paddind" id="Portfolio"><!--main-section-start-->
-	<div class="container">
+    <section class="main-section" id="Portfolio"><!--main-section-start-->
+	<div class="container gerServicos">
     	<h2>Gerenciador de Serviços</h2>
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnAdicionar">
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnServicos" CssClass="divServicos">
                     <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="nome do serviço"
                         MaxLength="50"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
@@ -31,19 +31,19 @@
 
                     <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             
-                <asp:LinkButton ID="btnAdicionar" runat="server" CssClass="btn btn-info"
+                <asp:LinkButton ID="btnServicos" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="valServicos" OnClick="btnAdicionar_Click">Adicionar</asp:LinkButton>
                 </asp:Panel>
        
          
         
 	</div>
-    <div class="portfolioContainer wow fadeInUp delay-04s">
+    <div class="container fadeInUp delay-04s tabelaServicos">
             
         <asp:HiddenField ID="hidID" runat="server" />
        <div id="divServicos">
          
-        <table style="font-size: 10px;" cellpadding="3px" cellspacing="0px">
+        <table id="divTabelaServico">
             <asp:Repeater ID="rptServicos" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
@@ -83,7 +83,7 @@
                             <%#Eval("caminho")%>
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
-                            <asp:LinkButton ID="lblAlterar" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>
+                            <asp:LinkButton ID="lblAlterar" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-wrench"></i></asp:LinkButton>
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
                             <asp:LinkButton ID="lbExcluir" OnCommand="imbExcluirEmail_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>

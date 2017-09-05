@@ -1,0 +1,79 @@
+﻿* {
+        font-family: 'Montserrat';
+}
+
+.gerNewsletter
+{
+    padding: 30px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.divNewsletter
+{
+    width: 500px;
+       left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+    position: relative; 
+}
+ 
+
+#contentBody_btnNewsletter
+{
+    display: block;
+    margin-top: 20px;
+}
+
+
+#divTabela{
+    border: 1px solid black;
+}
+
+#divTabela .th{
+    border: 1px solid black;
+}
+
+#divTabela tr:nth-child(even)
+{
+    background-color: #f1f1f1;
+}
+
+
+
+
+.gerServicos
+{
+    padding: 30px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.divServicos
+{
+    width: 500px;
+       left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+    position: relative; 
+}
+ 
+#contentBody_btnServicos
+{
+    display: block;
+    margin-top: 20px;
+}
+
+
+#divTabelaServico{
+    border: 1px solid black;
+}
+
+#divTabelaServico .th{
+    border: 1px solid black;
+}
+
+#divTabelaServico tr:nth-child(even)
+{
+    background-color: #f1f1f1;
+}
