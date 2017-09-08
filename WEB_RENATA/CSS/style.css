@@ -871,3 +871,24 @@ border: 2px solid #fff;
 {
   
 }
+
+#contentBody_panelNewsletter{
+    padding-left: 100px;
+    padding-right: 100px; 
+}
+
+#contentBody_btnNewsletter
+{
+    display: block;
+}
+
+#contentBody_validador2
+{
+    display: block;
+    margin-bottom: 7px;
+}
+
+.marginbottom
+{
+    margin-bottom: 20px;
+}

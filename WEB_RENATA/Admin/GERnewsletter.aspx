@@ -16,6 +16,7 @@
                         MaxLength="50"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RequiredFieldValidator>
+            <br />
                     <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
                         runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RegularExpressionValidator>

@@ -123,6 +123,13 @@
     <Content Include="CSS\style.css" />
     <Content Include="CSS\styleAdmin.css" />
     <Content Include="FONTS\fontawesome-webfont.svg" />
+    <Content Include="img\home\Car1.jpg" />
+    <Content Include="img\home\Car2.jpg" />
+    <Content Include="img\home\Car3.jpg" />
+    <Content Include="img\home\Cliente1.jpg" />
+    <Content Include="img\home\Cliente2.jpg" />
+    <Content Include="img\home\Cliente3.jpg" />
+    <Content Include="img\home\defaultCar.jpg" />
     <Content Include="img\home\defaultCarrousel.jpg" />
     <Content Include="img\home\defaultCliente.jpg" />
     <Content Include="JS\NewFolder1\all.js" />

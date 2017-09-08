@@ -148,6 +148,26 @@ namespace REGRA_RENATA
             }
         }
 
+        public List<Noticia> ConsultarTres()
+        {
+
+            string msg;
+
+            try
+            {
+                var consulta = (from Noticia in DataContext.DataContext.Noticias orderby Noticia.DataPublicacao descending select Noticia).Take(3);
+                if (consulta == null)
+                    return null;
+                return consulta.ToList();
+            }
+            catch (Exception e)
+            {
+
+
+                return null;
+            }
+        }
+
         public List<Noticia> ConsultarTodosPorIdCliente(int id)
         {
 

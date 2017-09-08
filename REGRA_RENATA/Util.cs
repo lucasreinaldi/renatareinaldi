@@ -457,5 +457,7 @@ namespace REGRA_RENATA
             }
             return context.Request.ServerVariables["REMOTE_ADDR"];
         }
+
+
     }
 }
