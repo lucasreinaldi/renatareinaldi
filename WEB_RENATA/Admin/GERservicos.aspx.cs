@@ -135,7 +135,7 @@ namespace WEB_RENATA.Admin
                 row["nome"] = lista.Nome;
                 row["descricao"] = lista.Descricao;
                 row["valor"] = lista.Valor;
-                row["caminho"] = lista.CaminhoImagem;
+                row["caminho"] = "..\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }
