@@ -99,6 +99,7 @@
     <Content Include="Admin\GERnoticias.aspx" />
     <Content Include="Admin\GERprodutos.aspx" />
     <Content Include="Admin\GERservicos.aspx" />
+    <Content Include="Admin\GERservicosDados.aspx" />
     <Content Include="Admin\GERusuarios.aspx" />
     <Content Include="Admin\Home.aspx" />
     <Content Include="CSS\animate.css" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="Admin\GERservicos.aspx.designer.cs">
       <DependentUpon>GERservicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERservicosDados.aspx.cs">
+      <DependentUpon>GERservicosDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERservicosDados.aspx.designer.cs">
+      <DependentUpon>GERservicosDados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GERusuarios.aspx.cs">
       <DependentUpon>GERusuarios.aspx</DependentUpon>

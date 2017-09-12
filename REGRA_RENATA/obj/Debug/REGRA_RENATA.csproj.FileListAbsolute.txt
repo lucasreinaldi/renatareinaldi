@@ -33,6 +33,7 @@ C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\REGRA_REN
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\REGRA_RENATA\obj\Debug\REGRA_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\REGRA_RENATA\obj\Debug\REGRA_RENATA.dll
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\REGRA_RENATA\obj\Debug\REGRA_RENATA.pdb
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\REGRA_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\ApplicationInsights.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\roslyn\csc.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -48,7 +49,6 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\ros
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\REGRA_RENATA.dll.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\REGRA_RENATA.dll
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\REGRA_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\DAL_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\REGRA_RENATA\bin\Microsoft.AI.DependencyCollector.dll

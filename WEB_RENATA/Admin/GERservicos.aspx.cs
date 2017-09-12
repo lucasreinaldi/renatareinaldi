@@ -44,9 +44,7 @@ namespace WEB_RENATA.Admin
         }
 
         protected void imbExcluirEmail_Click(object sender, CommandEventArgs e)
-        {
-
-             
+        {             
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = new Servico();
 
@@ -89,9 +87,7 @@ namespace WEB_RENATA.Admin
             this.rptServicos.DataBind();
         }
 
-
-
-
+        
         public void MontarRepeater()
         {
             ServicoBO servicoBO = new ServicoBO();
@@ -142,24 +138,10 @@ namespace WEB_RENATA.Admin
             return tabela;
         }
 
-        protected void btnAdicionar_Click(Object sender, EventArgs e)
-        {
-            ServicoBO servicosBO = new ServicoBO();
-            Servico servico = new Servico();
+        
 
-            servico.Nome = txtNome.Text;
-            servico.Descricao = txtDescricao.Text;
+        
 
-            decimal decim = Convert.ToDecimal(txtValor.Text);
-
-            servico.Valor = decim;
-
-            servicosBO.Inserir(servico, MapPath("../" + "img/servicos" + "/"), exampleInputFile);
-
-            if (servico != null)
-            {
-                Response.Redirect("GERservicos.aspx");
-            }
-        }
+        
     }
 }

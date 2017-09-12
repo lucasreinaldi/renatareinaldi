@@ -53,36 +53,116 @@ namespace REGRA_RENATA
 
         }
 
-        public bool Inserir(Servico servico, String caminho, FileUpload arquivo)
+      
+        public bool Inserir(Servico servico, string pastaDestino, string extensao, FileUpload fup)
         {
 
-            string fullPath = caminho + servico.Nome + ".jpg";
-            arquivo.SaveAs(fullPath);
+            string msg = "";
 
-            string caminhoDoArquivoNoBanco = "img\\servicos\\" + servico.Nome + ".jpg";
-            servico.CaminhoImagem = caminhoDoArquivoNoBanco;
-
-
-            string msg;
             try
             {
+                servico.CaminhoImagem = " ";
+                DataContext.BeginTransaction();
                 DataContext.DataContext.Servicos.InsertOnSubmit(servico);
                 DataContext.DataContext.SubmitChanges();
 
-                msg = "Cliente inserido com sucesso. " + servico.IdServicos;
+                string caminhoCompleto = pastaDestino + "Servico_" + servico.IdServicos + extensao;
+                Util.UploadArquivo(fup, caminhoCompleto);
+                if (Util.ArquivoExists(caminhoCompleto, null, null))
+                {
+                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos);
+                    servicoAlterar.CaminhoImagem = "../img/servicos/Servico_" + servico.IdServicos + extensao;
+                    DataContext.DataContext.SubmitChanges();
+                }
+                else
+                {
+                    DataContext.RollbackTransaction();
+                }
 
+                DataContext.CommitTransaction();
+                msg = "Inserido com sucesso [Inserir - Release]";
+
+                return true;
             }
             catch (Exception e)
             {
+                msg = "Erro ao inserir o Cliente [Inserir - ClienteBO.cs][" + e.Message + "][" + e.Source + "]";
 
-                msg = "Erro ao inserir o cliente. " + servico.IdServicos + "Erro: " + e.Message + " - " + e.Source;
-
-
+                DataContext.RollbackTransaction();
                 return false;
             }
-
-            return true;
         }
+
+        private bool Alterar(Servico servico, string pastaDestino, string extensao, FileUpload fup)
+        {
+            
+            string msg = "";
+            bool ok = false;
+            string oldPath;
+
+            try
+            {
+                DataContext.BeginTransaction();
+
+                Servico novoServico = this.ConsultarPorId(servico.IdServicos);
+                novoServico.Nome = servico.Nome;
+                novoServico.Descricao = servico.Descricao;
+                novoServico.Valor = servico.Valor;
+                oldPath = servico.CaminhoImagem;
+
+                // string caminhoCompleto = pastaDestino + "Release_" + release.Id + extensao;
+
+                if (fup.HasFile)
+                {
+                    novoServico.CaminhoImagem = servico.CaminhoImagem;
+
+                    if ((fup.FileName != null) && (fup.FileName != "") && (pastaDestino != null) && (pastaDestino != ""))
+                    {
+
+                        if (Util.ExcluirArquivo(pastaDestino + oldPath, null, null))
+                        {
+                            ok = true;
+                        }
+                        if (Util.UploadArquivo(fup, pastaDestino + "Servico_" + servico.IdServicos + extensao))
+                        {
+                            ok = true;
+                            novoServico.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
+                            DataContext.DataContext.SubmitChanges();
+                        }
+                        else
+                        {
+                            ok = false;
+                        }
+                    }
+                }
+                else
+                {
+                    ok = true;
+                }
+
+                if (ok)
+                {
+                    DataContext.DataContext.SubmitChanges();
+                    DataContext.CommitTransaction();
+                    msg = "O Release foi alterado com sucesso [Alterar - Release]";
+                    
+                    return true;
+                }
+
+                DataContext.RollbackTransaction();
+                msg = "Erro ao alterar o Release [Alterar - ReleaseBO.cs][Erro ao carregar Release do Cliente]";
+                 
+                return false;
+            }
+            catch (Exception e)
+            {
+                DataContext.RollbackTransaction();
+                msg = "Erro ao alterar o Release [Alterar - ReleaseBO.cs][Erro ao carregar Release do Cliente]";
+                 
+                return false;
+            }
+        }
+
 
         public Servico ConsultarPorId(int id)
         {
@@ -99,8 +179,12 @@ namespace REGRA_RENATA
             }
         }
 
-
-
-
-}
+        public bool Salvar(Servico servico, string pastaDestino, string extensao, FileUpload fup)
+        {
+            if (servico.IdServicos <= 0)
+                return this.Inserir(servico, pastaDestino, extensao, fup);
+            else
+                return this.Alterar(servico, pastaDestino, extensao, fup);
+        }
+    }
 }

@@ -8,33 +8,7 @@
     	<h2>Gerenciador de Serviços</h2>
     	 
 
-
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnServicos" CssClass="divServicos">
-                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="nome do serviço"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
-                        runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtNome" ValidationGroup="valServicos"></asp:RegularExpressionValidator>
-                    
-
-                    <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição do serviço"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
-            
-                    <asp:TextBox ID="txtValor" runat="server" CssClass="form-control input-text" placeholder="valor do serviço"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um valor" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
-
-                    <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
-            
-                <asp:LinkButton ID="btnServicos" runat="server" CssClass="btn btn-info"
-                        CausesValidation="true" ValidationGroup="valServicos" OnClick="btnAdicionar_Click">Adicionar</asp:LinkButton>
-                </asp:Panel>
-       
+          <a href="GERservicosDados.aspx?id=0">Novo serviço</a>
          
         
 	</div>
@@ -77,13 +51,15 @@
                             <%#Eval("descricao") %>
                         </td>
                         <td align="center">
-                            <%#Eval("valor")%>
+                            <%#Eval("valor", "{0:c}")%>
                         </td>
                         <td align="center">
                             <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
                         </td>
-                        <td align="center" title="X[<%#Eval("id") %>]">
-                            <asp:LinkButton ID="lblAlterar" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-wrench"></i></asp:LinkButton>
+                        <td align="center" title="X[<%#Eval("id") %>]">                             
+                            <a href="GERservicosDados.aspx?id=<%# Eval("id") %>" >
+                                 <i class="fa fa-wrench"></i>
+                            </a>
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
                             <asp:LinkButton ID="lbExcluir" OnCommand="imbExcluirEmail_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>

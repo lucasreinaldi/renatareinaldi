@@ -35,7 +35,6 @@ C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\WEB_RENAT
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\WEB_RENATA\obj\Debug\WEB_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\WEB_RENATA\obj\Debug\WEB_RENATA.dll
 C:\Users\Lucas\Documents\Visual Studio 2015\Projects\New folder\TCC_RR\WEB_RENATA\obj\Debug\WEB_RENATA.pdb
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\WEB_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\ApplicationInsights.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\roslyn\csc.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -50,6 +49,8 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\rosly
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\roslyn\VBCSCompiler.exe
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\WEB_RENATA.dll.config
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\WEB_RENATA.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\WEB_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\DAL_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.DependencyCollector.dll
@@ -61,7 +62,6 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Micro
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\REGRA_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\DAL_RENATA.pdb
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\REGRA_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.Web.xml
@@ -71,4 +71,4 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Micro
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\obj\Debug\WEB_RENATA.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\obj\Debug\WEB_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\obj\Debug\WEB_RENATA.pdb
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\WEB_RENATA.pdb
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\REGRA_RENATA.pdb
