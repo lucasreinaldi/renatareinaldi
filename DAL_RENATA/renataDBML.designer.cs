@@ -33,9 +33,6 @@ namespace DAL_RENATA
     partial void InsertNewsletter(Newsletter instance);
     partial void UpdateNewsletter(Newsletter instance);
     partial void DeleteNewsletter(Newsletter instance);
-    partial void InsertServico(Servico instance);
-    partial void UpdateServico(Servico instance);
-    partial void DeleteServico(Servico instance);
     partial void InsertEndereco(Endereco instance);
     partial void UpdateEndereco(Endereco instance);
     partial void DeleteEndereco(Endereco instance);
@@ -45,6 +42,12 @@ namespace DAL_RENATA
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
+    partial void InsertServico(Servico instance);
+    partial void UpdateServico(Servico instance);
+    partial void DeleteServico(Servico instance);
+    partial void InsertLog(Log instance);
+    partial void UpdateLog(Log instance);
+    partial void DeleteLog(Log instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -85,14 +88,6 @@ namespace DAL_RENATA
 			}
 		}
 		
-		public System.Data.Linq.Table<Servico> Servicos
-		{
-			get
-			{
-				return this.GetTable<Servico>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Endereco> Enderecos
 		{
 			get
@@ -114,6 +109,22 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Usuario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Servico> Servicos
+		{
+			get
+			{
+				return this.GetTable<Servico>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Log> Logs
+		{
+			get
+			{
+				return this.GetTable<Log>();
 			}
 		}
 	}
@@ -227,164 +238,6 @@ namespace DAL_RENATA
 					this._IP = value;
 					this.SendPropertyChanged("IP");
 					this.OnIPChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Servico")]
-	public partial class Servico : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdServicos;
-		
-		private string _Nome;
-		
-		private string _Descricao;
-		
-		private decimal _Valor;
-		
-		private string _CaminhoImagem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdServicosChanging(int value);
-    partial void OnIdServicosChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnDescricaoChanging(string value);
-    partial void OnDescricaoChanged();
-    partial void OnValorChanging(decimal value);
-    partial void OnValorChanged();
-    partial void OnCaminhoImagemChanging(string value);
-    partial void OnCaminhoImagemChanged();
-    #endregion
-		
-		public Servico()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdServicos", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdServicos
-		{
-			get
-			{
-				return this._IdServicos;
-			}
-			set
-			{
-				if ((this._IdServicos != value))
-				{
-					this.OnIdServicosChanging(value);
-					this.SendPropertyChanging();
-					this._IdServicos = value;
-					this.SendPropertyChanged("IdServicos");
-					this.OnIdServicosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(100)")]
-		public string Descricao
-		{
-			get
-			{
-				return this._Descricao;
-			}
-			set
-			{
-				if ((this._Descricao != value))
-				{
-					this.OnDescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._Descricao = value;
-					this.SendPropertyChanged("Descricao");
-					this.OnDescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Money NOT NULL")]
-		public decimal Valor
-		{
-			get
-			{
-				return this._Valor;
-			}
-			set
-			{
-				if ((this._Valor != value))
-				{
-					this.OnValorChanging(value);
-					this.SendPropertyChanging();
-					this._Valor = value;
-					this.SendPropertyChanged("Valor");
-					this.OnValorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
-		public string CaminhoImagem
-		{
-			get
-			{
-				return this._CaminhoImagem;
-			}
-			set
-			{
-				if ((this._CaminhoImagem != value))
-				{
-					this.OnCaminhoImagemChanging(value);
-					this.SendPropertyChanging();
-					this._CaminhoImagem = value;
-					this.SendPropertyChanged("CaminhoImagem");
-					this.OnCaminhoImagemChanged();
 				}
 			}
 		}
@@ -979,6 +832,298 @@ namespace DAL_RENATA
 					this._TipoUsuario = value;
 					this.SendPropertyChanged("TipoUsuario");
 					this.OnTipoUsuarioChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Servico")]
+	public partial class Servico : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdServicos;
+		
+		private string _Nome;
+		
+		private string _Descricao;
+		
+		private double _Valor;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdServicosChanging(int value);
+    partial void OnIdServicosChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnValorChanging(double value);
+    partial void OnValorChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Servico()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdServicos", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdServicos
+		{
+			get
+			{
+				return this._IdServicos;
+			}
+			set
+			{
+				if ((this._IdServicos != value))
+				{
+					this.OnIdServicosChanging(value);
+					this.SendPropertyChanging();
+					this._IdServicos = value;
+					this.SendPropertyChanged("IdServicos");
+					this.OnIdServicosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(100)")]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Float NOT NULL")]
+		public double Valor
+		{
+			get
+			{
+				return this._Valor;
+			}
+			set
+			{
+				if ((this._Valor != value))
+				{
+					this.OnValorChanging(value);
+					this.SendPropertyChanging();
+					this._Valor = value;
+					this.SendPropertyChanged("Valor");
+					this.OnValorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Log]")]
+	public partial class Log : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdLog;
+		
+		private System.Nullable<int> _IdUsuario;
+		
+		private string _Mensagem;
+		
+		private System.Nullable<System.DateTime> _DataHora;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdLogChanging(int value);
+    partial void OnIdLogChanged();
+    partial void OnIdUsuarioChanging(System.Nullable<int> value);
+    partial void OnIdUsuarioChanged();
+    partial void OnMensagemChanging(string value);
+    partial void OnMensagemChanged();
+    partial void OnDataHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataHoraChanged();
+    #endregion
+		
+		public Log()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLog", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdLog
+		{
+			get
+			{
+				return this._IdLog;
+			}
+			set
+			{
+				if ((this._IdLog != value))
+				{
+					this.OnIdLogChanging(value);
+					this.SendPropertyChanging();
+					this._IdLog = value;
+					this.SendPropertyChanged("IdLog");
+					this.OnIdLogChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int")]
+		public System.Nullable<int> IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this.OnIdUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._IdUsuario = value;
+					this.SendPropertyChanged("IdUsuario");
+					this.OnIdUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mensagem", DbType="VarChar(150)")]
+		public string Mensagem
+		{
+			get
+			{
+				return this._Mensagem;
+			}
+			set
+			{
+				if ((this._Mensagem != value))
+				{
+					this.OnMensagemChanging(value);
+					this.SendPropertyChanging();
+					this._Mensagem = value;
+					this.SendPropertyChanged("Mensagem");
+					this.OnMensagemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataHora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataHora
+		{
+			get
+			{
+				return this._DataHora;
+			}
+			set
+			{
+				if ((this._DataHora != value))
+				{
+					this.OnDataHoraChanging(value);
+					this.SendPropertyChanging();
+					this._DataHora = value;
+					this.SendPropertyChanged("DataHora");
+					this.OnDataHoraChanged();
 				}
 			}
 		}

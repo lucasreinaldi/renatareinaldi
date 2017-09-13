@@ -18,45 +18,18 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using REGRA_RENATA;
 
+
+
 namespace REGRA_RENATA
 {
     public class ServicoBO
     {
         BancoLINQ<renataDBMLDataContext> DataContext = new BancoLINQ<renataDBMLDataContext>();
 
-
-        public List<Servico> ConsultarTodos()
+        public bool Inserir(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
-
-            try
-            {
-
-                var consulta = from Servico in DataContext.DataContext.Servicos select Servico;
-                return consulta.ToList();
-
-
-            }
-            catch
-            {
-
-                return null;
-            }
-        }
-
-        public bool Excluir(Servico servico)
-        {
-
-            Servico exclusao = this.ConsultarPorId(servico.IdServicos);
-            DataContext.DataContext.Servicos.DeleteOnSubmit(exclusao);
-            DataContext.DataContext.SubmitChanges();
-            return true;
-
-        }
-
-      
-        public bool Inserir(Servico servico, string pastaDestino, string extensao, FileUpload fup)
-        {
-
+            LogBO logBO = new LogBO();
+            Log log = new Log();
             string msg = "";
 
             try
@@ -70,8 +43,8 @@ namespace REGRA_RENATA
                 Util.UploadArquivo(fup, caminhoCompleto);
                 if (Util.ArquivoExists(caminhoCompleto, null, null))
                 {
-                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos);
-                    servicoAlterar.CaminhoImagem = "../img/servicos/Servico_" + servico.IdServicos + extensao;
+                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
+                    servicoAlterar.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
                     DataContext.DataContext.SubmitChanges();
                 }
                 else
@@ -80,22 +53,35 @@ namespace REGRA_RENATA
                 }
 
                 DataContext.CommitTransaction();
-                msg = "Inserido com sucesso [Inserir - Release]";
+                msg = "Serviço inserido com sucesso. id: " + servico.IdServicos;
 
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
                 return true;
             }
             catch (Exception e)
             {
-                msg = "Erro ao inserir o Cliente [Inserir - ClienteBO.cs][" + e.Message + "][" + e.Source + "]";
+                msg = "Erro ao inserir o servico. [" + e.Message + "][" + e.Source + "]";
 
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
+                logBO.Salvar(log);
                 DataContext.RollbackTransaction();
                 return false;
             }
         }
 
-        private bool Alterar(Servico servico, string pastaDestino, string extensao, FileUpload fup)
+        private bool Alterar(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
-            
+            LogBO logBO = new LogBO();
+            Log log;
             string msg = "";
             bool ok = false;
             string oldPath;
@@ -104,13 +90,12 @@ namespace REGRA_RENATA
             {
                 DataContext.BeginTransaction();
 
-                Servico novoServico = this.ConsultarPorId(servico.IdServicos);
+                Servico novoServico = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
                 novoServico.Nome = servico.Nome;
                 novoServico.Descricao = servico.Descricao;
                 novoServico.Valor = servico.Valor;
                 oldPath = servico.CaminhoImagem;
 
-                // string caminhoCompleto = pastaDestino + "Release_" + release.Id + extensao;
 
                 if (fup.HasFile)
                 {
@@ -144,28 +129,109 @@ namespace REGRA_RENATA
                 {
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
-                    msg = "O Release foi alterado com sucesso [Alterar - Release]";
-                    
+                    msg = "O servico foi alterado com sucesso.";
+
+                    log = new Log()
+                    {
+
+                        IdUsuario = idUsuarioLogado,
+                        Mensagem = msg
+                    };
+                    logBO.Salvar(log);
+
                     return true;
                 }
 
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar o Release [Alterar - ReleaseBO.cs][Erro ao carregar Release do Cliente]";
-                 
+                msg = "Erro ao alterar o serviço.";
+
+                log = new Log()
+                {
+
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
                 return false;
             }
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar o Release [Alterar - ReleaseBO.cs][Erro ao carregar Release do Cliente]";
-                 
+                msg = "Erro ao alterar o serviço. [Erro ao carregar servico do bd]";
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+                logBO.Salvar(log);
                 return false;
             }
         }
 
-
-        public Servico ConsultarPorId(int id)
+        public bool Salvar(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
+            if (servico.IdServicos <= 0)
+                return this.Inserir(servico, pastaDestino, extensao, fup, idUsuarioLogado);
+            else
+                return this.Alterar(servico, pastaDestino, extensao, fup, idUsuarioLogado);
+        }
+
+        public bool Excluir(Servico servico, string pastaDestino, int? idUsuarioLogado)
+        {
+            LogBO logBO = new LogBO();
+            Log log;
+            string msg = "";
+
+            try
+            {
+                DataContext.BeginTransaction();
+                Servico servicoExcluir = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
+                string caminhoCompleto = pastaDestino + servicoExcluir.CaminhoImagem;
+                DataContext.DataContext.Servicos.DeleteOnSubmit(servicoExcluir);
+                if (Util.ExcluirArquivo(caminhoCompleto, null, null))
+                {
+                    DataContext.DataContext.SubmitChanges();
+                    DataContext.CommitTransaction();
+
+                    msg = "Release excluído com sucesso. " + servico.IdServicos;
+                    log = new Log()
+                    {
+                        IdUsuario = idUsuarioLogado,
+                        Mensagem = msg
+                    };
+
+
+                    return true;
+                }
+                else
+                {
+                    DataContext.RollbackTransaction();
+                    msg = "Erro ao excluir o arquivo do release. " + servico.IdServicos;
+
+
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                DataContext.RollbackTransaction();
+                msg = "Erro ao excluir release. " + servico.IdServicos + "Erro: " + e.Message + " - " + e.Source;
+                log = new Log()
+                {
+                    DataHora = DateTime.Now,
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
+                return false;
+            }
+        }
+
+        public Servico ConsultarPorId(int id, int? idUsuarioLogado)
+        {
+            LogBO logBO = new LogBO();
+            Log log = new Log();
+            string msg = "";
 
             try
             {
@@ -174,17 +240,45 @@ namespace REGRA_RENATA
 
             catch (Exception e)
             {
-
+                msg = "Erro ao consultar release por ID. " + e.Message + " - " + e.Source;
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+                logBO.Salvar(log);
                 return null;
             }
         }
 
-        public bool Salvar(Servico servico, string pastaDestino, string extensao, FileUpload fup)
+        public List<Servico> ConsultarTodos(int? idUsuarioLogado)
         {
-            if (servico.IdServicos <= 0)
-                return this.Inserir(servico, pastaDestino, extensao, fup);
-            else
-                return this.Alterar(servico, pastaDestino, extensao, fup);
+            LogBO logBO = new LogBO();
+            Log log;
+            string msg;
+
+            try
+            {
+
+                var consulta = from Servico in DataContext.DataContext.Servicos select Servico;
+                return consulta.ToList();
+
+
+            }
+            catch (Exception e)
+            {
+                msg = "Erro ao consultar clientes. Erro: " + e.Message + " - " + e.Source;
+                log = new Log()
+                {
+                    DataHora = DateTime.Now,
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
+                logBO.Salvar(log);
+
+                return null;
+            }
         }
     }
 }

@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeBO.cs" />
+    <Compile Include="LogBO.cs" />
     <Compile Include="NewsletterBO.cs" />
     <Compile Include="NoticiaBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

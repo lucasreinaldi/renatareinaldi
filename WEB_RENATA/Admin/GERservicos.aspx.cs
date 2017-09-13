@@ -25,7 +25,6 @@ namespace WEB_RENATA.Admin
         AdmHome mp;
         public static PagedDataSource pageDs;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (AdmHome)this.Master;
@@ -37,66 +36,58 @@ namespace WEB_RENATA.Admin
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 20;
 
-                //masterPage.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
+                // mp.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
 
             }
             this.MontarRepeater();
         }
 
-        protected void imbExcluirEmail_Click(object sender, CommandEventArgs e)
-        {             
+        private void Excluir(int id)
+        {
+            string pastaDestino = this.MapPath("..\\img\\servicos\\");
+
+            if (id > 0)
+            {
+                ServicoBO servicoBO = new ServicoBO();
+                Servico servico = new Servico();
+
+                servico.IdServicos = id;
+
+                if (servicoBO.Excluir(servico, pastaDestino, null) == true)
+                {
+                    mp.DefinirMsgResultado(divResultado, lblResultado, "Release Excluido com sucesso!", null);
+                    this.MontarRepeater();
+                }
+            }
+        }
+
+        protected void Excluir_Click(object sender, CommandEventArgs e)
+        {
+            int id = int.Parse(e.CommandArgument.ToString());
+            this.Excluir(id);
+        }
+
+        protected void btnAdicionar_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("GERservicosDados.aspx?id=-1");
+        }
+
+        public List<Servico> ListarTodos()
+        {
             ServicoBO servicoBO = new ServicoBO();
-            Servico servico = new Servico();
-
-            int id = Int32.Parse(e.CommandArgument.ToString());
-            servico.IdServicos = id;
-
-            if (servicoBO.Excluir(servico) == true)
-            {
-                
-                // masterPage.DefinirMsgResultado(divResultado, TipoMensagemLabel.Sucesso, lblResultado, "Cliente excluído com sucesso!", null);
-
-                this.MontarRepeater();
-            }
-            else
-            {
-
-                this.MontarRepeater();
-            }
-
-            // divResultado.Visible = true;
-            //  }
-
-
+            List<Servico> lista = servicoBO.ConsultarTodos(null);
+            return lista;
         }
 
-        protected void lbtAnterior_Click(object sender, EventArgs e)
-        {
-            mp.CurrentPage--;
-
-            this.rptServicos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
-            this.rptServicos.DataBind();
-        }
-
-
-        protected void lbtProximo_Click(object sender, EventArgs e)
-        {
-            mp.CurrentPage++;
-
-            this.rptServicos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
-            this.rptServicos.DataBind();
-        }
-
-        
         public void MontarRepeater()
         {
-            ServicoBO servicoBO = new ServicoBO();
-            List<Servico> listaServico = servicoBO.ConsultarTodos();
+            List<Servico> lista = new List<Servico>();
+            lista = ListarTodos();
 
-            if (listaServico != null && listaServico.Count > 0)
+            if (lista != null && lista.Count > 0)
             {
                 this.rptServicos.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(listaServico).DefaultView;
+                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
                 rptServicos.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
                 rptServicos.DataBind();
             }
@@ -104,12 +95,12 @@ namespace WEB_RENATA.Admin
             {
                 this.rptServicos.Visible = false;
             }
-            if (listaServico.Count == 0)
+            if (lista.Count == 0)
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
-                // mp.DefinirMsgResultado(divResultado, TipoMensagemLabel.Aviso, lblResultado, "Não há clientes cadastrados.", null);
-                // this.divResultado.Visible = true;
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há clientes cadastrados.", null);
+                
             }
         }
 
@@ -131,17 +122,32 @@ namespace WEB_RENATA.Admin
                 row["nome"] = lista.Nome;
                 row["descricao"] = lista.Descricao;
                 row["valor"] = lista.Valor;
-                row["caminho"] = "..\\" + lista.CaminhoImagem;
+                row["caminho"] = "..\\img\\servicos\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }
             return tabela;
         }
 
-        
 
-        
+        protected void lbtAnterior_Click(object sender, EventArgs e)
+        {
+            mp.CurrentPage--;
 
-        
+            this.rptServicos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptServicos.DataBind();
+        }
+
+        protected void lbtProximo_Click(object sender, EventArgs e)
+        {
+            mp.CurrentPage++;
+
+            this.rptServicos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptServicos.DataBind();
+        }
+
+
+
+
     }
 }

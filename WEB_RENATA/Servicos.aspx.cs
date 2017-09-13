@@ -57,7 +57,7 @@ namespace WEB_RENATA
             Servico servico = new Servico();
             ServicoBO servicoBO = new ServicoBO();
 
-            List<Servico> listaNoticia = servicoBO.ConsultarTodos();
+            List<Servico> listaNoticia = servicoBO.ConsultarTodos(null);
 
             if (listaNoticia != null && listaNoticia.Count > 0)
             {

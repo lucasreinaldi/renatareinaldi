@@ -53,17 +53,7 @@ namespace WEB_RENATA.Admin
             servico.IdServicos =  Int32.Parse(e.CommandArgument.ToString());
             
 
-            if (servicoBO.Excluir(servico) == true)
-            {
-                // masterPage.DefinirMsgResultado(divResultado, TipoMensagemLabel.Sucesso, lblResultado, "Cliente excluído com sucesso!", null);
-
-                this.MontarRepeater();
-            }
-            else
-            {
-
-                this.MontarRepeater();
-            }
+             
 
             // divResultado.Visible = true;
             //  }

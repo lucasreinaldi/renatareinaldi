@@ -3,6 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
+    <br />
+    <div id="divResultado" runat="server">
+        <div id="divLabel" runat="server">
+            <asp:Label ID="lblResultado" runat="server"></asp:Label>
+        </div>
+    </div>
+    <br />
+
+
     <section class="main-section" id="Portfolio"><!--main-section-start-->
 	<div class="container gerServicos">
     	<h2>Gerenciador de Serviços</h2>
@@ -62,7 +71,7 @@
                             </a>
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
-                            <asp:LinkButton ID="lbExcluir" OnCommand="imbExcluirEmail_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>
+                            <asp:LinkButton ID="lbExcluir" OnCommand="Excluir_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace WEB_RENATA.Admin
@@ -51,7 +52,39 @@ namespace WEB_RENATA.Admin
             get; set;
         }
 
+        public int ValidarQueryString(string queryString, string pagina)
+        {
+            try
+            {
+                if (queryString == null)
+                {
+                    Response.Redirect(pagina);
+                }
 
+                int valor = Int32.Parse(queryString);
+
+                if (valor > 0)
+                {
+                    return valor;
+                }
+                else if (valor == 0)
+                {
+                    return 0;
+                }
+
+                Response.Redirect(pagina);
+            }
+            catch (FormatException)
+            {
+                Response.Redirect(pagina);
+            }
+            catch (OverflowException)
+            {
+                Response.Redirect(pagina);
+            }
+
+            return -1;
+        }
 
         public void ChecarPermissao()
         {
@@ -65,6 +98,22 @@ namespace WEB_RENATA.Admin
             {
                 Response.Redirect("../Login.aspx");
             }
+        }
+
+        public void DefinirMsgResultado(HtmlGenericControl divResultado, Label lblMsg, string msg, Button btnFoco)
+        {
+            if (btnFoco != null)
+            {
+                btnFoco.Focus();
+            }
+
+            divResultado.Attributes["class"] = "formlinhamsg";
+
+             
+            lblMsg.Text = msg;
+
+            Session["msgRes"] = null;
+            Session["msgTipo"] = null;
         }
 
         #region Paginação

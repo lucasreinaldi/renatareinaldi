@@ -35,7 +35,7 @@ namespace WEB_RENATA.Admin
                     {
                         MapearObjetosParaCampos(Convert.ToInt32(id));
                         ServicoBO servicoBO = new ServicoBO();
-                        Servico servico = servicoBO.ConsultarPorId(Int32.Parse(id));
+                        Servico servico = servicoBO.ConsultarPorId(Int32.Parse(id), null);
                     }                    
                 }
             }
@@ -69,7 +69,7 @@ namespace WEB_RENATA.Admin
                 }
 
                 servico.IdServicos = id;
-                if (servicoBO.Salvar(servico, pastaDestino, extensao, exampleInputFile))
+                if (servicoBO.Salvar(servico, pastaDestino, extensao, exampleInputFile, null))
                 {                    
                     Session.Add("msgRes", "Release salvo com sucesso!");
                 }
@@ -83,7 +83,7 @@ namespace WEB_RENATA.Admin
             {
                 lblMsg.Text = "Problema ao salvar release.";
                 btnSalvar.Focus();
-            }
+            } 
         }
 
         private bool VerificaExtensao()
@@ -121,7 +121,7 @@ namespace WEB_RENATA.Admin
         {
              
             ServicoBO servicoBO = new ServicoBO();
-            Servico servico = servicoBO.ConsultarPorId(id);
+            Servico servico = servicoBO.ConsultarPorId(id, null);
 
             if (servico != null)
             {
@@ -143,7 +143,7 @@ namespace WEB_RENATA.Admin
 
             servico.Nome = txtNome.Text;
             servico.Descricao = txtDescricao.Text;
-            servico.Valor = Convert.ToDecimal(txtValor.Text);             
+            servico.Valor = Convert.ToDouble(txtValor.Text);             
             servico.IdServicos = Convert.ToInt32(Request.QueryString["id"]);
 
             return servico;
