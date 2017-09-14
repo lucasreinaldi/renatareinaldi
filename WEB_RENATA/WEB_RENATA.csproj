@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Admin\GERhome.aspx" />
     <Content Include="Admin\GERnoticias.aspx" />
+    <Content Include="Admin\GERnoticiasDados.aspx" />
     <Content Include="Admin\GERprodutos.aspx" />
     <Content Include="Admin\GERservicos.aspx" />
     <Content Include="Admin\GERservicosDados.aspx" />
@@ -207,6 +208,13 @@
     </Compile>
     <Compile Include="Admin\GERnoticias.aspx.designer.cs">
       <DependentUpon>GERnoticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERnoticiasDados.aspx.cs">
+      <DependentUpon>GERnoticiasDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERnoticiasDados.aspx.designer.cs">
+      <DependentUpon>GERnoticiasDados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GERprodutos.aspx.cs">
       <DependentUpon>GERprodutos.aspx</DependentUpon>

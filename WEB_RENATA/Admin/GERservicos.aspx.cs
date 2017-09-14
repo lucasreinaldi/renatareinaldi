@@ -34,7 +34,7 @@ namespace WEB_RENATA.Admin
             {
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 20;
+                pageDs.PageSize = 5;
 
                 // mp.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
 
@@ -99,8 +99,8 @@ namespace WEB_RENATA.Admin
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há clientes cadastrados.", null);
-                
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há servicos cadastrados.", null);
+                this.divResultado.Visible = true;
             }
         }
 

@@ -12,7 +12,7 @@
     <br />
 
 
-    <section class="main-section" id="Portfolio"><!--main-section-start-->
+    <section class="main-section" id="Portfolio">
 	<div class="container gerServicos">
     	<h2>Gerenciador de Serviços</h2>
     	 

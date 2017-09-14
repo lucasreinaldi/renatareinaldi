@@ -33,7 +33,7 @@ namespace WEB_RENATA
             Noticia noticia = new Noticia();
             NoticiaBO noticiaBO = new NoticiaBO();
 
-            List<Noticia> listaNoticia = noticiaBO.ConsultarTres();
+            List<Noticia> listaNoticia = noticiaBO.ConsultarTres(null);
 
             if (listaNoticia != null && listaNoticia.Count > 0)
             {

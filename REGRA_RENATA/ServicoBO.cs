@@ -193,7 +193,7 @@ namespace REGRA_RENATA
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
 
-                    msg = "Release excluído com sucesso. " + servico.IdServicos;
+                    msg = "Serviço excluído com sucesso. " + servico.IdServicos;
                     log = new Log()
                     {
                         IdUsuario = idUsuarioLogado,
@@ -206,7 +206,7 @@ namespace REGRA_RENATA
                 else
                 {
                     DataContext.RollbackTransaction();
-                    msg = "Erro ao excluir o arquivo do release. " + servico.IdServicos;
+                    msg = "Erro ao excluir o serviço. " + servico.IdServicos;
 
 
                     return false;
@@ -215,7 +215,7 @@ namespace REGRA_RENATA
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao excluir release. " + servico.IdServicos + "Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao excluir o serviço. " + servico.IdServicos + "Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -240,7 +240,7 @@ namespace REGRA_RENATA
 
             catch (Exception e)
             {
-                msg = "Erro ao consultar release por ID. " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar serviço. " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -267,7 +267,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao consultar clientes. Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar serviço. Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,

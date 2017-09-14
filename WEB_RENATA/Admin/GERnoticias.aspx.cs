@@ -34,7 +34,7 @@ namespace WEB_RENATA.Admin
             {
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 20;
+                pageDs.PageSize = 10;
 
                 //masterPage.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
 
@@ -42,23 +42,41 @@ namespace WEB_RENATA.Admin
             this.MontarRepeater();
         }
 
-        protected void imbExcluirEmail_Click(object sender, CommandEventArgs e)
+        private void Excluir(int id)
         {
+            string pastaDestino = this.MapPath("..\\img\\noticias\\");
 
-            //if (this.hidID.Value != null && int.Parse(hidID.Value) > 0)
-            //{
-            ServicoBO servicoBO = new ServicoBO();
-            Servico servico = new Servico();
+            if (id > 0)
+            {
+                NoticiaBO noticiaBO = new NoticiaBO();
+                Noticia noticia = new Noticia();
 
-            servico.IdServicos =  Int32.Parse(e.CommandArgument.ToString());
-            
+                noticia.IdNoticia = id;
 
-             
+                if (noticiaBO.Excluir(noticia, pastaDestino, null) == true)
+                {
+                    mp.DefinirMsgResultado(divResultado, lblResultado, "Noticia excluida com sucesso!", null);
+                    this.MontarRepeater();
+                }
+            }
+        }
 
-            // divResultado.Visible = true;
-            //  }
+        protected void Excluir_Click(object sender, CommandEventArgs e)
+        {
+            int id = int.Parse(e.CommandArgument.ToString());
+            this.Excluir(id);
+        }
 
+        protected void btnAdicionar_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("GERnoticiasDados.aspx?id=-1");
+        }
 
+        public List<Noticia> ListarTodos()
+        {
+            NoticiaBO noticiaBO = new NoticiaBO();
+            List<Noticia> lista = noticiaBO.ConsultarTodos(null);
+            return lista;
         }
 
         protected void lbtAnterior_Click(object sender, EventArgs e)
@@ -82,13 +100,13 @@ namespace WEB_RENATA.Admin
 
         public void MontarRepeater()
         {
-            NoticiaBO noticiaBO = new NoticiaBO();
-            List<Noticia> listaNoticia = noticiaBO.ConsultarTodos();
+            List<Noticia> lista = new List<Noticia>();
+            lista = ListarTodos();
 
-            if (listaNoticia != null && listaNoticia.Count > 0)
+            if (lista != null && lista.Count > 0)
             {
                 this.rptNoticias.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(listaNoticia).DefaultView;
+                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
                 rptNoticias.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
                 rptNoticias.DataBind();
             }
@@ -96,12 +114,12 @@ namespace WEB_RENATA.Admin
             {
                 this.rptNoticias.Visible = false;
             }
-            if (listaNoticia.Count == 0)
+            if (lista.Count == 0)
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
-                // mp.DefinirMsgResultado(divResultado, TipoMensagemLabel.Aviso, lblResultado, "Não há clientes cadastrados.", null);
-                // this.divResultado.Visible = true;
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há serviços cadastrados.", null);
+                this.divResultado.Visible = true;
             }
         }
 
@@ -125,31 +143,13 @@ namespace WEB_RENATA.Admin
                 row["conteudo"] = lista.Conteudo;
                 row["descricao"] = lista.DescricaoBreve;
                 row["data"] = lista.DataPublicacao;
-                row["caminho"] = "..\\" + lista.CaminhoImagem;
+                row["caminho"] = "..\\img\\noticias\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }
             return tabela;
         }
 
-        protected void btnAdicionar_Click(Object sender, EventArgs e)
-        {
-            NoticiaBO noticiaBO = new NoticiaBO();
-            Noticia noticia = new Noticia();
-
-            noticia.Titulo = txtTitulo.Text;
-            noticia.DescricaoBreve = txtDescricao.Text;
-            noticia.Conteudo = txtConteudo.Text;
-            noticia.DataPublicacao = DateTime.Now;
-
-   
-
-            noticiaBO.Inserir(noticia, MapPath("../" + "img/noticias" + "/"), exampleInputFile);
-
-            if (noticia != null)
-            {
-                Response.Redirect("GERnoticias.aspx");
-            }
-        }
+      
     }
 }

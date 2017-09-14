@@ -57,7 +57,7 @@ namespace WEB_RENATA
             Noticia noticia = new Noticia();
             NoticiaBO noticiaBO = new NoticiaBO();
 
-            List<Noticia> listaNoticia = noticiaBO.ConsultarTodos();
+            List<Noticia> listaNoticia = noticiaBO.ConsultarTodos(null);
 
             if (listaNoticia != null && listaNoticia.Count > 0)
             {

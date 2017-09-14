@@ -3,7 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
-
+    <br />
+    <div id="divResultado" runat="server">
+        <div id="divLabel" runat="server">
+            <asp:Label ID="lblResultado" runat="server"></asp:Label>
+        </div>
+    </div>
+    <br />
 
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerServicos">
@@ -11,30 +17,8 @@
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnServicos" CssClass="divServicos">
-                    <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control input-text" placeholder="titulo da noticia"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtTitulo" ValidationGroup="valNoticias"></asp:RequiredFieldValidator>
+         <a href="GERnoticiasDados.aspx?id=0">Nova notícia</a>
                     
-
-                    <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição breve"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma descrição breve" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="valNoticias"></asp:RequiredFieldValidator>
-            
-                    <asp:TextBox ID="txtConteudo" runat="server" CssClass="form-control input-text" placeholder="conteúdo da notícia"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você digitar o corpo da mensagem" CssClass="RequiredField" ControlToValidate="txtConteudo" ValidationGroup="valNoticias"></asp:RequiredFieldValidator>
-
-                    
-
-                    <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
-            
-                <asp:LinkButton ID="btnServicos" runat="server" CssClass="btn btn-info"
-                        CausesValidation="true" ValidationGroup="valNoticias" OnClick="btnAdicionar_Click">Adicionar</asp:LinkButton>
-                </asp:Panel>
        
          
         
@@ -88,11 +72,13 @@
                         <td align="center">
                             <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
                         </td>
-                        <td align="center" title="X[<%#Eval("id") %>]">
-                            <asp:LinkButton ID="lblAlterar" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-wrench"></i></asp:LinkButton>
+                        <td align="center" title="X[<%#Eval("id") %>]">                             
+                            <a href="GERnoticiasDados.aspx?id=<%# Eval("id") %>" >
+                                 <i class="fa fa-wrench"></i>
+                            </a>
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">
-                            <asp:LinkButton ID="lbExcluir" OnCommand="imbExcluirEmail_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>
+                            <asp:LinkButton ID="lbExcluir" OnCommand="Excluir_Click" CommandArgument='<%#Eval("ID")%>' runat="server" OnClientClick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-trash"></i></asp:LinkButton>
                         </td>
                     </tr>
                 </ItemTemplate>
