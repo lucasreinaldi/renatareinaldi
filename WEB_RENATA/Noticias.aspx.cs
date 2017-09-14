@@ -22,8 +22,25 @@ namespace WEB_RENATA
 {
     public partial class Noticias : System.Web.UI.Page
     {
+        Home mp;
+        public static PagedDataSource pageDs;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            mp = (Home)this.Master;
+            
+            
+            if (!IsPostBack)
+            {
+                pageDs = new PagedDataSource();
+                pageDs.AllowPaging = true;
+                pageDs.PageSize = 10;
+
+               
+
+            }
+            
+
             this.MontarRepeaterNoticias();
         }
 
@@ -45,7 +62,7 @@ namespace WEB_RENATA
                 row["titulo"] = lista.Titulo;
                 row["descricao"] = lista.DescricaoBreve;
                 row["data"] = lista.DataPublicacao;
-                row["imagem"] = lista.CaminhoImagem;
+                row["imagem"] = "\\img\\noticias\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }
@@ -59,20 +76,45 @@ namespace WEB_RENATA
             Noticia noticia = new Noticia();
             NoticiaBO noticiaBO = new NoticiaBO();
 
-            List<Noticia> listaNoticia = noticiaBO.ConsultarTodos(null);
+            List<Noticia> lista = noticiaBO.ConsultarTodos(null);
 
-            if (listaNoticia != null && listaNoticia.Count > 0)
+            if (lista != null && lista.Count > 0)
             {
                 this.rptNoticias.Visible = true;
-
-                rptNoticias.DataSource = this.MontarDataTable(listaNoticia).DefaultView;
+                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
+                rptNoticias.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
                 rptNoticias.DataBind();
             }
             else
             {
                 this.rptNoticias.Visible = false;
             }
+            if (lista.Count == 0)
+            {
+                lbtAnterior.Visible = false;
+                lbtProximo.Visible = false;
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há serviços cadastrados.", null);
+                this.divResultado.Visible = true;
+            }
 
         }
+
+        protected void lbtAnterior_Click(object sender, EventArgs e)
+        {
+            mp.CurrentPage--;
+
+            this.rptNoticias.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptNoticias.DataBind();
+        }
+
+
+        protected void lbtProximo_Click(object sender, EventArgs e)
+        {
+            mp.CurrentPage++;
+
+            this.rptNoticias.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptNoticias.DataBind();
+        }
+
     }
 }

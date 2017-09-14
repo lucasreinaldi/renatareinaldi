@@ -43,7 +43,7 @@ namespace WEB_RENATA
                 row["nome"] = lista.Nome;
                 row["descricao"] = lista.Descricao;
                 row["valor"] = lista.Valor;
-                row["imagem"] = lista.CaminhoImagem;
+                row["imagem"] = "\\img\\servicos\\" + lista.CaminhoImagem;
 
                 tabela.Rows.Add(row);
             }

@@ -177,6 +177,7 @@
     <Content Include="Default.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="ServicoConfirma.aspx" />
     <Content Include="Servicos.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="Web.config" />
@@ -288,6 +289,13 @@
       <DependentUpon>NoticiasArtigo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicoConfirma.aspx.cs">
+      <DependentUpon>ServicoConfirma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServicoConfirma.aspx.designer.cs">
+      <DependentUpon>ServicoConfirma.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Servicos.aspx.cs">
       <DependentUpon>Servicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
