@@ -31,6 +31,7 @@ namespace WEB_RENATA
         {
             DataTable tabela = new DataTable();
 
+            tabela.Columns.Add("id");
             tabela.Columns.Add("titulo");
             tabela.Columns.Add("descricao");
             tabela.Columns.Add("data");
@@ -40,6 +41,7 @@ namespace WEB_RENATA
             {
                 DataRow row = tabela.NewRow();
 
+                row["id"] = lista.IdNoticia;
                 row["titulo"] = lista.Titulo;
                 row["descricao"] = lista.DescricaoBreve;
                 row["data"] = lista.DataPublicacao;

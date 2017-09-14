@@ -39,16 +39,26 @@ namespace REGRA_RENATA
                 DataContext.DataContext.SubmitChanges();
 
                 string caminhoCompleto = pastaDestino + "Noticia_" + noticia.IdNoticia + extensao;
-                Util.UploadArquivo(fup, caminhoCompleto);
-                if (Util.ArquivoExists(caminhoCompleto, null, null))
+                if (fup.HasFile)
                 {
-                    Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
-                    noticiaAlterar.CaminhoImagem = "Noticia_" + noticia.IdNoticia + extensao;
-                    DataContext.DataContext.SubmitChanges();
+                    Util.UploadArquivo(fup, caminhoCompleto);
+                
+                    if (Util.ArquivoExists(caminhoCompleto, null, null))
+                    {
+                        Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
+                        noticiaAlterar.CaminhoImagem = "Noticia_" + noticia.IdNoticia + extensao;
+                        DataContext.DataContext.SubmitChanges();
+                    }
+                    else
+                    {
+                        DataContext.RollbackTransaction();
+                    }
                 }
                 else
                 {
-                    DataContext.RollbackTransaction();
+                    Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
+                    noticiaAlterar.CaminhoImagem = "Default.jpg";
+                    DataContext.DataContext.SubmitChanges();                    
                 }
 
                 DataContext.CommitTransaction();

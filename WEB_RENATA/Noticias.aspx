@@ -21,7 +21,8 @@
             	<P class="padding-b"><%#Eval("descricao") %></P>
                 <p>Publicado em: <%#Eval("data") %></p>
             	 <br />
-                 <p><a class="btn btn-secondary" href="#" role="button">Ler mais »</a></p>
+                 <p><a class="btn btn-secondary" href="NoticiasArtigo.aspx?id=<%#Eval("id") %>" role="button">Ler mais »</a></p>
+                
             </div>
         </div>
             </ItemTemplate>

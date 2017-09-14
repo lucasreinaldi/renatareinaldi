@@ -51,8 +51,7 @@ namespace WEB_RENATA
                 
             }
         }
-
-
+        
         private DataTable MontarDataTable(List<Noticia> list)
         {
             DataTable tabela = new DataTable();
@@ -74,6 +73,7 @@ namespace WEB_RENATA
             }
             return tabela;
         }
+
         protected void btnNewsletter_Click(Object sender, EventArgs e)
         {
             NewsletterBO newsletterBO = new NewsletterBO();
