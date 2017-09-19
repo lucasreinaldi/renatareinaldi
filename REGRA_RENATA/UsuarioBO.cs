@@ -32,6 +32,7 @@ namespace REGRA_RENATA
                 DataContext.DataContext.Enderecos.InsertOnSubmit(end);
                 DataContext.DataContext.SubmitChanges();
 
+                usu.fkEndereco = end.IdEndereco;
                 DataContext.DataContext.Usuarios.InsertOnSubmit(usu);
                 DataContext.DataContext.SubmitChanges();
 
@@ -77,6 +78,27 @@ namespace REGRA_RENATA
             }
         }
 
+        public Endereco BuscarEndereco(Usuario usuario)
+        {
+            try
+            {
+                                
+               
+
+                var end = (from Endereco in DataContext.DataContext.Enderecos
+                            where usuario.fkEndereco == Endereco.IdEndereco
+                            select Endereco).FirstOrDefault();
+
+                return end;
+            }
+            catch
+            {
+
+                return null;
+            }
+           
+        }
+
         public bool Excluir(Usuario usu)
         {
 
@@ -105,29 +127,24 @@ namespace REGRA_RENATA
 
         public static byte[] CriptografarSenhaSHA1(string senha)
         {
-            //senha digitada
+            
             byte[] unicodeSenha = System.Text.UTF8Encoding.UTF8.GetBytes(senha + "SMC98923482000rAAeADDw___0034920qkjqkejSKDJAADD");
 
             System.Security.Cryptography.SHA1CryptoServiceProvider sha1 = new System.Security.Cryptography.SHA1CryptoServiceProvider();
 
-            //criptografa a senha
+          
             byte[] senhaCripto = sha1.ComputeHash(unicodeSenha);
 
-            //retorna a senha criptografada
+            
             return senhaCripto;
         }
 
-        /// <summary>
-        /// Efetua a comparação entre duas senha, retorna true se forem iguais.
-        /// </summary>
-        /// <param name="senha1">Senha a ser comparada.</param>
-        /// <param name="senha2">Senha a ser comparada.</param>
-        /// <returns></returns>
+       
         public static bool CompararSenhas(byte[] senha1, System.Data.Linq.Binary senha2)
         {
             byte[] senha3 = senha2.ToArray();
 
-            //Verifica o tamanho dos arrays
+           
             if (senha1.Length == senha3.Length)
             {
                 for (int i = 0; i < senha1.Length; i++)

@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\GERhome.aspx" />
+    <Content Include="Admin\GERlogs.aspx" />
     <Content Include="Admin\GERnoticias.aspx" />
     <Content Include="Admin\GERnoticiasDados.aspx" />
     <Content Include="Admin\GERprodutos.aspx" />
@@ -107,6 +108,7 @@
     <Content Include="CSS\animate.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\font-awesome.css" />
+    <Content Include="CSS\font-awesome.min.css" />
     <Content Include="CSS\NewFolder1\animate.min.css" />
     <Content Include="CSS\NewFolder1\bootstrap.min.css" />
     <Content Include="CSS\NewFolder1\et-line.css" />
@@ -197,6 +199,13 @@
     </Compile>
     <Compile Include="Admin\GERhome.aspx.designer.cs">
       <DependentUpon>GERhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERlogs.aspx.cs">
+      <DependentUpon>GERlogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERlogs.aspx.designer.cs">
+      <DependentUpon>GERlogs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GERnewsletter.aspx.cs">
       <DependentUpon>GERnewsletter.aspx</DependentUpon>

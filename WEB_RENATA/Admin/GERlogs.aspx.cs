@@ -20,7 +20,7 @@ using System.Xml.Linq;
 
 namespace WEB_RENATA.Admin
 {
-    public partial class GERusuarios : System.Web.UI.Page
+    public partial class GERlog : System.Web.UI.Page
     {
         AdmHome mp;
         public static PagedDataSource pageDs;
@@ -28,7 +28,7 @@ namespace WEB_RENATA.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (AdmHome)this.Master;
-            this.Page.Title = "Gerenciador de Usuários";
+            this.Page.Title = "Gerenciador de Logs";
 
             if (!IsPostBack)
             {
@@ -42,14 +42,12 @@ namespace WEB_RENATA.Admin
             this.MontarRepeater();
         }
 
-        public List<Usuario> ListarTodos()
+        public List<Log> ListarTodos()
         {
-            UsuarioBO logBO = new UsuarioBO();
-            List<Usuario> lista = logBO.ConsultarTodos();
+            LogBO logBO = new LogBO();
+            List<Log> lista = logBO.ConsultarTodos();
             return lista;
         }
-
-       
 
         protected void lbtAnterior_Click(object sender, EventArgs e)
         {
@@ -69,7 +67,7 @@ namespace WEB_RENATA.Admin
 
         public void MontarRepeater()
         {
-            List<Usuario> lista = new List<Usuario>();
+            List<Log> lista = new List<Log>();
             lista = ListarTodos();
 
             if (lista != null && lista.Count > 0)
@@ -87,50 +85,29 @@ namespace WEB_RENATA.Admin
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há usuários.", null);
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há logs.", null);
                 this.divResultado.Visible = true;
             }
         }
 
-
-
-        private DataTable MontarDataTable(List<Usuario> list)
+        private DataTable MontarDataTable(List<Log> list)
         {
-            UsuarioBO usuarioBO = new UsuarioBO();
-            
-            
-
             DataTable tabela = new DataTable();
             tabela.Columns.Add("id");
-            tabela.Columns.Add("nome");
-            tabela.Columns.Add("email");
-            tabela.Columns.Add("endereco");
+            tabela.Columns.Add("idUsuario");
+            tabela.Columns.Add("mensagem");
+            tabela.Columns.Add("data");
+                        
 
-            tabela.Columns.Add("cidade");
-            tabela.Columns.Add("estado");
-            tabela.Columns.Add("cep");
-            tabela.Columns.Add("bairro");
-            tabela.Columns.Add("rua");
-
-
-            foreach (Usuario lista in list)
+            foreach (Log lista in list)
             {
-                Endereco endereco = usuarioBO.BuscarEndereco(lista);
-
                 DataRow row = tabela.NewRow();
 
-                row["id"] = lista.IdUsuario;
-                row["nome"] = lista.Nome;
-                row["email"] = lista.Email;
-                 
-
-                row["cidade"] = endereco.Cidade;
-                row["estado"] = endereco.Estado;
-                row["cep"] = endereco.CEP;
-                row["bairro"] = endereco.Bairro;
-                row["rua"] = endereco.Endereco1;
+                row["id"] = lista.IdLog;
+                row["idUsuario"] = lista.IdUsuario;
+                row["mensagem"] = lista.Mensagem;
+                row["data"] = lista.DataHora;
                 
-
                 tabela.Rows.Add(row);
             }
             return tabela;

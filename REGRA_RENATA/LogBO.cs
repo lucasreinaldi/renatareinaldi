@@ -52,47 +52,42 @@ namespace REGRA_RENATA
             return data.Year + "/" + data.Month + "/" + data.Day;
         }
 
-       
 
-      /*  public List<Log> ConsultarTodos(CategoriaLog categoria, DateTime dataInicio, DateTime dataFim, int? codEvento, int? idUsuario, int? idUsuarioLogado)
+
+        public List<Log> ConsultarTodos()
         {
+
             try
             {
-                string sql = MontarSQL(categoria, dataInicio, dataFim, idUsuario, codEvento, idUsuarioLogado);
-                var consulta = Contexto.DataContext.ExecuteQuery<Log>(sql);
 
-                List<Log> lista = consulta.ToList();
+                var consulta = from Log in DataContext.DataContext.Logs select Log;
+                return consulta.ToList();
 
-                return lista;
+
             }
-            catch (Exception e)
+            catch
             {
-                string msgLog = "Erro ao Consultar Todos Logs[ConsultarTodos - LogBO.cs][ " + e.Message + " - " + e.Source + " ]";
-                Log log = new Log() { Categoria = (int)CategoriaLog.Erro, CodEvento = 30002, IdUsuario = idUsuarioLogado, Mensagem = msgLog };
-
-                LogBO logBO = new LogBO();
-                logBO.Salvar(log);
 
                 return null;
             }
-        } */
+        }
 
-       /* public Log ConsultarPorId(int id)
-        {
-            try
-            {
-                return Contexto.DataContext.Logs.Single(a => a.IdLog == id);
-            }
-            catch (Exception e)
-            {
-                string msgLog = "Erro ao Consultar Log Por ID [ConsultarPorId - LogBO.cs][" + e.Message + " - " + e.Source + " ]";
+        /* public Log ConsultarPorId(int id)
+         {
+             try
+             {
+                 return Contexto.DataContext.Logs.Single(a => a.IdLog == id);
+             }
+             catch (Exception e)
+             {
+                 string msgLog = "Erro ao Consultar Log Por ID [ConsultarPorId - LogBO.cs][" + e.Message + " - " + e.Source + " ]";
 
-                Log log = new Log() { Categoria = (int)CategoriaLog.Erro, CodEvento = 30003, IdUsuario = idUsuarioLogado, Mensagem = msgLog };
-                LogBO logBO = new LogBO();
-                logBO.Salvar(log);
+                 Log log = new Log() { Categoria = (int)CategoriaLog.Erro, CodEvento = 30003, IdUsuario = idUsuarioLogado, Mensagem = msgLog };
+                 LogBO logBO = new LogBO();
+                 logBO.Salvar(log);
 
-                return null;
-            }
-        }*/
+                 return null;
+             }
+         }*/
     }
 }

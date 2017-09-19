@@ -21,8 +21,8 @@
  
 
 <link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="../CSS/font-awesome.css" rel="stylesheet" />
- 
 <link href="../css/responsive.css" rel="stylesheet" type="text/css">
 <link href="../css/animate.css" rel="stylesheet" type="text/css">
     <link href="../css/styleAdmin.css" rel="stylesheet" type="text/css">
@@ -57,9 +57,10 @@
             <li><a href="GERservicos.aspx">Serviços</a></li>  
             <li><a href="GERnoticias.aspx">Notícias</a></li>    
             <li><a href="GERprodutos.aspx">Produtos</a></li>
-            <li><a href="GERusuarios.aspx">Usuários</a></li>                      
+            <li><a href="GERusuarios.aspx">Usuários</a></li> 
+            <li><a href="GERlogs.aspx">Logs</a></li>                      
         </ul>
-        <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+        <a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
     </div>
 </nav><!--main-nav-end-->
     <asp:ContentPlaceHolder ID="contentBody" runat="server">

@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERusuarios.aspx.cs" Inherits="WEB_RENATA.Admin.GERusuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERlogs.aspx.cs" Inherits="WEB_RENATA.Admin.GERlog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
-
-
-        <div id="divResultado" runat="server">
+     <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
@@ -32,23 +30,14 @@
                         <tr>
                             <th style="width: 3%; text-align: center;">ID
                             </th>
-                            <th style="width: 4%; text-align: center;">Nome
+                            <th style="width: 3%; text-align: center;">ID Usuário
                             </th>
-                            <th style="width: 5%; text-align: center;">E-mail
+                            <th style="width: 20%; text-align: center;">Mensagem
                             </th>                            
-                            
-                            <th style="width: 5%; text-align: center;">Cidade
-                            </th>
-                            <th style="width: 5%; text-align: center;">Estado
-                            </th>
-                            <th style="width: 6%; text-align: center;">Rua
-                            </th>                            
-                            <th style="width: 3%; text-align: center;">CEP
+                            <th style="width: 15%; text-align: center;">Data Publicação
                             </th>
                             
                         </tr>
- 
-
                     </div>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -57,35 +46,17 @@
                             <%#Eval("id") %>
                         </td>
                         <td align="center">
-                            <%#Eval("nome") %>
+                            <%#Eval("idUsuario") %>
                         </td>
                         <td align="center">
-                            <%#Eval("email") %>
-                        </td>
-                        
-                        <td align="center">
-                            <%#Eval("cidade")%>
+                            <%#Eval("mensagem") %>
                         </td>
                         <td align="center">
-                            <%#Eval("estado")%>
-                        </td> 
-                        <td align="center">
-                            <%#Eval("rua")%>
+                            <%#Eval("data")%>
                         </td>
-                        <td align="center">
-                            <%#Eval("cep")%>
-                        </td>
-                        
-                        
-                          
-                        
-                                     
+                                               
                     </tr>
- 
-                     
                 </ItemTemplate>
-
-               
             </asp:Repeater>
         </table>
     </div>
@@ -102,9 +73,10 @@
                
         
         
-  
-
-
+        
+         
+    </div>
+</section>
 
 
 

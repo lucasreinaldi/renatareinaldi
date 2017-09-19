@@ -10,7 +10,7 @@
 namespace WEB_RENATA.Admin {
     
     
-    public partial class GERusuarios {
+    public partial class GERlog {
         
         /// <summary>
         /// divResultado control.
