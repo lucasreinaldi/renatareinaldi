@@ -57,4 +57,14 @@
       <Column Name="DataHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Produto" Member="Produtos">
+    <Type Name="Produto">
+      <Column Name="IdProduto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Preco" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Estoque" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CaminhoImagem" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

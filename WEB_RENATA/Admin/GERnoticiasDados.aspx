@@ -34,7 +34,7 @@
                     <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             
                 <asp:LinkButton ID="btnSalvar" runat="server" CssClass="btn btn-info"
-                        CausesValidation="true" ValidationGroup="validation" OnClick="btnSalvar_Click">Adicionar</asp:LinkButton>
+                        CausesValidation="true" ValidationGroup="validation" OnClick="btnSalvar_Click">Salvar</asp:LinkButton>
                 </asp:Panel>
        
          

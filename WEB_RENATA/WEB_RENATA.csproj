@@ -99,6 +99,7 @@
     <Content Include="Admin\GERnoticias.aspx" />
     <Content Include="Admin\GERnoticiasDados.aspx" />
     <Content Include="Admin\GERprodutos.aspx" />
+    <Content Include="Admin\GERprodutosDados.aspx" />
     <Content Include="Admin\GERservicos.aspx" />
     <Content Include="Admin\GERservicosDados.aspx" />
     <Content Include="Admin\GERusuarios.aspx" />
@@ -225,6 +226,13 @@
     <Compile Include="Admin\GERprodutos.aspx.designer.cs">
       <DependentUpon>GERprodutos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\GERprodutosDados.aspx.cs">
+      <DependentUpon>GERprodutosDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERprodutosDados.aspx.designer.cs">
+      <DependentUpon>GERprodutosDados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\GERservicos.aspx.cs">
       <DependentUpon>GERservicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -313,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\noticias\" />
+    <Folder Include="img\produtos\" />
     <Folder Include="img\servicos\" />
   </ItemGroup>
   <ItemGroup>

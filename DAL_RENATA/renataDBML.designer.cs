@@ -48,6 +48,9 @@ namespace DAL_RENATA
     partial void InsertLog(Log instance);
     partial void UpdateLog(Log instance);
     partial void DeleteLog(Log instance);
+    partial void InsertProduto(Produto instance);
+    partial void UpdateProduto(Produto instance);
+    partial void DeleteProduto(Produto instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -125,6 +128,14 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Log>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Produto> Produtos
+		{
+			get
+			{
+				return this.GetTable<Produto>();
 			}
 		}
 	}
@@ -1124,6 +1135,188 @@ namespace DAL_RENATA
 					this._DataHora = value;
 					this.SendPropertyChanged("DataHora");
 					this.OnDataHoraChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Produto")]
+	public partial class Produto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdProduto;
+		
+		private string _Nome;
+		
+		private string _Descricao;
+		
+		private double _Preco;
+		
+		private int _Estoque;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdProdutoChanging(int value);
+    partial void OnIdProdutoChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnPrecoChanging(double value);
+    partial void OnPrecoChanged();
+    partial void OnEstoqueChanging(int value);
+    partial void OnEstoqueChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Produto()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdProduto
+		{
+			get
+			{
+				return this._IdProduto;
+			}
+			set
+			{
+				if ((this._IdProduto != value))
+				{
+					this.OnIdProdutoChanging(value);
+					this.SendPropertyChanging();
+					this._IdProduto = value;
+					this.SendPropertyChanged("IdProduto");
+					this.OnIdProdutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(200)")]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Float NOT NULL")]
+		public double Preco
+		{
+			get
+			{
+				return this._Preco;
+			}
+			set
+			{
+				if ((this._Preco != value))
+				{
+					this.OnPrecoChanging(value);
+					this.SendPropertyChanging();
+					this._Preco = value;
+					this.SendPropertyChanged("Preco");
+					this.OnPrecoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estoque", DbType="Int NOT NULL")]
+		public int Estoque
+		{
+			get
+			{
+				return this._Estoque;
+			}
+			set
+			{
+				if ((this._Estoque != value))
+				{
+					this.OnEstoqueChanging(value);
+					this.SendPropertyChanging();
+					this._Estoque = value;
+					this.SendPropertyChanged("Estoque");
+					this.OnEstoqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
 				}
 			}
 		}

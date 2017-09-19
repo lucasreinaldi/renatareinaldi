@@ -32,6 +32,17 @@ namespace WEB_RENATA.Admin
 
             if (!IsPostBack)
             {
+                if (Session["msgRes"] != null)
+                {                    
+
+                    mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
+                }
+                Session["msgRes"] = null;
+                
+                Session.Remove("msgRes");
+
+
+
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 5;
@@ -69,7 +80,7 @@ namespace WEB_RENATA.Admin
 
         protected void btnAdicionar_Click(Object sender, EventArgs e)
         {
-            Response.Redirect("GERservicosDados.aspx?id=-1");
+            Response.Redirect("GERservicosDados.aspx?id=-0");
         }
 
         public List<Servico> ListarTodos()

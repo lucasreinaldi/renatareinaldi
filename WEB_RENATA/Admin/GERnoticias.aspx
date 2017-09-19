@@ -3,13 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
-    <br />
+   
     <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <br />
+   
 
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerServicos">
@@ -70,7 +70,7 @@
                             <%#Eval("data")%>
                         </td>
                         <td align="center">
-                            <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
+                            <img src="<%#Eval("imagem")%>" style="height:200px; width: 200px;" />                            
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">                             
                             <a href="GERnoticiasDados.aspx?id=<%# Eval("id") %>" >

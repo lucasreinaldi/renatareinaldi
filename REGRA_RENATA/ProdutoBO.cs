@@ -17,16 +17,15 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using REGRA_RENATA;
-
-
+using System.Data.Linq;
 
 namespace REGRA_RENATA
 {
-    public class ServicoBO
+    public class ProdutoBO
     {
         BancoLINQ<renataDBMLDataContext> DataContext = new BancoLINQ<renataDBMLDataContext>();
 
-        public bool Inserir(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
+        public bool Inserir(Produto produto, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log = new Log();
@@ -34,26 +33,36 @@ namespace REGRA_RENATA
 
             try
             {
-                servico.CaminhoImagem = " ";
+                produto.CaminhoImagem = " ";
                 DataContext.BeginTransaction();
-                DataContext.DataContext.Servicos.InsertOnSubmit(servico);
+                DataContext.DataContext.Produtos.InsertOnSubmit(produto);
                 DataContext.DataContext.SubmitChanges();
 
-                string caminhoCompleto = pastaDestino + "Servico_" + servico.IdServicos + extensao;
-                Util.UploadArquivo(fup, caminhoCompleto);
-                if (Util.ArquivoExists(caminhoCompleto, null, null))
+                string caminhoCompleto = pastaDestino + "Produto_" + produto.IdProduto + extensao;
+                if (fup.HasFile)
                 {
-                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
-                    servicoAlterar.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
-                    DataContext.DataContext.SubmitChanges();
+                    Util.UploadArquivo(fup, caminhoCompleto);
+
+                    if (Util.ArquivoExists(caminhoCompleto, null, null))
+                    {
+                        Produto produtoAlterar = this.ConsultarPorId(produto.IdProduto, idUsuarioLogado);
+                        produtoAlterar.CaminhoImagem = "Produto_" + produto.IdProduto + extensao;
+                        DataContext.DataContext.SubmitChanges();
+                    }
+                    else
+                    {
+                        DataContext.RollbackTransaction();
+                    }
                 }
                 else
                 {
-                    DataContext.RollbackTransaction();
+                    Produto produtoAlterar = this.ConsultarPorId(produto.IdProduto, idUsuarioLogado);
+                    produtoAlterar.CaminhoImagem = "Default.jpg";
+                    DataContext.DataContext.SubmitChanges();
                 }
 
                 DataContext.CommitTransaction();
-                msg = "Serviço inserido com sucesso. id: " + servico.IdServicos;
+                msg = "Produto inserido com sucesso. id: " + produto.IdProduto;
 
                 log = new Log()
                 {
@@ -64,7 +73,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao inserir o servico. [" + e.Message + "][" + e.Source + "]";
+                msg = "Erro ao inserir o produto. [" + e.Message + "][" + e.Source + "]";
 
                 log = new Log()
                 {
@@ -78,7 +87,7 @@ namespace REGRA_RENATA
             }
         }
 
-        private bool Alterar(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
+        private bool Alterar(Produto produto, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log;
@@ -90,16 +99,18 @@ namespace REGRA_RENATA
             {
                 DataContext.BeginTransaction();
 
-                Servico novoServico = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
-                novoServico.Nome = servico.Nome;
-                novoServico.Descricao = servico.Descricao;
-                novoServico.Valor = servico.Valor;
-                oldPath = servico.CaminhoImagem;
-
-
+                Produto novoObj = this.ConsultarPorId(produto.IdProduto, idUsuarioLogado);
+                novoObj.Nome = produto.Nome;
+                novoObj.Descricao = produto.Descricao;
+                novoObj.Estoque = produto.Estoque;
+                novoObj.Preco = produto.Preco;
+                
+                
+                oldPath = produto.CaminhoImagem;
+                
                 if (fup.HasFile)
                 {
-                    novoServico.CaminhoImagem = servico.CaminhoImagem;
+                    novoObj.CaminhoImagem = novoObj.CaminhoImagem;
 
                     if ((fup.FileName != null) && (fup.FileName != "") && (pastaDestino != null) && (pastaDestino != ""))
                     {
@@ -108,10 +119,10 @@ namespace REGRA_RENATA
                         {
                             ok = true;
                         }
-                        if (Util.UploadArquivo(fup, pastaDestino + "Servico_" + servico.IdServicos + extensao))
+                        if (Util.UploadArquivo(fup, pastaDestino + "Produto_" + produto.IdProduto + extensao))
                         {
                             ok = true;
-                            novoServico.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
+                            novoObj.CaminhoImagem = "Produto_" + produto.IdProduto + extensao;
                             DataContext.DataContext.SubmitChanges();
                         }
                         else
@@ -129,7 +140,7 @@ namespace REGRA_RENATA
                 {
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
-                    msg = "O servico foi alterado com sucesso.";
+                    msg = "O produto foi alterado com sucesso.";
 
                     log = new Log()
                     {
@@ -143,7 +154,7 @@ namespace REGRA_RENATA
                 }
 
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar o serviço.";
+                msg = "Erro ao alterar o produto.";
 
                 log = new Log()
                 {
@@ -157,7 +168,7 @@ namespace REGRA_RENATA
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar o serviço. [Erro ao carregar servico do bd]";
+                msg = "Erro ao alterar o produto. [Erro ao carregar servico do bd]";
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -168,15 +179,15 @@ namespace REGRA_RENATA
             }
         }
 
-        public bool Salvar(Servico servico, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
+        public bool Salvar(Produto produto, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
-            if (servico.IdServicos <= 0)
-                return this.Inserir(servico, pastaDestino, extensao, fup, idUsuarioLogado);
+            if (produto.IdProduto <= 0)
+                return this.Inserir(produto, pastaDestino, extensao, fup, idUsuarioLogado);
             else
-                return this.Alterar(servico, pastaDestino, extensao, fup, idUsuarioLogado);
+                return this.Alterar(produto, pastaDestino, extensao, fup, idUsuarioLogado);
         }
 
-        public bool Excluir(Servico servico, string pastaDestino, int? idUsuarioLogado)
+        public bool Excluir(Produto produto, string pastaDestino, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log;
@@ -185,41 +196,50 @@ namespace REGRA_RENATA
             try
             {
                 DataContext.BeginTransaction();
-                Servico servicoExcluir = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
-                string caminhoCompleto = pastaDestino + servicoExcluir.CaminhoImagem;
-                DataContext.DataContext.Servicos.DeleteOnSubmit(servicoExcluir);
-                if (servico.CaminhoImagem != "Default.jpg")
+                Produto produtoExcluir = this.ConsultarPorId(produto.IdProduto, idUsuarioLogado);
+                string caminhoCompleto = pastaDestino + produtoExcluir.CaminhoImagem;
+                DataContext.DataContext.Produtos.DeleteOnSubmit(produtoExcluir);
+
+                if (produto.CaminhoImagem != null)
+                 {
+                if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                 {
-                    if (Util.ExcluirArquivo(caminhoCompleto, null, null))
+                    DataContext.DataContext.SubmitChanges();
+                    DataContext.CommitTransaction();
+
+                    msg = "Produto excluído com sucesso. " + produtoExcluir.IdProduto;
+                    log = new Log()
                     {
-                        DataContext.DataContext.SubmitChanges();
-                        DataContext.CommitTransaction();
+                        IdUsuario = idUsuarioLogado,
+                        Mensagem = msg
+                    };
 
-                        msg = "Serviço excluído com sucesso. " + servico.IdServicos;
-                        log = new Log()
-                        {
-                            IdUsuario = idUsuarioLogado,
-                            Mensagem = msg
-                        };
-
-
-                        return true;
-                    }
-                    else
-                    {
-                        DataContext.RollbackTransaction();
-                        msg = "Erro ao excluir o serviço. " + servico.IdServicos;
-
-
-                        return false;
-                    }
+                    return true;
                 }
+                else
+                {
+                    DataContext.RollbackTransaction();
+                    msg = "Erro ao excluir o produto. " + produto.IdProduto;
+
+                    return false;
+                }
+            }
+                DataContext.DataContext.SubmitChanges();
+                DataContext.CommitTransaction();
+
+                msg = "Produto excluído com sucesso. " + produtoExcluir.IdProduto;
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+ 
                 return true;
             }
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao excluir o serviço. " + servico.IdServicos + "Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao excluir a noticia. " + produto.IdProduto + "Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -231,7 +251,7 @@ namespace REGRA_RENATA
             }
         }
 
-        public Servico ConsultarPorId(int id, int? idUsuarioLogado)
+        public Produto ConsultarPorId(int id, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log = new Log();
@@ -239,12 +259,12 @@ namespace REGRA_RENATA
 
             try
             {
-                return DataContext.DataContext.Servicos.Single(Servico => Servico.IdServicos == id);
+                return DataContext.DataContext.Produtos.Single(Produto => Produto.IdProduto == id);
             }
 
             catch (Exception e)
             {
-                msg = "Erro ao consultar serviço. " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar produto por ID. " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -255,7 +275,7 @@ namespace REGRA_RENATA
             }
         }
 
-        public List<Servico> ConsultarTodos(int? idUsuarioLogado)
+        public List<Produto> ConsultarTodos(int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log;
@@ -264,14 +284,14 @@ namespace REGRA_RENATA
             try
             {
 
-                var consulta = from Servico in DataContext.DataContext.Servicos select Servico;
+                var consulta = from Produto in DataContext.DataContext.Produtos select Produto;
                 return consulta.ToList();
 
 
             }
             catch (Exception e)
             {
-                msg = "Erro ao consultar serviço. Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar produtos. Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -284,5 +304,7 @@ namespace REGRA_RENATA
                 return null;
             }
         }
+ 
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="renataDBML">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 9.125" name="renataDBML">
   <DataContextMoniker Name="/renataDBMLDataContext" />
   <nestedChildShapes>
     <classShape Id="0556332d-4cec-40c3-a4c5-e242a6baca32" absoluteBounds="5.875, 1.125, 2, 1.5785953776041666">
@@ -36,6 +36,12 @@
       <DataClassMoniker Name="/renataDBMLDataContext/Log" />
       <nestedChildShapes>
         <elementListCompartment Id="f87137dd-d825-4a42-b6a1-a8c65ad27d9e" absoluteBounds="1.8900000000000001, 3.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0da9eff3-4ecc-4c6d-b262-04bb7139f871" absoluteBounds="9.125, 5.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/renataDBMLDataContext/Produto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="313a63e7-9c34-4b6f-b4f8-d76d89813b44" absoluteBounds="9.14, 5.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

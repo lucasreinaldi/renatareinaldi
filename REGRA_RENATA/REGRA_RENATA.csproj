@@ -114,6 +114,7 @@
     <Compile Include="LogBO.cs" />
     <Compile Include="NewsletterBO.cs" />
     <Compile Include="NoticiaBO.cs" />
+    <Compile Include="ProdutoBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicoBO.cs" />
     <Compile Include="UsuarioBO.cs" />

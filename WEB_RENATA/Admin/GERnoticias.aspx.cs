@@ -69,7 +69,7 @@ namespace WEB_RENATA.Admin
 
         protected void btnAdicionar_Click(Object sender, EventArgs e)
         {
-            Response.Redirect("GERnoticiasDados.aspx?id=-1");
+            Response.Redirect("GERnoticiasDados.aspx?id=0");
         }
 
         public List<Noticia> ListarTodos()
@@ -87,7 +87,6 @@ namespace WEB_RENATA.Admin
             this.rptNoticias.DataBind();
         }
 
-
         protected void lbtProximo_Click(object sender, EventArgs e)
         {
             mp.CurrentPage++;
@@ -95,8 +94,6 @@ namespace WEB_RENATA.Admin
             this.rptNoticias.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
             this.rptNoticias.DataBind();
         }
-
-        
 
         public void MontarRepeater()
         {
@@ -122,7 +119,6 @@ namespace WEB_RENATA.Admin
                 this.divResultado.Visible = true;
             }
         }
-
 
         private DataTable MontarDataTable(List<Noticia> list)
         {
@@ -150,6 +146,5 @@ namespace WEB_RENATA.Admin
             return tabela;
         }
 
-      
     }
 }

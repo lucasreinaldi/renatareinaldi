@@ -19,7 +19,7 @@
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
                     
 
-                    <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição do serviço"
+                    <asp:TextBox TextMode="MultiLine" ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição do serviço"
                         MaxLength="200"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
