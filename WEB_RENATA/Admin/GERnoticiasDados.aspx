@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
      <section class="main-section" id="Portfolio">
-	<div class="container gerServicos">
+	<div class="container gerSquare">
     	<h2>Gerenciador de Notícias</h2>
     	 
 
@@ -26,12 +26,12 @@
                         ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricaoBreve" ValidationGroup="validation"></asp:RequiredFieldValidator>
             
                     <asp:TextBox ID="txtConteudo" runat="server" CssClass="form-control input-text" placeholder="corpo da notícia"
-                        MaxLength="1500"></asp:TextBox>                    
+                        MaxLength="1500" TextMode="MultiLine"></asp:TextBox>                    
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtConteudo" ValidationGroup="validation"></asp:RequiredFieldValidator>
 
                      
-                    <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
+                    <asp:FileUpload class="margintop marginbottom" ID="fup" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             
                 <asp:LinkButton ID="btnSalvar" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="validation" OnClick="btnSalvar_Click">Salvar</asp:LinkButton>

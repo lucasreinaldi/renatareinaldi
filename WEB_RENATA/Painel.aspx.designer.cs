@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WEB_RENATA.Admin
+namespace WEB_RENATA
 {
 
 
-    public partial class Home
+    public partial class Painel
     {
     }
 }

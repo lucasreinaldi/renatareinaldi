@@ -104,25 +104,10 @@
     <Content Include="Admin\GERservicos.aspx" />
     <Content Include="Admin\GERservicosDados.aspx" />
     <Content Include="Admin\GERusuarios.aspx" />
-    <Content Include="Admin\Home.aspx" />
     <Content Include="CSS\animate.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\font-awesome.css" />
     <Content Include="CSS\font-awesome.min.css" />
-    <Content Include="CSS\NewFolder1\animate.min.css" />
-    <Content Include="CSS\NewFolder1\bootstrap.min.css" />
-    <Content Include="CSS\NewFolder1\et-line.css" />
-    <Content Include="CSS\NewFolder1\font-awesome.min.css" />
-    <Content Include="CSS\NewFolder1\grabbing.png" />
-    <Content Include="CSS\NewFolder1\magnific-popup.css" />
-    <Content Include="CSS\NewFolder1\owl.carousel.css" />
-    <Content Include="CSS\NewFolder1\owl.transitions.css" />
-    <Content Include="CSS\NewFolder1\rev-slider.css" />
-    <Content Include="CSS\NewFolder1\simpletextrotator.css" />
-    <Content Include="CSS\NewFolder1\style-responsive.css" />
-    <Content Include="CSS\NewFolder1\style.css" />
-    <Content Include="CSS\NewFolder1\vertical-rhythm.min.css" />
-    <Content Include="CSS\NewFolder1\YTPlayer.css" />
     <Content Include="CSS\owl.carousel.css" />
     <Content Include="CSS\responsive.css" />
     <Content Include="CSS\style.css" />
@@ -160,9 +145,6 @@
     </Content>
     <Content Include="Home.Master" />
     <Content Include="Admin\AdmHome.Master" />
-    <Content Include="CSS\NewFolder1\ytp-regular.eot" />
-    <Content Include="CSS\NewFolder1\ytp-regular.ttf" />
-    <Content Include="CSS\NewFolder1\ytp-regular.woff" />
     <Content Include="FONTS\fontawesome-webfont.eot" />
     <Content Include="FONTS\fontawesome-webfont.ttf" />
     <Content Include="FONTS\fontawesome-webfont.woff" />
@@ -178,6 +160,7 @@
   <ItemGroup>
     <Content Include="Admin\GERnewsletter.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Painel.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="ServicoConfirma.aspx" />
@@ -263,13 +246,6 @@
     <Compile Include="Admin\GERusuarios.aspx.designer.cs">
       <DependentUpon>GERusuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +280,13 @@
     </Compile>
     <Compile Include="NoticiasArtigo.aspx.designer.cs">
       <DependentUpon>NoticiasArtigo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Painel.aspx.cs">
+      <DependentUpon>Painel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Painel.aspx.designer.cs">
+      <DependentUpon>Painel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicoConfirma.aspx.cs">

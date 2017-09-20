@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
     <section class="main-section" id="Portfolio">
-	<div class="container gerServicos">
+	<div class="container gerSquare">
     	<h2>Gerenciador de Produtos</h2>
     	 
 
@@ -20,7 +20,7 @@
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     
 
-                    <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição"
+                    <asp:TextBox ID="txtDescricao" TextMode="MultiLine" runat="server" CssClass="form-control input-text" placeholder="descrição"
                         MaxLength="200"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="validation"></asp:RequiredFieldValidator>
@@ -40,7 +40,7 @@
                         ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtEstoque" ValidationGroup="validation"></asp:RegularExpressionValidator>
 
                      
-                    <asp:FileUpload ID="fup" Width="70%" ToolTip="Selecione a imagem" runat="server" />
+                    <asp:FileUpload class="margintop marginbottom" ID="fup" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             
                 <asp:LinkButton ID="btnSalvar" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="validation" OnClick="btnSalvar_Click">Salvar</asp:LinkButton>

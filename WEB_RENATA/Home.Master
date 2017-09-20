@@ -22,9 +22,9 @@
 <link href="css/animate.css" rel="stylesheet" type="text/css">
 <link href="CSS/style2.css" rel="stylesheet" />
 <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
-
+        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/jquery.isotope.js"></script>
@@ -33,8 +33,7 @@
 <script src="contactform/contactform.js"></script>
 
     
-  </body>
-</html>
+ 
 
 </head>
 
@@ -53,8 +52,8 @@
             <li><a href="Default.aspx">Home</a></li>
             <li><a href="Servicos.aspx">Serviços</a></li>
             <li><a href="Noticias.aspx">Notícias</a></li>                        
-            <li><a href="Contato.aspx">Contato</a></li>
             <li><a href="Loja.aspx">Loja</a></li>
+            <li><a href="Painel.aspx">Painel</a></li>
         </ul>
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>

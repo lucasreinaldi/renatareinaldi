@@ -12,7 +12,7 @@
    
 
     <section class="main-section" id="Portfolio"> 
-	<div class="container gerServicos">
+	<div class="container gerSquare">
     	<h2>Gerenciador de Notícias</h2>
     	 
 
@@ -26,24 +26,24 @@
     <div class="container fadeInUp delay-04s tabelaServicos">
             
         <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divServicos">
+       <div id="divCentral">
          
-        <table id="divTabelaServico">
+        <table id="divTabela">
             <asp:Repeater ID="rptNoticias" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
                             <th style="width: 3%; text-align: center;">ID
                             </th>
-                            <th style="width: 7%; text-align: center;">Titulo
+                            <th style="width: 5%; text-align: center;">Titulo
                             </th>
-                            <th style="width: 15%; text-align: center;">Descricao Breve
+                            <th style="width: 8%; text-align: center;">Descricao Breve
                             </th>
-                            <th style="width: 10%; text-align: center;">Conteudo
+                            <th style="width: 20%; text-align: center;">Conteudo
                             </th>
-                            <th style="width: 15%; text-align: center;">Data Publicação
+                            <th style="width: 5%; text-align: center;">Data Publicação
                             </th>
-                            <th style="width: 10%; text-align: center;">Caminho
+                            <th style="width: 15%; text-align: center;">Caminho
                             </th>
                             <th style="width: 3%; text-align: center;">Alterar
                             </th>
@@ -70,7 +70,7 @@
                             <%#Eval("data")%>
                         </td>
                         <td align="center">
-                            <img src="<%#Eval("imagem")%>" style="height:200px; width: 200px;" />                            
+                            <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">                             
                             <a href="GERnoticiasDados.aspx?id=<%# Eval("id") %>" >

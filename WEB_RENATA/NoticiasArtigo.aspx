@@ -17,7 +17,7 @@
                  
                 <div class="featured-box">
                 	<div class="featured-box-col wow fadeInRight delay-06s">
-                    	<i class="fa-dashboard"></i>
+                    	<i class="fa fa-dashboard"></i>
                     </div>	
                 	<div class="featured-box-col2 wow fadeInRight delay-06s">
                         <h3>Publicado em: <p id="data" runat="server"></p> </h3>                        

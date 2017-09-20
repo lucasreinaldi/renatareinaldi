@@ -163,5 +163,30 @@ namespace REGRA_RENATA
             return true;
         }
 
+        public Usuario ConsultarPorLogin(string email, int? idUsuarioLogado)
+        {
+            try
+            {
+                Usuario usu = new Usuario();
+                usu = DataContext.DataContext.Usuarios.SingleOrDefault(u => u.Email == email);
+
+                if (usu != null)
+                    return usu;
+
+                return null;
+            }
+            catch (Exception e)
+            {
+                string msgLog = "Erro ao consultar usuário por login. [usuarioBO] " + e.Source;
+
+                Log log = new Log() { IdUsuario = idUsuarioLogado, Mensagem = msgLog };
+
+                LogBO logBO = new LogBO();
+                logBO.Salvar(log);
+
+                return null;
+            }
+        }
+
     }
 }

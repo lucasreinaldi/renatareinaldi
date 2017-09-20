@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
   <section class="main-section" id="Portfolio">
-	<div class="container gerServicos">
+	<div class="container gerSquare">
     	<h2>Gerenciador de Serviços</h2>
     	 
 
@@ -31,7 +31,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
 
-                    <asp:FileUpload ID="exampleInputFile" Width="70%" ToolTip="Selecione a imagem" runat="server" />
+                    <asp:FileUpload class="margintop marginbottom" ID="fup" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             
                 <asp:LinkButton ID="btnSalvar" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="valServicos" OnClick="btnSalvar_Click">Adicionar</asp:LinkButton>

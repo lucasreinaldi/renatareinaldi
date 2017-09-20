@@ -201,29 +201,29 @@ namespace REGRA_RENATA
                 DataContext.DataContext.Produtos.DeleteOnSubmit(produtoExcluir);
 
                 if (produto.CaminhoImagem != null)
-                 {
-                if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                 {
-                    DataContext.DataContext.SubmitChanges();
-                    DataContext.CommitTransaction();
-
-                    msg = "Produto excluído com sucesso. " + produtoExcluir.IdProduto;
-                    log = new Log()
+                    if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                     {
-                        IdUsuario = idUsuarioLogado,
-                        Mensagem = msg
-                    };
+                        DataContext.DataContext.SubmitChanges();
+                        DataContext.CommitTransaction();
 
-                    return true;
-                }
-                else
-                {
-                    DataContext.RollbackTransaction();
-                    msg = "Erro ao excluir o produto. " + produto.IdProduto;
+                        msg = "Produto excluído com sucesso. " + produtoExcluir.IdProduto;
+                        log = new Log()
+                        {
+                            IdUsuario = idUsuarioLogado,
+                            Mensagem = msg
+                        };
 
-                    return false;
+                        return true;
+                    }
+                    else
+                    {
+                        DataContext.RollbackTransaction();
+                        msg = "Erro ao excluir o produto. " + produto.IdProduto;
+
+                        return false;
+                    }
                 }
-            }
                 DataContext.DataContext.SubmitChanges();
                 DataContext.CommitTransaction();
 

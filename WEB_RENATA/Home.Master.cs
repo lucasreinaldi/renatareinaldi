@@ -101,7 +101,7 @@ namespace WEB_RENATA
             }
         }
 
-        public void DefinirMsgResultado(HtmlGenericControl divResultado, Label lblMsg, string msg, Button btnFoco)
+        public void DefinirMsgResultado(HtmlGenericControl divResultado, Label lblMsg, string msg, LinkButton btnFoco)
         {
             if (btnFoco != null)
             {

@@ -3,17 +3,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 
-    <br />
+    
     <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <br />
+    
 
 
     <section class="main-section" id="Portfolio">
-	<div class="container gerServicos">
+	<div class="container gerSquare">
     	<h2>Gerenciador de Serviços</h2>
     	 
 
@@ -24,9 +24,9 @@
     <div class="container fadeInUp delay-04s tabelaServicos">
             
         <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divServicos">
+       <div id="divTabela">
          
-        <table id="divTabelaServico">
+        <table id="divCentral">
             <asp:Repeater ID="rptServicos" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">

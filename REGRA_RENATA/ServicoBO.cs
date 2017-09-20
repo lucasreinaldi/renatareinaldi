@@ -40,18 +40,27 @@ namespace REGRA_RENATA
                 DataContext.DataContext.SubmitChanges();
 
                 string caminhoCompleto = pastaDestino + "Servico_" + servico.IdServicos + extensao;
-                Util.UploadArquivo(fup, caminhoCompleto);
-                if (Util.ArquivoExists(caminhoCompleto, null, null))
+                if (fup.HasFile)
                 {
-                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
-                    servicoAlterar.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
-                    DataContext.DataContext.SubmitChanges();
+                    Util.UploadArquivo(fup, caminhoCompleto);
+
+                    if (Util.ArquivoExists(caminhoCompleto, null, null))
+                    {
+                        Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
+                        servicoAlterar.CaminhoImagem = "Servico_" + servico.IdServicos + extensao;
+                        DataContext.DataContext.SubmitChanges();
+                    }
+                    else
+                    {
+                        DataContext.RollbackTransaction();
+                    }
                 }
                 else
                 {
-                    DataContext.RollbackTransaction();
+                    Servico servicoAlterar = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
+                    servicoAlterar.CaminhoImagem = "Default.jpg";
+                    DataContext.DataContext.SubmitChanges();
                 }
-
                 DataContext.CommitTransaction();
                 msg = "Serviço inserido com sucesso. id: " + servico.IdServicos;
 
@@ -188,8 +197,10 @@ namespace REGRA_RENATA
                 Servico servicoExcluir = this.ConsultarPorId(servico.IdServicos, idUsuarioLogado);
                 string caminhoCompleto = pastaDestino + servicoExcluir.CaminhoImagem;
                 DataContext.DataContext.Servicos.DeleteOnSubmit(servicoExcluir);
-                if (servico.CaminhoImagem != "Default.jpg")
+
+                if (servico.CaminhoImagem != null)
                 {
+                    
                     if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                     {
                         DataContext.DataContext.SubmitChanges();
@@ -208,12 +219,21 @@ namespace REGRA_RENATA
                     else
                     {
                         DataContext.RollbackTransaction();
-                        msg = "Erro ao excluir o serviço. " + servico.IdServicos;
-
-
+                        msg = "Erro ao excluir o serviço. " + servicoExcluir.IdServicos;
+                        
                         return false;
                     }
                 }
+                DataContext.DataContext.SubmitChanges();
+                DataContext.CommitTransaction();
+
+                msg = "Serviço excluído com sucesso. " + servicoExcluir.IdServicos;
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
                 return true;
             }
             catch (Exception e)

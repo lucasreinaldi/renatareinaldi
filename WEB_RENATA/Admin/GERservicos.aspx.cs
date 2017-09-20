@@ -66,7 +66,7 @@ namespace WEB_RENATA.Admin
 
                 if (servicoBO.Excluir(servico, pastaDestino, null) == true)
                 {
-                    mp.DefinirMsgResultado(divResultado, lblResultado, "Release Excluido com sucesso!", null);
+                    mp.DefinirMsgResultado(divResultado, lblResultado, "Serviço excluído com sucesso!", null);
                     this.MontarRepeater();
                 }
             }
@@ -105,12 +105,13 @@ namespace WEB_RENATA.Admin
             else
             {
                 this.rptServicos.Visible = false;
+                this.divResultado.Visible = false;
             }
             if (lista.Count == 0)
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há servicos cadastrados.", null);
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há serviços cadastrados.", null);
                 this.divResultado.Visible = true;
             }
         }

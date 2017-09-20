@@ -27,6 +27,8 @@ namespace WEB_RENATA.Admin
         {
             string id = this.Request.QueryString["id"];
 
+            this.Title = "Gerenciar produtos";
+
             if (id != null)
             {
                 if (!this.IsPostBack)

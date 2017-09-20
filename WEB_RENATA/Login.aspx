@@ -32,7 +32,11 @@
 <body>
     <form runat="server">
 
-
+        <div id="divResultado" runat="server">
+        <div id="divLabel" runat="server">
+            <asp:Label ID="lblResultado" runat="server"></asp:Label>
+        </div>
+    </div>
 
 
 
@@ -42,8 +46,8 @@
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnAdicionar">
-                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="login"
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogar">
+                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="e-mail"
                         MaxLength="50"></asp:TextBox>
                     
                     <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
@@ -54,21 +58,22 @@
                     <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input-text" placeholder="senha"
                         MaxLength="50"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
+                        ErrorMessage="você precisa digitar uma senha" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
             
                      
-                <asp:LinkButton ID="btnAdicionar" runat="server" CssClass="btn btn-info"
-                        CausesValidation="true" ValidationGroup="valServicos" >Logar</asp:LinkButton>
+                <asp:LinkButton ID="btnLogar" runat="server" CssClass="btn btn-info"
+                        CausesValidation="true" OnClick="btnLogar_Click" ValidationGroup="valServicos" >Logar</asp:LinkButton>
 
                 <asp:LinkButton ID="btnCadastrar" runat="server" CssClass="btn btn-info"
-                        CausesValidation="false">Cadastrar</asp:LinkButton>
+                        CausesValidation="false" OnClick="btnCadastrar_Click">Cadastrar</asp:LinkButton>
                 </asp:Panel>
        
          
         
 	</div>
-        </section>
 
+        
+        </section>
 
 
 

@@ -26,6 +26,7 @@ namespace WEB_RENATA.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             string id = this.Request.QueryString["id"];
+            this.Title = "Gerenciar notícias";
 
             if (id != null)
             {
@@ -50,7 +51,7 @@ namespace WEB_RENATA.Admin
             NoticiaBO noticiaBO = new NoticiaBO();
 
             string idNoticia = this.Request.QueryString["id"];
-            string extensao = Path.GetExtension(exampleInputFile.FileName);
+            string extensao = Path.GetExtension(fup.FileName);
             string pastaDestino = this.MapPath("../" + "img/noticias" + "/");
 
             Noticia noticia = MapearCamposParaObjeto();
@@ -69,7 +70,7 @@ namespace WEB_RENATA.Admin
                 }
 
                 noticia.IdNoticia = id;
-                if (noticiaBO.Salvar(noticia, pastaDestino, extensao, exampleInputFile, null))
+                if (noticiaBO.Salvar(noticia, pastaDestino, extensao, fup, null))
                 {
                     Session.Add("msgRes", "Noticia salva com sucesso!");
                 }
@@ -89,11 +90,11 @@ namespace WEB_RENATA.Admin
         private bool VerificaExtensao()
         {
 
-            string extensao = Path.GetExtension(exampleInputFile.FileName).ToLower();
+            string extensao = Path.GetExtension(fup.FileName).ToLower();
 
             if (Convert.ToInt32(Request.QueryString["id"]) < 0)
             {
-                if (exampleInputFile.HasFile)
+                if (fup.HasFile)
                 {
                     if ((extensao.Equals(".jpg")) || (extensao.Equals(".jpeg")) || (extensao.Equals(".png")))
                     {

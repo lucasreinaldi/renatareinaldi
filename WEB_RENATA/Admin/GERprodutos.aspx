@@ -11,8 +11,8 @@
    
 
     <section class="main-section" id="Portfolio"> 
-	<div class="container gerServicos">
-    	<h2>Gerenciador de Notícias</h2>
+	<div class="container gerSquare">
+    	<h2>Gerenciador de Produtos</h2>
     	 
 
 
@@ -25,24 +25,24 @@
     <div class="container fadeInUp delay-04s tabelaServicos">
             
         <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divServicos">
+       <div id="divCentral">
          
-        <table id="divTabelaServico">
+        <table id="divTabela">
             <asp:Repeater ID="rptProdutos" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
                             <th style="width: 3%; text-align: center;">ID
                             </th>
-                            <th style="width: 7%; text-align: center;">Nome
+                            <th style="width: 5%; text-align: center;">Nome
                             </th>
                             <th style="width: 15%; text-align: center;">Descricao
                             </th>
-                            <th style="width: 10%; text-align: center;">Valor
+                            <th style="width: 5%; text-align: center;">Valor
                             </th>
-                            <th style="width: 15%; text-align: center;">Estoque
+                            <th style="width: 4%; text-align: center;">Estoque
                             </th>
-                            <th style="width: 10%; text-align: center;">Imagem
+                            <th style="width: 15%; text-align: center;">Imagem
                             </th>
                             <th style="width: 3%; text-align: center;">Alterar
                             </th>

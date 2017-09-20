@@ -58,7 +58,7 @@ namespace WEB_RENATA
             {
                 this.titulo.InnerText = noticia.Titulo.ToString();
                 this.corpo.InnerText = noticia.DescricaoBreve.ToString();
-                this.data.InnerText = noticia.Conteudo.ToString();
+                this.data.InnerText = noticia.DataPublicacao.ToString();
                 this.imagem.Src = "img\\noticias\\" + noticia.CaminhoImagem.ToString();
 
 

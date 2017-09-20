@@ -14,7 +14,7 @@
 
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerServicos">
-    	<h2>Gerenciador de Logs</h2>
+    	<h2>Usuários cadastrados</h2>
     	 
 
          
@@ -23,9 +23,9 @@
     <div class="container fadeInUp delay-04s tabelaServicos">
             
         <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divServicos">
+       <div id="divCentral">
          
-        <table id="divTabelaServico">
+        <table id="divTabela">
             <asp:Repeater ID="rptLogs" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">

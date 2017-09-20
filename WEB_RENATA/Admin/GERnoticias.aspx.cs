@@ -32,11 +32,21 @@ namespace WEB_RENATA.Admin
 
             if (!IsPostBack)
             {
+                if (Session["msgRes"] != null)
+                {
+
+                    mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
+                }
+                Session["msgRes"] = null;
+
+                Session.Remove("msgRes");
+
+
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 10;
 
-                //masterPage.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
+                
 
             }
             this.MontarRepeater();

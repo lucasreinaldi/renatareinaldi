@@ -51,7 +51,7 @@
     <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">        	 
-            <li><a href="Home.aspx">Home</a></li>
+            <li><a href="../Default.aspx">Home</a></li>
             <li><a href="GERhome.aspx">Alterar Home</a></li>
             <li><a href="GERnewsletter.aspx">Newsletter</a></li>
             <li><a href="GERservicos.aspx">Serviços</a></li>  

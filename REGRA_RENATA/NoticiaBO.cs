@@ -200,32 +200,41 @@ namespace REGRA_RENATA
                 Noticia noticiaExcluir = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
                 string caminhoCompleto = pastaDestino + noticiaExcluir.CaminhoImagem;
                 DataContext.DataContext.Noticias.DeleteOnSubmit(noticiaExcluir);
-                if (noticia.CaminhoImagem != "Default.jpg")
+
+                if (noticia.CaminhoImagem != null)
                 {
                     if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                     {
                         DataContext.DataContext.SubmitChanges();
                         DataContext.CommitTransaction();
 
-                        msg = "Noticia excluída com sucesso. " + noticia.IdNoticia;
+                        msg = "Notícia excluída com sucesso. " + noticiaExcluir.IdNoticia;
                         log = new Log()
                         {
                             IdUsuario = idUsuarioLogado,
                             Mensagem = msg
                         };
 
-
                         return true;
                     }
                     else
                     {
                         DataContext.RollbackTransaction();
-                        msg = "Erro ao excluir a noticia. " + noticia.IdNoticia;
-
+                        msg = "Erro ao excluir a notícia. " + noticiaExcluir.IdNoticia;
 
                         return false;
                     }
                 }
+                DataContext.DataContext.SubmitChanges();
+                DataContext.CommitTransaction();
+
+                msg = "Notícia excluída com sucesso. " + noticiaExcluir.IdNoticia;
+                log = new Log()
+                {
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
                 return true;
             }
             catch (Exception e)

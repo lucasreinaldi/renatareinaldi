@@ -26,6 +26,7 @@ namespace WEB_RENATA.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             string id = this.Request.QueryString["id"];
+            this.Title = "Gerenciar serviços";
 
             if (id != null)
             {
@@ -50,7 +51,7 @@ namespace WEB_RENATA.Admin
             ServicoBO servicoBO = new ServicoBO();
 
             string idServico = this.Request.QueryString["id"];
-            string extensao = Path.GetExtension(exampleInputFile.FileName);
+            string extensao = Path.GetExtension(fup.FileName);
             string pastaDestino = this.MapPath("../" + "img/servicos" + "/");
 
             Servico servico = MapearCamposParaObjeto();
@@ -69,19 +70,19 @@ namespace WEB_RENATA.Admin
                 }
 
                 servico.IdServicos = id;
-                if (servicoBO.Salvar(servico, pastaDestino, extensao, exampleInputFile, null))
+                if (servicoBO.Salvar(servico, pastaDestino, extensao, fup, null))
                 {                    
-                    Session.Add("msgRes", "Release salvo com sucesso!");
+                    Session.Add("msgRes", "Serviço salvo com sucesso!");
                 }
                 else
                 {                    
-                    Session.Add("msgRes", "Erro ao salvar release!");
+                    Session.Add("msgRes", "Erro ao salvar serviço!");
                 }
                 Response.Redirect("GERservicos.aspx");
             }
             else
             {
-                lblMsg.Text = "Problema ao salvar release.";
+                lblMsg.Text = "Problema ao salvar serviço.";
                 btnSalvar.Focus();
             } 
         }
@@ -89,11 +90,11 @@ namespace WEB_RENATA.Admin
         private bool VerificaExtensao()
         {
 
-            string extensao = Path.GetExtension(exampleInputFile.FileName).ToLower();
+            string extensao = Path.GetExtension(fup.FileName).ToLower();
 
             if (Convert.ToInt32(Request.QueryString["id"]) < 0)
             {
-                if (exampleInputFile.HasFile)
+                if (fup.HasFile)
                 {
                     if ((extensao.Equals(".jpg")) || (extensao.Equals(".jpeg")) || (extensao.Equals(".png")))
                     {
@@ -101,7 +102,7 @@ namespace WEB_RENATA.Admin
                     }
                     else
                     {
-                        lblMsg.Text = "Arquivo com extensão inválida. Utilize as extenções 'jpg' e 'png'.";
+                        lblMsg.Text = "Arquivo com extensão inválida. Utilize as extensões 'jpg' e 'png'.";
                         return false;
                     }
                 }

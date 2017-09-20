@@ -42,14 +42,14 @@
 
 
 
-.gerServicos
+.gerSquare
 {
     padding: 30px;
     border: 2px solid black;
     margin-bottom: 30px;
 }
 
-.divServicos
+.divCentral
 {
     width: 500px;
        left: 50%;
@@ -63,17 +63,4 @@
     display: block;
     margin-top: 20px;
 }
-
-
-#divTabelaServico{
-    border: 1px solid black;
-}
-
-#divTabelaServico .th{
-    border: 1px solid black;
-}
-
-#divTabelaServico tr:nth-child(even)
-{
-    background-color: #f1f1f1;
-}
+ 
