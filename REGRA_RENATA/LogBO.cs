@@ -31,7 +31,7 @@ namespace REGRA_RENATA
             return Inserir(log);
         }
 
-       
+
         private bool Inserir(Log log)
         {
             try
@@ -45,8 +45,8 @@ namespace REGRA_RENATA
                 return false;
             }
         }
-        
-       
+
+
         public string FormatarDataMesDiaAno(DateTime data)
         {
             return data.Year + "/" + data.Month + "/" + data.Day;
@@ -72,22 +72,22 @@ namespace REGRA_RENATA
             }
         }
 
-        /* public Log ConsultarPorId(int id)
-         {
-             try
-             {
-                 return Contexto.DataContext.Logs.Single(a => a.IdLog == id);
-             }
-             catch (Exception e)
-             {
-                 string msgLog = "Erro ao Consultar Log Por ID [ConsultarPorId - LogBO.cs][" + e.Message + " - " + e.Source + " ]";
+        public Log ConsultarPorId(int id)
+        {
+            try
+            {
+                return DataContext.DataContext.Logs.Single(a => a.IdLog == id);
+            }
+            catch (Exception e)
+            {
+                string msgLog = "Erro ao consultar log por id.";
 
-                 Log log = new Log() { Categoria = (int)CategoriaLog.Erro, CodEvento = 30003, IdUsuario = idUsuarioLogado, Mensagem = msgLog };
-                 LogBO logBO = new LogBO();
-                 logBO.Salvar(log);
+                Log log = new Log() { IdUsuario = null, Mensagem = msgLog };
+                LogBO logBO = new LogBO();
+                logBO.Salvar(log);
 
-                 return null;
-             }
-         }*/
+                return null;
+            }
+        }
     }
 }

@@ -70,7 +70,7 @@ namespace WEB_RENATA
             {
                 this.rptServicos.Visible = false;
             }
-             
+
         }
     }
 }

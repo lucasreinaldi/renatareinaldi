@@ -67,13 +67,13 @@ namespace REGRA_RENATA
                 DataContext.DataContext.Newsletters.InsertOnSubmit(news);
                 DataContext.DataContext.SubmitChanges();
 
-                msg = "Cliente inserido com sucesso. " + news.IdListaEmail;
+                msg = "Email inserido com sucesso. " + news.IdListaEmail;
 
             }
             catch (Exception e)
             {
 
-                msg = "Erro ao inserir o cliente. " + news.IdListaEmail + "Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao inserir a . " + news.IdListaEmail + "Erro: " + e.Message + " - " + e.Source;
 
 
                 return false;

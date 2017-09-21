@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERprodutosDados.aspx.cs" Inherits="WEB_RENATA.Admin.GERprodutosDados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true"
+    CodeBehind="GERprodutosDados.aspx.cs" Inherits="WEB_RENATA.Admin.GERprodutosDados" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
     <section class="main-section" id="Portfolio">
 	<div class="container gerSquare">
     	<h2>Gerenciador de Produtos</h2>
@@ -50,5 +51,4 @@
         
 	</div>
       </section>
-
 </asp:Content>

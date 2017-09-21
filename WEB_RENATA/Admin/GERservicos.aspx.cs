@@ -33,12 +33,12 @@ namespace WEB_RENATA.Admin
             if (!IsPostBack)
             {
                 if (Session["msgRes"] != null)
-                {                    
+                {
 
                     mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
                 }
                 Session["msgRes"] = null;
-                
+
                 Session.Remove("msgRes");
 
 

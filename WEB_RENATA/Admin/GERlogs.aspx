@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERlogs.aspx.cs" Inherits="WEB_RENATA.Admin.GERlog" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true"
+    CodeBehind="GERlogs.aspx.cs" Inherits="WEB_RENATA.Admin.GERlog" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
-     <div id="divResultado" runat="server">
+    <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-   
-
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerServicos">
     	<h2>Gerenciador de Logs</h2>
@@ -77,8 +76,4 @@
          
     </div>
 </section>
-
-
-
-
 </asp:Content>

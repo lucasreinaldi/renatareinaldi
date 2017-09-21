@@ -37,7 +37,7 @@ namespace WEB_RENATA.Admin
                         MapearObjetosParaCampos(Convert.ToInt32(id));
                         ServicoBO servicoBO = new ServicoBO();
                         Servico servico = servicoBO.ConsultarPorId(Int32.Parse(id), null);
-                    }                    
+                    }
                 }
             }
             else
@@ -71,11 +71,11 @@ namespace WEB_RENATA.Admin
 
                 servico.IdServicos = id;
                 if (servicoBO.Salvar(servico, pastaDestino, extensao, fup, null))
-                {                    
+                {
                     Session.Add("msgRes", "Serviço salvo com sucesso!");
                 }
                 else
-                {                    
+                {
                     Session.Add("msgRes", "Erro ao salvar serviço!");
                 }
                 Response.Redirect("GERservicos.aspx");
@@ -84,7 +84,7 @@ namespace WEB_RENATA.Admin
             {
                 lblMsg.Text = "Problema ao salvar serviço.";
                 btnSalvar.Focus();
-            } 
+            }
         }
 
         private bool VerificaExtensao()
@@ -120,21 +120,21 @@ namespace WEB_RENATA.Admin
 
         public void MapearObjetosParaCampos(int id)
         {
-             
+
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = servicoBO.ConsultarPorId(id, null);
 
             if (servico != null)
             {
-                 
+
                 this.lblID.Text = servico.IdServicos.ToString();
                 this.txtDescricao.Text = servico.Descricao.ToString();
                 this.txtNome.Text = servico.Nome.ToString();
                 this.txtValor.Text = servico.Valor.ToString();
-                                
+
             }
 
-             
+
 
         }
 
@@ -144,7 +144,7 @@ namespace WEB_RENATA.Admin
 
             servico.Nome = txtNome.Text;
             servico.Descricao = txtDescricao.Text;
-            servico.Valor = Convert.ToDouble(txtValor.Text);             
+            servico.Valor = Convert.ToDouble(txtValor.Text);
             servico.IdServicos = Convert.ToInt32(Request.QueryString["id"]);
 
             return servico;

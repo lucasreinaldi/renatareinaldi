@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Servicos.aspx.cs" Inherits="WEB_RENATA.Servicos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true"
+    CodeBehind="Servicos.aspx.cs" Inherits="WEB_RENATA.Servicos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
     <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-
-
     <section class="main-section alabaster">
 
         
@@ -39,8 +38,5 @@
          
 
 
-</section> 
-
-
-
+</section>
 </asp:Content>

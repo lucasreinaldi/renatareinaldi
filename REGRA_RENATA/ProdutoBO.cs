@@ -104,10 +104,10 @@ namespace REGRA_RENATA
                 novoObj.Descricao = produto.Descricao;
                 novoObj.Estoque = produto.Estoque;
                 novoObj.Preco = produto.Preco;
-                
-                
+
+
                 oldPath = produto.CaminhoImagem;
-                
+
                 if (fup.HasFile)
                 {
                     novoObj.CaminhoImagem = novoObj.CaminhoImagem;
@@ -233,13 +233,13 @@ namespace REGRA_RENATA
                     IdUsuario = idUsuarioLogado,
                     Mensagem = msg
                 };
- 
+
                 return true;
             }
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao excluir a noticia. " + produto.IdProduto + "Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao excluir o produto. " + produto.IdProduto + "Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -291,7 +291,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao consultar produtos. Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar todos produtos. Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -304,7 +304,7 @@ namespace REGRA_RENATA
                 return null;
             }
         }
- 
+
 
     }
 }

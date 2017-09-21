@@ -29,7 +29,7 @@ namespace REGRA_RENATA
             string fullPath = caminho + "Car" + filtro + ".jpg";
             arquivo.SaveAs(fullPath);
             return true;
-          
+
         }
 
         public bool AlterarCli(string caminho, FileUpload arquivo, int filtro)

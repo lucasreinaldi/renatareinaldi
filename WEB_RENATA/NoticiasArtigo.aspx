@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="NoticiasArtigo.aspx.cs" Inherits="WEB_RENATA.NoticiasArtigo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true"
+    CodeBehind="NoticiasArtigo.aspx.cs" Inherits="WEB_RENATA.NoticiasArtigo" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
     <section class="main-section alabaster">
 	<div class="container">
         
@@ -28,6 +29,5 @@
         </div>
                     
 	</div>
-</section> 
-
+</section>
 </asp:Content>

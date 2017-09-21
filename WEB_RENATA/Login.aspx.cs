@@ -46,33 +46,35 @@ namespace WEB_RENATA
 
             }
 
-            
+
         }
 
-         
+
         public void EfetuarLogin()
         {
             if (Context.User.Identity.IsAuthenticated)
             {
                 try
                 {
-                    Session.Clear();  
-                    Session.Abandon();  
+                    Session.Clear();
+                    Session.Abandon();
                     FormsAuthentication.SignOut();
                 }
                 catch (HttpException e)
                 {
                     string mensagem = "Erro - Não foi possível deslogar o usuário." + e;
 
-                    Log log = new Log() {
+                    Log log = new Log()
+                    {
 
 
 
                         IdUsuario = Convert.ToInt32(mp.ID),
                         DataHora = DateTime.Now,
-                        Mensagem = mensagem };
+                        Mensagem = mensagem
+                    };
 
-                    
+
 
                     LogBO logBO = new LogBO();
                     logBO.Salvar(log);
@@ -95,12 +97,12 @@ namespace WEB_RENATA
                 byte[] senhaCripto = UsuarioBO.CriptografarSenhaSHA1(senhaDigitada);
 
                 if (UsuarioBO.CompararSenhas(senhaCripto, usuario.Senha))
-                {                    
+                {
                     Session.Add("nomeUsuario", usuario.Nome);
 
                     FormsAuthentication.RedirectFromLoginPage(usuario.IdUsuario.ToString(), false);
                     isAutenticado = true;
-                    
+
                 }
             }
             else
@@ -118,12 +120,12 @@ namespace WEB_RENATA
             {
 
                 Response.Redirect("Login.aspx");
-                
-                
+
+
             }
         }
-              
-                
+
+
         protected void btnLogar_Click(Object sender, EventArgs e)
         {
             this.EfetuarLogin();

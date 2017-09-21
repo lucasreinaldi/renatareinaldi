@@ -24,7 +24,7 @@ namespace WEB_RENATA.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnCarUm_Click(Object sender, EventArgs e)
@@ -93,6 +93,6 @@ namespace WEB_RENATA.Admin
             Response.Redirect("GERhome.aspx");
         }
 
-       
+
     }
 }

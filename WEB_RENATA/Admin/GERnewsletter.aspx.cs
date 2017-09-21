@@ -51,7 +51,7 @@ namespace WEB_RENATA.Admin
             NewsletterBO newsletterBO = new NewsletterBO();
             Newsletter newsletter = new Newsletter();
 
-            
+
             int id = Int32.Parse(e.CommandArgument.ToString());
 
             newsletter.IdListaEmail = id;

@@ -18,39 +18,48 @@ namespace WEB_RENATA
 
         public static int Totalpaginas
         {
-            get; set;
+            get;
+            set;
         }
         public static int NumeroP
         {
-            get; set;
+            get;
+            set;
         }
         public static int NumeroPaginas
         {
-            get; set;
+            get;
+            set;
         }
         public static int Inicio
         {
-            get; set;
+            get;
+            set;
         }
         public static string NomePagina
         {
-            get; set;
+            get;
+            set;
         }
         public static int NumTotalPaginas
         {
-            get; set;
+            get;
+            set;
         }
         public static int Pagina
         {
-            get; set;
+            get;
+            set;
         }
         public static Literal ltlpaginas
         {
-            get; set;
+            get;
+            set;
         }
         public static int IdQuery
         {
-            get; set;
+            get;
+            set;
         }
 
         public int ValidarQueryString(string queryString, string pagina)

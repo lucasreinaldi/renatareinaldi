@@ -44,9 +44,9 @@ namespace WEB_RENATA
             }
         }
 
-         
 
-        
+
+
 
         public void MapearObjetosParaCampos(int id)
         {
@@ -68,6 +68,6 @@ namespace WEB_RENATA
 
         }
 
-        
+
     }
 }

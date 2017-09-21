@@ -24,7 +24,7 @@ namespace WEB_RENATA.Admin
     {
         AdmHome mp;
         public static PagedDataSource pageDs;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (AdmHome)this.Master;
@@ -46,7 +46,7 @@ namespace WEB_RENATA.Admin
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 10;
 
-                
+
 
             }
             this.MontarRepeater();

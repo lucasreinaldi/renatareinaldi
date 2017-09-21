@@ -73,7 +73,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao inserir o servico. [" + e.Message + "][" + e.Source + "]";
+                msg = "Erro ao inserir o serviço. [" + e.Message + "][" + e.Source + "]";
 
                 log = new Log()
                 {
@@ -138,7 +138,7 @@ namespace REGRA_RENATA
                 {
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
-                    msg = "O servico foi alterado com sucesso.";
+                    msg = "O serviço foi alterado com sucesso.";
 
                     log = new Log()
                     {
@@ -200,7 +200,7 @@ namespace REGRA_RENATA
 
                 if (servico.CaminhoImagem != null)
                 {
-                    
+
                     if (Util.ExcluirArquivo(caminhoCompleto, null, null))
                     {
                         DataContext.DataContext.SubmitChanges();
@@ -220,7 +220,7 @@ namespace REGRA_RENATA
                     {
                         DataContext.RollbackTransaction();
                         msg = "Erro ao excluir o serviço. " + servicoExcluir.IdServicos;
-                        
+
                         return false;
                     }
                 }

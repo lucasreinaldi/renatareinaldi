@@ -1,17 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERusuarios.aspx.cs" Inherits="WEB_RENATA.Admin.GERusuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true"
+    CodeBehind="GERusuarios.aspx.cs" Inherits="WEB_RENATA.Admin.GERusuarios" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
-
-
-        <div id="divResultado" runat="server">
+    <div id="divResultado" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-   
-
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerServicos">
     	<h2>Usuários cadastrados</h2>
@@ -98,15 +95,5 @@
             <asp:LinkButton runat="server" ID="lbtProximo" Text="Próximo" ToolTip="Ir para a próxima página"
                 CausesValidation="false" AccessKey="P" ForeColor="#000000" OnClick="lbtProximo_Click"></asp:LinkButton>
         </div>
-    </div> 	
-               
-        
-        
-  
-
-
-
-
-
-
+    </div>
 </asp:Content>

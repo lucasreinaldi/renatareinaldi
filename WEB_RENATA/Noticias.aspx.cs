@@ -28,18 +28,18 @@ namespace WEB_RENATA
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (Home)this.Master;
-            
-            
+
+
             if (!IsPostBack)
             {
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 10;
 
-               
+
 
             }
-            
+
 
             this.MontarRepeaterNoticias();
         }

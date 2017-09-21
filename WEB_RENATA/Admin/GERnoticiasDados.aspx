@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true" CodeBehind="GERnoticiasDados.aspx.cs" Inherits="WEB_RENATA.Admin.GERnoticiasDados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdmHome.Master" AutoEventWireup="true"
+    CodeBehind="GERnoticiasDados.aspx.cs" Inherits="WEB_RENATA.Admin.GERnoticiasDados" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
-     <section class="main-section" id="Portfolio">
+    <section class="main-section" id="Portfolio">
 	<div class="container gerSquare">
     	<h2>Gerenciador de Notícias</h2>
     	 
@@ -41,5 +42,4 @@
         
 	</div>
       </section>
-
 </asp:Content>

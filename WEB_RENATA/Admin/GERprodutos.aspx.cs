@@ -38,9 +38,9 @@ namespace WEB_RENATA.Admin
                     mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
                 }
                 Session["msgRes"] = null;
-                
+
                 Session.Remove("msgRes");
-                
+
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;

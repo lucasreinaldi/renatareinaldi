@@ -49,7 +49,7 @@ namespace WEB_RENATA.Admin
             return lista;
         }
 
-       
+
 
         protected void lbtAnterior_Click(object sender, EventArgs e)
         {
@@ -97,8 +97,8 @@ namespace WEB_RENATA.Admin
         private DataTable MontarDataTable(List<Usuario> list)
         {
             UsuarioBO usuarioBO = new UsuarioBO();
-            
-            
+
+
 
             DataTable tabela = new DataTable();
             tabela.Columns.Add("id");
@@ -122,14 +122,14 @@ namespace WEB_RENATA.Admin
                 row["id"] = lista.IdUsuario;
                 row["nome"] = lista.Nome;
                 row["email"] = lista.Email;
-                 
+
 
                 row["cidade"] = endereco.Cidade;
                 row["estado"] = endereco.Estado;
                 row["cep"] = endereco.CEP;
                 row["bairro"] = endereco.Bairro;
                 row["rua"] = endereco.Endereco1;
-                
+
 
                 tabela.Rows.Add(row);
             }

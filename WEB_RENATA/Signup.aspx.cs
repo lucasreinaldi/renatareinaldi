@@ -32,11 +32,11 @@ namespace WEB_RENATA
             Endereco end = new Endereco();
             UsuarioBO usuarioBO = new UsuarioBO();
 
-            usuario.Nome = txtNome.Text;             
+            usuario.Nome = txtNome.Text;
             usuario.Email = txtEmail.Text;
             usuario.CPF = txtCpf.Text;
             usuario.fkEndereco = end.IdEndereco;
-            
+
             end.Bairro = txtBairro.Text;
             end.CEP = txtCep.Text;
             end.Cidade = txtCidade.Text;
@@ -44,21 +44,21 @@ namespace WEB_RENATA
             end.Complemento = txtComplemento.Text;
             end.Endereco1 = txtEndereco.Text;
 
- 
-                        
+
+
             usuario.Senha = UsuarioBO.CriptografarSenhaSHA1(txtSenha.Text);
 
-             
 
-                try
-                {
-                    usuarioBO.CriarUsuario(usuario, end);
-                    Session.Add("userName", usuario.Nome);
-                    Response.Redirect("Admin/Home.aspx");
-                }
-                catch
-                {
-                }
+
+            try
+            {
+                usuarioBO.CriarUsuario(usuario, end);
+                Session.Add("userName", usuario.Nome);
+                Response.Redirect("Admin/Home.aspx");
+            }
+            catch
+            {
             }
         }
+    }
 }

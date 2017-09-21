@@ -42,7 +42,7 @@ namespace REGRA_RENATA
                 if (fup.HasFile)
                 {
                     Util.UploadArquivo(fup, caminhoCompleto);
-                
+
                     if (Util.ArquivoExists(caminhoCompleto, null, null))
                     {
                         Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
@@ -58,11 +58,11 @@ namespace REGRA_RENATA
                 {
                     Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
                     noticiaAlterar.CaminhoImagem = "Default.jpg";
-                    DataContext.DataContext.SubmitChanges();                    
+                    DataContext.DataContext.SubmitChanges();
                 }
 
                 DataContext.CommitTransaction();
-                msg = "Noticia inserida com sucesso. id: " + noticia.IdNoticia;
+                msg = "Notícia inserida com sucesso. id: " + noticia.IdNoticia;
 
                 log = new Log()
                 {
@@ -73,7 +73,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao inserir o servico. [" + e.Message + "][" + e.Source + "]";
+                msg = "Erro ao inserir a notícia. [" + e.Message + "][" + e.Source + "]";
 
                 log = new Log()
                 {
@@ -141,7 +141,7 @@ namespace REGRA_RENATA
                 {
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
-                    msg = "A noticia foi alterado com sucesso.";
+                    msg = "A notícia foi alterada com sucesso.";
 
                     log = new Log()
                     {
@@ -155,7 +155,7 @@ namespace REGRA_RENATA
                 }
 
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar a noticia.";
+                msg = "Erro ao alterar a notícia.";
 
                 log = new Log()
                 {
@@ -169,7 +169,7 @@ namespace REGRA_RENATA
             catch (Exception e)
             {
                 DataContext.RollbackTransaction();
-                msg = "Erro ao alterar a noticia. [Erro ao carregar servico do bd]";
+                msg = "Erro ao alterar a notícia. [Erro ao carregar notícia do bd]";
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -265,7 +265,7 @@ namespace REGRA_RENATA
 
             catch (Exception e)
             {
-                msg = "Erro ao consultar noticia por ID. " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar notícia por ID. " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -292,7 +292,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao consultar noticias. Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar notícias. Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -322,7 +322,7 @@ namespace REGRA_RENATA
             }
             catch (Exception e)
             {
-                msg = "Erro ao consultar noticias. Erro: " + e.Message + " - " + e.Source;
+                msg = "Erro ao consultar 3 notícias. Erro: " + e.Message + " - " + e.Source;
                 log = new Log()
                 {
                     DataHora = DateTime.Now,
@@ -336,7 +336,7 @@ namespace REGRA_RENATA
             }
         }
 
-        
+
     }
 }
 

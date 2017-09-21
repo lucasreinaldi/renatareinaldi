@@ -97,7 +97,7 @@ namespace WEB_RENATA.Admin
             tabela.Columns.Add("idUsuario");
             tabela.Columns.Add("mensagem");
             tabela.Columns.Add("data");
-                        
+
 
             foreach (Log lista in list)
             {
@@ -107,7 +107,7 @@ namespace WEB_RENATA.Admin
                 row["idUsuario"] = lista.IdUsuario;
                 row["mensagem"] = lista.Mensagem;
                 row["data"] = lista.DataHora;
-                
+
                 tabela.Rows.Add(row);
             }
             return tabela;

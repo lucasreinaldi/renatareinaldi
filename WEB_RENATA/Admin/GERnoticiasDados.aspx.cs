@@ -130,7 +130,7 @@ namespace WEB_RENATA.Admin
                 this.txtTitulo.Text = noticia.Titulo.ToString();
                 this.txtDescricaoBreve.Text = noticia.DescricaoBreve.ToString();
                 this.txtConteudo.Text = noticia.Conteudo.ToString();
-                
+
 
             }
 

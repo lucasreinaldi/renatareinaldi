@@ -8,14 +8,10 @@ using System.Collections.Generic;
 
 namespace REGRA_RENATA
 {
-    /// <summary>
-    /// Realiza a Ponte entre o LINQ - Banco por meio do DataContext
-    /// </summary>
+    
     public class BancoLINQ<T> where T : DataContext, new()
     {
-        /// <summary>
-        /// Data Context
-        /// </summary>
+        
         public T DataContext { get; set; }
 
         public BancoLINQ()
@@ -26,36 +22,25 @@ namespace REGRA_RENATA
 
                 try
                 {
-                    //Com Pool
+                   
 
-                    //S4W
+                 
                     this.DataContext.Connection.ConnectionString = "Data Source=NEBULUS_PC\\SQLEXPRESS;Initial Catalog=renatadb;Integrated Security=True";
                     this.DataContext.Connection.Open();
 
-                    //LOCAWEB
-                    //this.DataContext.Connection.ConnectionString = "Data Source=186.202.148.131;Initial Catalog=accesso2;User ID=accesso2;Password=acc2468;Pooling=true;Min Pool Size=3;Max Pool Size=60;Connect Timeout=3";
-                    //this.DataContext.Connection.Open();
+                   
                 }
                 catch (Exception)
                 {
-                    //Sem Pool
+                   
+                    
 
-                    //S4W
-                    this.DataContext.Connection.ConnectionString = "Data Source=S4W-SERVER;Initial Catalog=S4W_Treinamento_Accesso;User ID=s4wtreinoaccesso;Password=treino123;Pooling=false";
-                    this.DataContext.Connection.Open();
-
-                    //LOCAWEB
-                    //this.DataContext.Connection.ConnectionString = "Data Source=186.202.148.131;Initial Catalog=accesso2;User ID=accesso2;Password=acc2468;Pooling=false";
-                    //this.DataContext.Connection.Open();
+                
                 }
             }
         }
 
-        /// <summary>
-        /// Inicia uma Transação no Banco de Dados.
-        /// </summary>
-        /// <param name="isolationLevel">Nível de Isolamento</param>
-        /// <returns></returns>
+      
         public bool BeginTransaction(IsolationLevel isolationLevel)
         {
             try
@@ -69,9 +54,7 @@ namespace REGRA_RENATA
             }
         }
 
-        /// <summary>
-        /// Inicia uma Transação no Banco de Dados. Nível padrão: ReadCommited
-        /// </summary>
+      
         public void BeginTransaction()
         {
             try
@@ -84,9 +67,7 @@ namespace REGRA_RENATA
             }
         }
 
-        /// <summary>
-        /// Comita uma Transação corrente no Banco de Dados
-        /// </summary>
+    
         public void CommitTransaction()
         {
             try
@@ -107,9 +88,6 @@ namespace REGRA_RENATA
             }
         }
 
-        /// <summary>
-        /// Rollback em uma Transação corrente no Banco de Dados
-        /// </summary>
         public void RollbackTransaction()
         {
             try

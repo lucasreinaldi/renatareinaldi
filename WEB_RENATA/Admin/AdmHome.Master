@@ -1,34 +1,27 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdmHome.master.cs" Inherits="WEB_RENATA.Admin.AdmHome" %>
 
-
- 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
- 
 <html>
 <head runat="server" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
-
 <title>RENATA REINALDI</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
-
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- 
-
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'
+    type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600'
+    rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="../CSS/font-awesome.css" rel="stylesheet" />
 <link href="../css/responsive.css" rel="stylesheet" type="text/css">
 <link href="../css/animate.css" rel="stylesheet" type="text/css">
-    <link href="../css/styleAdmin.css" rel="stylesheet" type="text/css">
-
+<link href="../css/styleAdmin.css" rel="stylesheet" type="text/css">
 <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
-
 <script type="text/javascript" src="../js/jquery.1.8.3.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="../js/jquery-scrolltofixed.js"></script>
@@ -36,19 +29,14 @@
 <script type="text/javascript" src="../js/jquery.isotope.js"></script>
 <script type="text/javascript" src="../js/wow.js"></script>
 <script type="text/javascript" src="../js/classie.js"></script>
- 
-
 </head>
 <body>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
-        
- 
     </asp:ContentPlaceHolder>
-</head>
-<body class="appear-animate">
-    <form id="form1" runat="server">
-    <nav class="main-nav-outer" id="test"><!--main-nav-start-->
+    </head>
+    <body class="appear-animate">
+        <form id="form1" runat="server">
+        <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">        	 
             <li><a href="../Default.aspx">Home</a></li>
@@ -62,54 +50,45 @@
         </ul>
         <a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
     </div>
-</nav><!--main-nav-end-->
-    <asp:ContentPlaceHolder ID="contentBody" runat="server">
-    </asp:ContentPlaceHolder>
-   
+</nav>
+        <!--main-nav-end-->
+        <asp:ContentPlaceHolder ID="contentBody" runat="server">
+        </asp:ContentPlaceHolder>
+        <script type="text/javascript">
+            $(document).ready(function (e) {
+                $('#test').scrollToFixed();
+                $('.res-nav_click').click(function () {
+                    $('.main-nav').slideToggle();
+                    return false
 
+                });
 
-
-
-
-<script type="text/javascript">
-    $(document).ready(function(e) {
-        $('#test').scrollToFixed();
-        $('.res-nav_click').click(function(){
-            $('.main-nav').slideToggle();
-            return false    
-            
-        });
-        
-    });
-</script>
-
-  <script>
-    wow = new WOW(
+            });
+        </script>
+        <script>
+            wow = new WOW(
       {
-        animateClass: 'animated',
-        offset:       100
+          animateClass: 'animated',
+          offset: 100
       }
     );
-    wow.init();
-  </script>
+            wow.init();
+        </script>
+        <script type="text/javascript">
+            $(window).load(function () {
 
+                $('.main-nav li a').bind('click', function (event) {
+                    var $anchor = $(this);
 
-<script type="text/javascript">
-	$(window).load(function(){
-		
-		$('.main-nav li a').bind('click',function(event){
-			var $anchor = $(this);
-			
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top - 102
-			}, 1500,'easeInOutExpo');
-			
-			event.preventDefault();
-		});
-	})
-</script>
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 102
+                    }, 1500, 'easeInOutExpo');
 
-<script type="text/javascript">
+                    event.preventDefault();
+                });
+            })
+        </script>
+        <script type="text/javascript">
 
 $(window).load(function(){
   
@@ -154,7 +133,7 @@ $(window).load(function(){
   
 });
 
-</script>
+        </script>
         </form>
-</body>
+    </body>
 </html>

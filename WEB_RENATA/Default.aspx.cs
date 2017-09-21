@@ -29,7 +29,7 @@ namespace WEB_RENATA
 
         public void MontarRepeaterNoticias()
         {
-             
+
             Noticia noticia = new Noticia();
             NoticiaBO noticiaBO = new NoticiaBO();
 
@@ -38,7 +38,7 @@ namespace WEB_RENATA
             if (listaNoticia != null && listaNoticia.Count > 0)
             {
                 this.rptNoticias.Visible = true;
-                
+
                 rptNoticias.DataSource = this.MontarDataTable(listaNoticia).DefaultView;
                 rptNoticias.DataBind();
             }
@@ -48,26 +48,26 @@ namespace WEB_RENATA
             }
             if (listaNoticia.Count == 0)
             {
-                
+
             }
         }
-        
+
         private DataTable MontarDataTable(List<Noticia> list)
         {
             DataTable tabela = new DataTable();
-            
+
             tabela.Columns.Add("titulo");
             tabela.Columns.Add("descricao");
-            
+
 
             foreach (Noticia lista in list)
             {
                 DataRow row = tabela.NewRow();
 
                 row["titulo"] = lista.Titulo;
-                 
+
                 row["descricao"] = lista.DescricaoBreve;
-                 
+
 
                 tabela.Rows.Add(row);
             }
@@ -89,6 +89,6 @@ namespace WEB_RENATA
             }
         }
 
-        
+
     }
 }
