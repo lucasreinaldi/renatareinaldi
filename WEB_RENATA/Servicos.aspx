@@ -27,7 +27,7 @@
             	<P class="padding-b"><%#Eval("descricao") %></P>
                 <p>Valor: <%#Eval("valor") %> R$</p>
             	 
-                 <p><a class="btn btn-secondary" href="ServicoConfirma.aspx?id=0" role="button">Contratar »</a></p>
+                 <p><a class="btn btn-secondary" href="ServicoConfirma.aspx?id=<%#Eval("id") %>" role="button">Contratar »</a></p>
             </div>
         </div>
             </ItemTemplate>
@@ -35,7 +35,16 @@
 	</div>
 
          
-         
+         <div id="divPaginacao" class="divPaginacao" runat="server" style="text-align: center;">
+        <div style="padding: 5px 0 0 0;">
+            <asp:LinkButton runat="server" ID="lbtAnterior" Text="Anterior" ToolTip="Ir para a página anteiror"
+                CausesValidation="false" AccessKey="A" ForeColor="#000000" OnClick="lbtAnterior_Click"></asp:LinkButton>
+            <asp:Label ID="lblCurrentPage" runat="server"></asp:Label>
+            <asp:LinkButton runat="server" ID="lbtProximo" Text="Próximo" ToolTip="Ir para a próxima página"
+                CausesValidation="false" AccessKey="P" ForeColor="#000000" OnClick="lbtProximo_Click"></asp:LinkButton>
+        </div>
+    </div> 	
+             
 
 
 </section>

@@ -51,6 +51,9 @@ namespace DAL_RENATA
     partial void InsertProduto(Produto instance);
     partial void UpdateProduto(Produto instance);
     partial void DeleteProduto(Produto instance);
+    partial void InsertAtendimento(Atendimento instance);
+    partial void UpdateAtendimento(Atendimento instance);
+    partial void DeleteAtendimento(Atendimento instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -136,6 +139,14 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Produto>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Atendimento> Atendimentos
+		{
+			get
+			{
+				return this.GetTable<Atendimento>();
 			}
 		}
 	}
@@ -1317,6 +1328,212 @@ namespace DAL_RENATA
 					this._CaminhoImagem = value;
 					this.SendPropertyChanged("CaminhoImagem");
 					this.OnCaminhoImagemChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Atendimento")]
+	public partial class Atendimento : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdAtendimento;
+		
+		private System.Nullable<System.DateTime> _Data;
+		
+		private System.Nullable<int> _FkServico;
+		
+		private System.Nullable<int> _FkUsuario;
+		
+		private System.Nullable<int> _FkAdmin;
+		
+		private System.Nullable<int> _Estado;
+		
+		private string _Comentario;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdAtendimentoChanging(int value);
+    partial void OnIdAtendimentoChanged();
+    partial void OnDataChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataChanged();
+    partial void OnFkServicoChanging(System.Nullable<int> value);
+    partial void OnFkServicoChanged();
+    partial void OnFkUsuarioChanging(System.Nullable<int> value);
+    partial void OnFkUsuarioChanged();
+    partial void OnFkAdminChanging(System.Nullable<int> value);
+    partial void OnFkAdminChanged();
+    partial void OnEstadoChanging(System.Nullable<int> value);
+    partial void OnEstadoChanged();
+    partial void OnComentarioChanging(string value);
+    partial void OnComentarioChanged();
+    #endregion
+		
+		public Atendimento()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAtendimento", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdAtendimento
+		{
+			get
+			{
+				return this._IdAtendimento;
+			}
+			set
+			{
+				if ((this._IdAtendimento != value))
+				{
+					this.OnIdAtendimentoChanging(value);
+					this.SendPropertyChanging();
+					this._IdAtendimento = value;
+					this.SendPropertyChanged("IdAtendimento");
+					this.OnIdAtendimentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this.OnDataChanging(value);
+					this.SendPropertyChanging();
+					this._Data = value;
+					this.SendPropertyChanged("Data");
+					this.OnDataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkServico", DbType="Int")]
+		public System.Nullable<int> FkServico
+		{
+			get
+			{
+				return this._FkServico;
+			}
+			set
+			{
+				if ((this._FkServico != value))
+				{
+					this.OnFkServicoChanging(value);
+					this.SendPropertyChanging();
+					this._FkServico = value;
+					this.SendPropertyChanged("FkServico");
+					this.OnFkServicoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int")]
+		public System.Nullable<int> FkUsuario
+		{
+			get
+			{
+				return this._FkUsuario;
+			}
+			set
+			{
+				if ((this._FkUsuario != value))
+				{
+					this.OnFkUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._FkUsuario = value;
+					this.SendPropertyChanged("FkUsuario");
+					this.OnFkUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkAdmin", DbType="Int")]
+		public System.Nullable<int> FkAdmin
+		{
+			get
+			{
+				return this._FkAdmin;
+			}
+			set
+			{
+				if ((this._FkAdmin != value))
+				{
+					this.OnFkAdminChanging(value);
+					this.SendPropertyChanging();
+					this._FkAdmin = value;
+					this.SendPropertyChanged("FkAdmin");
+					this.OnFkAdminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
+		public System.Nullable<int> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comentario", DbType="VarChar(200)")]
+		public string Comentario
+		{
+			get
+			{
+				return this._Comentario;
+			}
+			set
+			{
+				if ((this._Comentario != value))
+				{
+					this.OnComentarioChanging(value);
+					this.SendPropertyChanging();
+					this._Comentario = value;
+					this.SendPropertyChanged("Comentario");
+					this.OnComentarioChanged();
 				}
 			}
 		}

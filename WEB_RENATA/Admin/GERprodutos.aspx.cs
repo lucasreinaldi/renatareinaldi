@@ -77,7 +77,7 @@ namespace WEB_RENATA.Admin
             this.Excluir(id);
         }
 
-        protected void btnAdicionar_Click(Object sender, EventArgs e)
+        protected void btnAprovar_Click(Object sender, EventArgs e)
         {
             Response.Redirect("GERprodutosDados.aspx?id=0");
         }

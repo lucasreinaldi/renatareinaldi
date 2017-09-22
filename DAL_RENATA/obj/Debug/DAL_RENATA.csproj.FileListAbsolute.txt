@@ -30,4 +30,3 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\DAL_RENATA\bin\Micro
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\DAL_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\DAL_RENATA\obj\Debug\DAL_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\DAL_RENATA\obj\Debug\DAL_RENATA.pdb
-C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\DAL_RENATA\obj\Debug\DAL_RENATA.csprojResolveAssemblyReference.cache
