@@ -23,6 +23,14 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtComentario" ValidationGroup="validation"></asp:RequiredFieldValidator>
 
+                    <asp:TextBox ID="txtData" runat="server" CssClass="form-control input-text" placeholder="comentário (opcional)"
+                        MaxLength="1500" TextMode="MultiLine"></asp:TextBox>                    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
+                        ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtData" ValidationGroup="validation"></asp:RequiredFieldValidator>
+
+                    <input type="text" style="width: 100px;"  name="Date" id="lol" class="hasDatepicker"/>
+
+
                      <br />
             <br />
 
@@ -35,6 +43,7 @@
          
         
 	</div>
+        
       </section>
 
 </asp:Content>

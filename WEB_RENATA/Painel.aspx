@@ -10,7 +10,7 @@
     </div>
     <section class="main-section" id="Portfolio"> 
 	<div class="container gerSquare">
-    	<h2>Atendimentos</h2>
+    	<h2>Atendimentos Pendentes</h2>
     	 
 
         
@@ -21,7 +21,7 @@
        <div id="divCentral">
          
         <table id="divTabela">
-            <asp:Repeater ID="rptProdutos" runat="server">
+            <asp:Repeater ID="rptAtendimento" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
@@ -73,16 +73,7 @@
         </table>
     </div>
 
-    <div id="divPaginacao" class="divPaginacao" runat="server" style="text-align: center;">
-        <div style="padding: 5px 0 0 0;">
-            <asp:LinkButton runat="server" ID="lbtAnterior" Text="Anterior" ToolTip="Ir para a página anteiror"
-                CausesValidation="false" AccessKey="A" ForeColor="#000000" OnClick="lbtAnterior_Click"></asp:LinkButton>
-            <asp:Label ID="lblCurrentPage" runat="server"></asp:Label>
-            <asp:LinkButton runat="server" ID="lbtProximo" Text="Próximo" ToolTip="Ir para a próxima página"
-                CausesValidation="false" AccessKey="P" ForeColor="#000000" OnClick="lbtProximo_Click"></asp:LinkButton>
-        </div>
-    </div> 	
-               
+ 
         
         
         
@@ -147,15 +138,79 @@
     </div>
 
      
-               
+         
+    </div>
+
+        <div class="container gerSquare">
+    	<h2>Atendimentos Desaprovados</h2>
+    	 
+
         
+	</div>
+    <div class="container fadeInUp delay-04s tabelaServicos">
+            
         
-        
+       <div id="divCentral">
+         
+        <table id="divTabela">
+            <asp:Repeater ID="rptDesaprovado" runat="server">
+                <HeaderTemplate>
+                    <div id="topoLista">
+                        <tr>
+                            <th style="width: 3%; text-align: center;">Serviço
+                            </th>
+                            <th style="width: 5%; text-align: center;">Data
+                            </th>
+                            <th style="width: 3%; text-align: center;">Usuário
+                            </th>
+                            <th style="width: 3%; text-align: center;">Comentário
+                            </th>
+                            <th style="width: 15%; text-align: center;">Estado
+                            </th>                            
+                            
+                        </tr>
+                    </div>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr class="linhaA">
+                        <td align="center">
+                            <%#Eval("servico") %>
+                        </td>
+                        <td align="center">
+                            <%#Eval("data") %>
+                        </td>
+                        <td align="center">
+                            <%#Eval("usuario") %>
+                        </td>
+                        <td align="center">
+                            <%#Eval("comentario") %>
+                        </td>
+                        <td align="center">
+                            <%#Eval("estado")%>
+                        </td>
+                         
+                       
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+        </table>
+    </div>
+
+     
          
     </div>
 
 
-
+           <div id="divPaginacao" class="divPaginacao" runat="server" style="text-align: center;">
+        <div style="padding: 5px 0 0 0;">
+            <asp:LinkButton runat="server" ID="lbtAnterior" Text="Anterior" ToolTip="Ir para a página anteiror"
+                CausesValidation="false" AccessKey="A" ForeColor="#000000" OnClick="lbtAnterior_Click"></asp:LinkButton>
+            <asp:Label ID="lblCurrentPage" runat="server"></asp:Label>
+            <asp:LinkButton runat="server" ID="lbtProximo" Text="Próximo" ToolTip="Ir para a próxima página"
+                CausesValidation="false" AccessKey="P" ForeColor="#000000" OnClick="lbtProximo_Click"></asp:LinkButton>
+        </div>
+    </div> 	
+               
 
 
 

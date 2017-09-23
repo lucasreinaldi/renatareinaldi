@@ -23,6 +23,11 @@ C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Micro
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.ApplicationInsights.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.WindowsAPICodePack.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.WindowsAPICodePack.Sensors.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\Microsoft.WindowsAPICodePack.ShellExtensions.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\REGRA_RENATA.dll
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\DAL_RENATA.pdb
 C:\Users\Lucas\Google Drive\WORK\FREELA\TCC\renatareinaldii\WEB_RENATA\bin\REGRA_RENATA.pdb

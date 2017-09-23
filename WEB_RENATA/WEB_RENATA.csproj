@@ -76,6 +76,26 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -86,6 +106,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -108,6 +129,8 @@
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\font-awesome.css" />
     <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\jquery.datetimepicker.css" />
+    <Content Include="CSS\jquery.datetimepicker.min.css" />
     <Content Include="CSS\owl.carousel.css" />
     <Content Include="CSS\responsive.css" />
     <Content Include="CSS\style.css" />
@@ -122,11 +145,14 @@
     <Content Include="img\home\defaultCar.jpg" />
     <Content Include="img\home\defaultCarrousel.jpg" />
     <Content Include="img\home\defaultCliente.jpg" />
+    <Content Include="JS\jquery.datetimepicker.full.js" />
+    <Content Include="JS\jquery.js" />
     <Content Include="JS\NewFolder1\all.js" />
     <Content Include="JS\NewFolder1\bootstrap.min.js" />
     <Content Include="JS\NewFolder1\imagesloaded.pkgd.min.js" />
     <Content Include="JS\NewFolder1\jquery-1.11.2.min.js" />
     <Content Include="JS\NewFolder1\jquery.appear.js" />
+    <Content Include="JS\NewFolder1\jquery.datetimepicker.min.js" />
     <Content Include="JS\NewFolder1\jquery.easing.1.3.js" />
     <Content Include="JS\NewFolder1\jquery.fitvids.js" />
     <Content Include="JS\NewFolder1\jquery.localScroll.min.js" />

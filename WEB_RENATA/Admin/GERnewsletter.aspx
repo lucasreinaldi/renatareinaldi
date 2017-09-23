@@ -10,20 +10,9 @@
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnNewsletter" CssClass="divNewsletter">
-                    <asp:TextBox ID="txtNewsletter" runat="server" CssClass="form-control input-text" placeholder="newsletter"
-                        MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RequiredFieldValidator>
-            <br />
-                    <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
-                        runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtNewsletter" ValidationGroup="valNewsletter"></asp:RegularExpressionValidator>
-                  
-                        <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-info"
+        <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-info"
                         CausesValidation="true" ValidationGroup="valNewsletter" OnClick="btnNewsletter_Click"
-                         >Adicionar</asp:LinkButton>
-                </asp:Panel>
+                         >Exportar para .csv</asp:LinkButton>
        
          
         

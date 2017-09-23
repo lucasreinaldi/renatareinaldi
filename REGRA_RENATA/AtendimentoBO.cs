@@ -57,7 +57,7 @@ namespace REGRA_RENATA
             try
             {
 
-                var consulta = from Atendimento in DataContext.DataContext.Atendimentos select Atendimento;
+                var consulta = from Atendimento in DataContext.DataContext.Atendimentos where Atendimento.Estado == 0 select Atendimento;
                 return consulta.ToList();
 
 

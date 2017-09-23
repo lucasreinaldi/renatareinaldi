@@ -17,6 +17,10 @@ using System.Web.Security;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.IO;
+using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Threading;
 
 namespace WEB_RENATA.Admin
 {
@@ -28,6 +32,8 @@ namespace WEB_RENATA.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             mp = (AdmHome)this.Master;
             this.Page.Title = "Lista de E-mails";
 
@@ -142,19 +148,51 @@ namespace WEB_RENATA.Admin
             return tabela;
         }
 
+        private void exportarCsv()
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+
+            NewsletterBO newsletterBO = new NewsletterBO();
+            List<Newsletter> listaNewsletter = newsletterBO.ConsultarTodos();
+
+            string caminho;
+            string resultado = "";
+            var itemCount = listaNewsletter.Count;
+
+            foreach (Newsletter lista in listaNewsletter)
+            {
+                resultado = resultado + lista.Email;
+                resultado = resultado + "\n";
+
+            }
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.AddExtension = true;              
+            sf.FileName = "Lista de e-mails";
+            if (sf.ShowDialog() == DialogResult.OK)
+            {                
+                caminho = Path.GetDirectoryName(sf.FileName);                
+            }
+
+            caminho = sf.FileName;
+                File.WriteAllText(caminho + ".csv", resultado);
+        }
+
         protected void btnNewsletter_Click(Object sender, EventArgs e)
         {
-            NewsletterBO newsletterBO = new NewsletterBO();
-            Newsletter newsletter = new Newsletter();
+            Thread myth;
+            myth = new Thread(new System.Threading.ThreadStart(exportarCsv));
+            myth.ApartmentState = ApartmentState.STA;
+            myth.Start();
+            this.exportarCsv();
 
-            newsletter.Email = txtNewsletter.Text;
+            myth.Abort();
 
-            newsletterBO.Inserir(newsletter);
+            Response.Redirect("GERnewsletter.aspx");
+        }
 
-            if (newsletter != null)
-            {
-                Response.Redirect("GERnewsletter.aspx");
-            }
+        private void montarString()
+        {
+            
         }
     }
 }

@@ -51,6 +51,7 @@ namespace WEB_RENATA
             }
             this.MontarRepeater();
             this.MontarRepeaterAprovados();
+            this.MontarRepeaterDesaprovados();
         }
 
         private void Excluir(int id)
@@ -91,6 +92,7 @@ namespace WEB_RENATA
             AtendimentoBO atendimentoBO = new AtendimentoBO();
             atendimentoBO.Desaprovar(id, null);
 
+            Response.Redirect("Painel.aspx");
         }
 
         public List<Atendimento> ListarTodos()
@@ -120,16 +122,16 @@ namespace WEB_RENATA
         {
             mp.CurrentPage--;
 
-            this.rptProdutos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
-            this.rptProdutos.DataBind();
+            this.rptAtendimento.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptAtendimento.DataBind();
         }
 
         protected void lbtProximo_Click(object sender, EventArgs e)
         {
             mp.CurrentPage++;
 
-            this.rptProdutos.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
-            this.rptProdutos.DataBind();
+            this.rptAtendimento.DataSource = mp.MontarListaPaginada(pageDs, lblCurrentPage, lbtAnterior, lbtProximo);
+            this.rptAtendimento.DataBind();
         }
 
         public void MontarRepeater()
@@ -139,14 +141,14 @@ namespace WEB_RENATA
 
             if (lista != null && lista.Count > 0)
             {
-                this.rptProdutos.Visible = true;
+                this.rptAtendimento.Visible = true;
                 pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptProdutos.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptProdutos.DataBind();
+                rptAtendimento.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
+                rptAtendimento.DataBind();
             }
             else
             {
-                this.rptProdutos.Visible = false;
+                this.rptAtendimento.Visible = false;
             }
             if (lista.Count == 0)
             {
@@ -189,14 +191,14 @@ namespace WEB_RENATA
 
             if (lista != null && lista.Count > 0)
             {
-                this.rptProdutos.Visible = true;
+                this.rptDesaprovado.Visible = true;
                 pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptProdutos.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptProdutos.DataBind();
+                rptDesaprovado.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
+                rptDesaprovado.DataBind();
             }
             else
             {
-                this.rptProdutos.Visible = false;
+                this.rptDesaprovado.Visible = false;
             }
             if (lista.Count == 0)
             {
