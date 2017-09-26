@@ -11,8 +11,8 @@
 
 .divNewsletter
 {
-    width: 500px;
-       left: 50%;
+   
+    left: 50%;
     right: auto;
     transform: translate(-50%, 0);
     position: relative; 
@@ -47,6 +47,7 @@
     padding: 30px;
     border: 2px solid black;
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .divCentral

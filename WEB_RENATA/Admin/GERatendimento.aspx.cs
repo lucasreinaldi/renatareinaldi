@@ -18,16 +18,16 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-namespace WEB_RENATA
+namespace WEB_RENATA.Admin
 {
-    public partial class Painel : System.Web.UI.Page
+    public partial class GERatendimento : System.Web.UI.Page
     {
-        Home mp;
+        AdmHome mp;
         public static PagedDataSource pageDs;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            mp = (Home)this.Master;
+            mp = (AdmHome)this.Master;
 
 
             if (!IsPostBack)
@@ -44,46 +44,16 @@ namespace WEB_RENATA
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 10;
+                pageDs.PageSize = 20;
 
                 //masterPage.ValidarQueryString(Request.QueryString["id"], "MidiaGer.aspx?pagina=0");
 
             }
             this.MontarRepeater();
-            this.MontarRepeaterAprovados();
-            this.MontarRepeaterDesaprovados();
+             
         }
-
-        private void Excluir(int id)
-        {
-            string pastaDestino = this.MapPath("..\\img\\produtos\\");
-
-            if (id > 0)
-            {
-                ProdutoBO produtoBO = new ProdutoBO();
-                Produto produto = new Produto();
-
-                produto.IdProduto = id;
-
-                if (produtoBO.Excluir(produto, pastaDestino, null) == true)
-                {
-                    mp.DefinirMsgResultado(divResultado, lblResultado, "Produto excluido com sucesso!", null);
-                    this.MontarRepeater();
-                }
-            }
-        }
-
-        protected void Aprovar_Click(object sender, CommandEventArgs e)
-        {
-          
-
-
-        }
-
-        protected void Reprovar_Click(object sender, CommandEventArgs e)
-        {
-           
-        }
+ 
+ 
 
         public List<Atendimento> ListarTodos()
         {
@@ -148,31 +118,8 @@ namespace WEB_RENATA
                 this.divResultado.Visible = true;
             }
         }
-
-        public void MontarRepeaterAprovados()
-        {
-            List<Atendimento> lista = new List<Atendimento>();
-            lista = ListarAprovados();
-
-            if (lista != null && lista.Count > 0)
-            {
-                this.rptAprovado.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptAprovado.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptAprovado.DataBind();
-            }
-            else
-            {
-                this.rptAprovado.Visible = false;
-            }
-            if (lista.Count == 0)
-            {
-                lbtAnterior.Visible = false;
-                lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
-                this.divResultado.Visible = true;
-            }
-        }
+/*
+        
 
         public void MontarRepeaterDesaprovados()
         {
@@ -197,7 +144,7 @@ namespace WEB_RENATA
                 mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
                 this.divResultado.Visible = true;
             }
-        }
+        }*/
 
         private DataTable MontarDataTable(List<Atendimento> list)
         {
@@ -207,6 +154,7 @@ namespace WEB_RENATA
             tabela.Columns.Add("data");
             tabela.Columns.Add("dataAtend");
             tabela.Columns.Add("comentario");
+            tabela.Columns.Add("resposta");
             tabela.Columns.Add("estado");
             tabela.Columns.Add("usuario");
 
@@ -235,8 +183,9 @@ namespace WEB_RENATA
                 row["id"] = atend.IdAtendimento;
                 row["servico"] = atend.FkServico;
                 row["data"] = atend.Data;
-               
+                row["dataAtend"] = atend.DataAtendimento;
                 row["comentario"] = atend.Comentario;
+                row["resposta"] = atend.Resposta;
                 row["estado"] = resultado;
                 row["usuario"] = "lol";
 
@@ -246,7 +195,5 @@ namespace WEB_RENATA
             }
             return tabela;
         }
-
-
     }
 }

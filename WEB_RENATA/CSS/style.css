@@ -350,7 +350,7 @@ color: #fff;
 	width:350px;
 	overflow:hidden;
 	float:left;
-	padding:0;
+	padding: 20px;
 }
 .Portfolio-box img{
 	margin-bottom:25px;
@@ -873,8 +873,8 @@ border: 2px solid #fff;
 }
 
 #contentBody_panelNewsletter{
-    padding-left: 100px;
-    padding-right: 100px; 
+    padding-left: 15%;
+    padding-right: 15%; 
 }
 
 #contentBody_btnNewsletter
@@ -905,5 +905,10 @@ border: 2px solid #fff;
 
 .formlinhamsg
 {
-    text-align: center;
+   text-align: center;
+    border: solid black;
+    padding: 20px;
+    margin: 10px;
+    margin-right: 10%;
+    margin-left: 10%;
 }

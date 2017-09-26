@@ -53,7 +53,7 @@ namespace WEB_RENATA
             if (servico != null)
             {
 
-                this.lblServico.Text = servico.Nome.ToString();
+                this.lblServico.InnerText = servico.Nome.ToString();
                 
 
             }
@@ -77,6 +77,7 @@ namespace WEB_RENATA
             atendimento.FkAdmin = 0;
             atendimento.Estado = 0;
             atendimento.Data = DateTime.Now;
+            atendimento.DataAtendimento = Convert.ToDateTime(txtData.Text);
             atendimento.Comentario = txtComentario.Text;
 
             AtendimentoBO atendimentoBO = new AtendimentoBO();

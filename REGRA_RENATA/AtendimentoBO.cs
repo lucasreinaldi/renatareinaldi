@@ -179,24 +179,30 @@ namespace REGRA_RENATA
             }
         }
 
-        public bool Aprovar(int id, int? idUsuarioLogado)
+        public bool Aprovar(Atendimento atendimento, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log = new Log();
             string msg = "";
 
-            Atendimento atendimento = new Atendimento();
-            AtendimentoBO atendimentoBO = new AtendimentoBO();
-
-            atendimento = atendimentoBO.ConsultarPorId(id, null);
-
-            atendimento.Estado = 1;
-
+            
             try
             {
 
                 DataContext.BeginTransaction();
-                DataContext.DataContext.Atendimentos.InsertOnSubmit(atendimento);
+
+                Atendimento novo = this.ConsultarPorId(atendimento.IdAtendimento, null);
+                novo.Comentario = atendimento.Comentario;
+                novo.Data = atendimento.Data;
+                novo.DataAtendimento = atendimento.DataAtendimento;
+                novo.Estado = 1;
+                novo.FkAdmin = atendimento.FkAdmin;
+                novo.FkServico = atendimento.FkServico;
+                novo.FkUsuario = atendimento.FkUsuario;
+                novo.IdAtendimento = atendimento.IdAtendimento;
+                novo.Resposta = atendimento.Resposta;
+
+
                 DataContext.DataContext.SubmitChanges();
 
 
@@ -226,24 +232,30 @@ namespace REGRA_RENATA
             }
         }
 
-        public bool Desaprovar(int id, int? idUsuarioLogado)
+        public bool Desaprovar(Atendimento atendimento, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log = new Log();
             string msg = "";
 
-            Atendimento atendimento = new Atendimento();
-            AtendimentoBO atendimentoBO = new AtendimentoBO();
-
-            atendimento = atendimentoBO.ConsultarPorId(id, null);
-
-            atendimento.Estado = 2;
 
             try
             {
 
                 DataContext.BeginTransaction();
-                DataContext.DataContext.Atendimentos.InsertOnSubmit(atendimento);
+
+                Atendimento novo = this.ConsultarPorId(atendimento.IdAtendimento, null);
+                novo.Comentario = atendimento.Comentario;
+                novo.Data = atendimento.Data;
+                novo.DataAtendimento = atendimento.DataAtendimento;
+                novo.Estado = 2;
+                novo.FkAdmin = atendimento.FkAdmin;
+                novo.FkServico = atendimento.FkServico;
+                novo.FkUsuario = atendimento.FkUsuario;
+                novo.IdAtendimento = atendimento.IdAtendimento;
+                novo.Resposta = atendimento.Resposta;
+
+
                 DataContext.DataContext.SubmitChanges();
 
 
@@ -272,5 +284,6 @@ namespace REGRA_RENATA
                 return false;
             }
         }
+        
     }
 }

@@ -59,6 +59,7 @@
             <li><a href="Noticias.aspx">Notícias</a></li>                        
             <li><a href="Loja.aspx">Loja</a></li>
             <li><a href="Painel.aspx">Painel</a></li>
+            <li><a href="Carrinho.aspx">Carrinho</a></li>
         </ul>
         <a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
     </div>
@@ -182,7 +183,8 @@ $('#contentBody_txtData').datetimepicker({
 dayOfWeekStart : 1,
 lang:'en',
 disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
-startDate:	'1986/01/05'
+startDate:	'1986/01/05',
+dateFormat: 'dd/mm/yyyy'
 });
 $('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
 

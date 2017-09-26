@@ -1373,6 +1373,10 @@ namespace DAL_RENATA
 		
 		private string _Comentario;
 		
+		private string _Resposta;
+		
+		private System.Nullable<System.DateTime> _DataAtendimento;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1391,6 +1395,10 @@ namespace DAL_RENATA
     partial void OnEstadoChanged();
     partial void OnComentarioChanging(string value);
     partial void OnComentarioChanged();
+    partial void OnRespostaChanging(string value);
+    partial void OnRespostaChanged();
+    partial void OnDataAtendimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataAtendimentoChanged();
     #endregion
 		
 		public Atendimento()
@@ -1534,6 +1542,46 @@ namespace DAL_RENATA
 					this._Comentario = value;
 					this.SendPropertyChanged("Comentario");
 					this.OnComentarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resposta", DbType="VarChar(200)")]
+		public string Resposta
+		{
+			get
+			{
+				return this._Resposta;
+			}
+			set
+			{
+				if ((this._Resposta != value))
+				{
+					this.OnRespostaChanging(value);
+					this.SendPropertyChanging();
+					this._Resposta = value;
+					this.SendPropertyChanged("Resposta");
+					this.OnRespostaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataAtendimento", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataAtendimento
+		{
+			get
+			{
+				return this._DataAtendimento;
+			}
+			set
+			{
+				if ((this._DataAtendimento != value))
+				{
+					this.OnDataAtendimentoChanging(value);
+					this.SendPropertyChanging();
+					this._DataAtendimento = value;
+					this.SendPropertyChanged("DataAtendimento");
+					this.OnDataAtendimentoChanged();
 				}
 			}
 		}

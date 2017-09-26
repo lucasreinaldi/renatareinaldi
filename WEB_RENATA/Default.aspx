@@ -34,13 +34,14 @@
             </div>
         </div>
     </div>
-    <section class="main-section paddind" id="Portfolio"> 
+    <section class="main-section" id="Portfolio"> 
 	<div class="container">
+<div class="row">
     	<h2>Clientes satisfeitos</h2>
     	<h6>Animais também sorriem!</h6>
        
         
-	</div>
+	
     <div class="portfolioContainer wow fadeInUp delay-04s">
             	<div class=" Portfolio-box printdesign">
                 	<img src="img/home/Cliente1.jpg" />
@@ -55,9 +56,12 @@
                 </div>
                 
     </div>
+    </div>
+        </div>
 </section>
     <section class="main-section" id="">
 	<div class="container">
+         
     	<h2>Novidades</h2>
     	        
         <div id="noticias" class="row">
@@ -71,8 +75,8 @@
                      </ItemTemplate>
            </asp:Repeater>
             
-          </div>
-
+         
+    </div>
 	</div>
     
          

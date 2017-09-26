@@ -76,6 +76,8 @@
       <Column Name="FkAdmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Comentario" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Resposta" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DataAtendimento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -116,6 +116,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\GERatendimento.aspx" />
+    <Content Include="Admin\GERatendimentoAprovado.aspx" />
+    <Content Include="Admin\GERatendimentoDados.aspx" />
+    <Content Include="Admin\GERatendimentoDesaprovado.aspx" />
     <Content Include="Admin\GERhome.aspx" />
     <Content Include="Admin\GERlogs.aspx" />
     <Content Include="Admin\GERnoticias.aspx" />
@@ -163,6 +167,7 @@
     <Content Include="JS\NewFolder1\jquery.viewport.mini.js" />
     <Content Include="JS\NewFolder1\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Loja.aspx" />
     <Content Include="Noticias.aspx" />
     <Content Include="NoticiasArtigo.aspx" />
     <Content Include="packages.config" />
@@ -201,6 +206,34 @@
     </Compile>
     <Compile Include="Admin\AdmHome.Master.designer.cs">
       <DependentUpon>AdmHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERatendimento.aspx.cs">
+      <DependentUpon>GERatendimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERatendimento.aspx.designer.cs">
+      <DependentUpon>GERatendimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoAprovado.aspx.cs">
+      <DependentUpon>GERatendimentoAprovado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoAprovado.aspx.designer.cs">
+      <DependentUpon>GERatendimentoAprovado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoDados.aspx.cs">
+      <DependentUpon>GERatendimentoDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoDados.aspx.designer.cs">
+      <DependentUpon>GERatendimentoDados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoDesaprovado.aspx.cs">
+      <DependentUpon>GERatendimentoDesaprovado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERatendimentoDesaprovado.aspx.designer.cs">
+      <DependentUpon>GERatendimentoDesaprovado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GERhome.aspx.cs">
       <DependentUpon>GERhome.aspx</DependentUpon>
@@ -292,6 +325,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loja.aspx.cs">
+      <DependentUpon>Loja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loja.aspx.designer.cs">
+      <DependentUpon>Loja.aspx</DependentUpon>
     </Compile>
     <Compile Include="Noticias.aspx.cs">
       <DependentUpon>Noticias.aspx</DependentUpon>
