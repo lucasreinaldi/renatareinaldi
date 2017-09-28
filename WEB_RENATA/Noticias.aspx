@@ -25,9 +25,9 @@
         	<div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
             	<h2><%#Eval("titulo") %></h2>
             	<P class="padding-b"><%#Eval("descricao") %></P>
-                <p>Publicado em: <%#Eval("data") %></p>
-            	 <br />
-                 <p><a class="btn btn-secondary" href="NoticiasArtigo.aspx?id=<%#Eval("id") %>" role="button">Ler mais »</a></p>
+                <p class="padding-b">Publicado em: <%#Eval("data") %></p>
+            	  
+                 <p><a class="btn btn-primary" href="NoticiasArtigo.aspx?id=<%#Eval("id") %>" role="button">Ler mais »</a></p>
                 
             </div>
         </div>

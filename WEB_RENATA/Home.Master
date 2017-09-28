@@ -50,16 +50,19 @@
     </asp:contentplaceholder>
 <body class="appear-animate">
     <form id="form1" runat="server">
-    <nav class="main-nav-outer" id="test">
-	<div class="container">
+    <nav class="navbar navbar-inverse" id="test">
+	<div class="container-fluid">
         <ul class="main-nav">
-        	<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+        	<li class="small-logo"><h4 class="">RENATA REINALDI</h4> </li>
             <li><a href="Default.aspx">Home</a></li>
             <li><a href="Servicos.aspx">Serviços</a></li>
             <li><a href="Noticias.aspx">Notícias</a></li>                        
             <li><a href="Loja.aspx">Loja</a></li>
-            <li><a href="Painel.aspx">Painel</a></li>
             <li><a href="Carrinho.aspx">Carrinho</a></li>
+            <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
+            <li id="logout" runat="server"><a href="Logout.aspx">Logout</a></li>            
+            <li id="painel" runat="server"><a href="Painel.aspx">Painel</a></li>
+            <li id="adm" runat="server"><a href="Admin/GERhome.aspx">ADM</a></li>
         </ul>
         <a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
     </div>

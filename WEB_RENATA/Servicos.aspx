@@ -25,9 +25,9 @@
         	<div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
             	<h2><%#Eval("nome") %></h2>
             	<P class="padding-b"><%#Eval("descricao") %></P>
-                <p>Valor: <%#Eval("valor") %> R$</p>
+                <p class="padding-b">Valor: <%#Eval("valor") %> R$</p>
             	 
-                 <p><a class="btn btn-primary" href="ServicoConfirma.aspx?id=<%#Eval("id") %>" role="button">Contratar »</a></p>
+                 <p><a class="btn btn-secondary" href="ServicoConfirma.aspx?id=<%#Eval("id") %>" role="button">Contratar »</a></p>
             </div>
         </div>
             </ItemTemplate>

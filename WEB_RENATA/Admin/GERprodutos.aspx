@@ -9,15 +9,14 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio"> 
+    <section > 
 	<div class="container gerSquare">
     	<h2>Gerenciador de Produtos</h2>
     	 
 
 
-         <a href="GERprodutosDados.aspx?id=0">Novo produto</a>
-                    
-       
+        <a class="btn btn-primary" href="GERprodutosDados.aspx?id=0">Novo produto</a>
+          
          
         
 	</div>
@@ -68,7 +67,7 @@
                             <%#Eval("estoque")%>
                         </td>
                         <td align="center">
-                            <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px;" />                            
+                            <img src="<%#Eval("caminho")%>" style="height:200px; width: 200px; " />                            
                         </td>
                         <td align="center" title="X[<%#Eval("id") %>]">                             
                             <a href="GERprodutosDados.aspx?id=<%# Eval("id") %>" >

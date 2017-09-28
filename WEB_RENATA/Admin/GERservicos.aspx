@@ -9,12 +9,12 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio">
+    <section  >
 	<div class="container gerSquare">
     	<h2>Gerenciador de Serviços</h2>
     	 
 
-          <a href="GERservicosDados.aspx?id=0">Novo serviço</a>
+         <a class="btn btn-primary" href="GERservicosDados.aspx?id=0">Novo serviço</a>
          
         
 	</div>
@@ -28,19 +28,19 @@
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
-                            <th style="width: 3%; text-align: center;">ID
+                            <th style="width: 2%; text-align: center;">ID
                             </th>
-                            <th style="width: 7%; text-align: center;">Nome
+                            <th style="width: 5%; text-align: center;">Nome
                             </th>
                             <th style="width: 15%; text-align: center;">Descrição
                             </th>
-                            <th style="width: 10%; text-align: center;">Valor
+                            <th style="width: 5%; text-align: center;">Valor
                             </th>
-                            <th style="width: 10%; text-align: center;">Caminho
+                            <th style="width: 15%; text-align: center;">Imagem
                             </th>
-                            <th style="width: 3%; text-align: center;">Alterar
+                            <th style="width: 3%; text-align: center;">A
                             </th>
-                            <th style="width: 3%; text-align: center;">Deletar
+                            <th style="width: 3%; text-align: center;">D
                             </th>
                         </tr>
                     </div>

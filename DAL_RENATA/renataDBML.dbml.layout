@@ -50,5 +50,11 @@
         <elementListCompartment Id="95619217-f337-4131-9963-af0c4866b466" absoluteBounds="9.765, 2.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="828bb154-fa24-4997-96f1-ce57f4c703cf" absoluteBounds="7.875, 3.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/renataDBMLDataContext/Imagem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07d2108a-0121-447d-a6b9-184e0cc6e398" absoluteBounds="7.89, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

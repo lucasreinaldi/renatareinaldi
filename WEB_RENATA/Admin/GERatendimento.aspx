@@ -8,15 +8,15 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio"> 
+    <section > 
 	<div class="container gerSquare">
     	<h2>Atendimentos Pendentes</h2>
     	 
-        <a href="GERatendimentoAprovado.aspx" >
+        <a class="btn btn-primary" href="GERatendimentoAprovado.aspx" >
                                Ver aprovados
                             </a>
         <br />
-        <a href="GERatendimentoDesaprovado.aspx" >
+        <a class="btn btn-primary" href="GERatendimentoDesaprovado.aspx" >
                                Ver desaprovados
                             </a>
         

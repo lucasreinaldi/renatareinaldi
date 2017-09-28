@@ -28,10 +28,11 @@
             
                     <asp:TextBox ID="txtValor" runat="server" CssClass="form-control input-text" placeholder="valor do serviço"
                         MaxLength="5"></asp:TextBox>
-                    <asp:RegularExpressionValidator runat="server" ValidationExpression="^\d+$" ID="RequiredNumeric" Font-Size="Smaller" 
-                        ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="valServicos"></asp:RegularExpressionValidator>
+                    
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator runat="server" ValidationExpression="[0-9]+(\.[0-9][0-9]?)?" ID="RegularExpressionValidator1" Font-Size="Smaller" 
+                        ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="validation"></asp:RegularExpressionValidator>
 
                     <asp:FileUpload class="margintop marginbottom" ID="fup" Width="70%" ToolTip="Selecione a imagem" runat="server" />
             

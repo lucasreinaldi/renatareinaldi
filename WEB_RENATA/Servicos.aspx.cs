@@ -28,7 +28,8 @@ namespace WEB_RENATA
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (Home)this.Master;
-           
+
+             
 
             if (!IsPostBack)
             {
@@ -45,7 +46,7 @@ namespace WEB_RENATA
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 2;
+                pageDs.PageSize = 5;
 
                 // mp.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
 

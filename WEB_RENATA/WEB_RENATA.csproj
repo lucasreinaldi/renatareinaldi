@@ -149,6 +149,7 @@
     <Content Include="img\home\defaultCar.jpg" />
     <Content Include="img\home\defaultCarrousel.jpg" />
     <Content Include="img\home\defaultCliente.jpg" />
+    <Content Include="img\regal.png" />
     <Content Include="JS\jquery.datetimepicker.full.js" />
     <Content Include="JS\jquery.js" />
     <Content Include="JS\NewFolder1\all.js" />

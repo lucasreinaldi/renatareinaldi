@@ -9,8 +9,9 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio"> 
+    <section  > 
 	<div class="container gerServicos">
+        <br /><br />
     	<h2>Usuários cadastrados</h2>
     	 
 

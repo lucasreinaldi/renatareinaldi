@@ -54,6 +54,9 @@ namespace DAL_RENATA
     partial void InsertAtendimento(Atendimento instance);
     partial void UpdateAtendimento(Atendimento instance);
     partial void DeleteAtendimento(Atendimento instance);
+    partial void InsertImagem(Imagem instance);
+    partial void UpdateImagem(Imagem instance);
+    partial void DeleteImagem(Imagem instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -147,6 +150,14 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Atendimento>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Imagem> Imagems
+		{
+			get
+			{
+				return this.GetTable<Imagem>();
 			}
 		}
 	}
@@ -1582,6 +1593,116 @@ namespace DAL_RENATA
 					this._DataAtendimento = value;
 					this.SendPropertyChanged("DataAtendimento");
 					this.OnDataAtendimentoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Imagem")]
+	public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdImagem;
+		
+		private string _Titulo;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdImagemChanging(int value);
+    partial void OnIdImagemChanged();
+    partial void OnTituloChanging(string value);
+    partial void OnTituloChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Imagem()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImagem", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdImagem
+		{
+			get
+			{
+				return this._IdImagem;
+			}
+			set
+			{
+				if ((this._IdImagem != value))
+				{
+					this.OnIdImagemChanging(value);
+					this.SendPropertyChanging();
+					this._IdImagem = value;
+					this.SendPropertyChanged("IdImagem");
+					this.OnIdImagemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(200)")]
+		public string Titulo
+		{
+			get
+			{
+				return this._Titulo;
+			}
+			set
+			{
+				if ((this._Titulo != value))
+				{
+					this.OnTituloChanging(value);
+					this.SendPropertyChanging();
+					this._Titulo = value;
+					this.SendPropertyChanged("Titulo");
+					this.OnTituloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
 				}
 			}
 		}

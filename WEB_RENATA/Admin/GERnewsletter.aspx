@@ -10,7 +10,7 @@
     	 
 
 
-        <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-info"
+        <asp:LinkButton ID="btnNewsletter" runat="server" CssClass="btn btn-primary"
                         CausesValidation="true" ValidationGroup="valNewsletter" OnClick="btnNewsletter_Click"
                          >Exportar para .csv</asp:LinkButton>
        

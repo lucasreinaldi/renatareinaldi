@@ -80,4 +80,11 @@
       <Column Name="DataAtendimento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Imagem" Member="Imagems">
+    <Type Name="Imagem">
+      <Column Name="IdImagem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CaminhoImagem" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
