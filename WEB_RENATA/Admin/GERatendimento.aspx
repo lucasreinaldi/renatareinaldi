@@ -12,7 +12,7 @@
 	<div class="container gerSquare">
     	<h2>Atendimentos Pendentes</h2>
     	 
-        <a class="btn btn-primary" href="GERatendimentoAprovado.aspx" >
+        <a class="btn btn-primary marginbottom" href="GERatendimentoAprovado.aspx" >
                                Ver aprovados
                             </a>
         <br />

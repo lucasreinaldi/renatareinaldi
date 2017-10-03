@@ -25,41 +25,49 @@
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/classie.js"></script>
     <script src="contactform/contactform.js"></script>
+
+    <link href="CSS/login.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
-    <section runat="server" class="main-section paddind" id="Portfolio"><!--main-section-start-->
-	<div class="container">
+    <section runat="server"><!--main-section-start-->
+	<div class="loginmodal-container ">
     	<h2>Cadastro</h2>
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="LinkButton1">
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnCadastrar">
 
-                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="nome"
-                        MaxLength="100"></asp:TextBox>
+                    <asp:TextBox ID="txtNome" runat="server" CssClass="margin-top form-control input-text" placeholder="nome"
+                        MaxLength="80"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar um nome" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
             
 
-                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control input-text" placeholder="email"
-                        MaxLength="100"></asp:TextBox>                    
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control input-text" placeholder="email (login)"
+                        MaxLength="100" TextMode="Email"></asp:TextBox>                    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Font-Size="Smaller" runat="server"
+                        ErrorMessage="você precisa digitar um email" CssClass="RequiredField" ControlToValidate="txtEmail" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
+            
                     <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
                         runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ValidationGroup="valCadastro"></asp:RegularExpressionValidator>
                     
 
-                    <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input-text" placeholder="senha"
+                    <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input-text" placeholder="senha" TextMode="Password"
                         MaxLength="100"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
+                        ErrorMessage="você precisa digitar uma senha" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
             
 
                 <asp:TextBox ID="txtCpf" runat="server" CssClass="form-control input-text" placeholder="cpf"
                         MaxLength="100"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtCpf" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
-            
+                        ErrorMessage="você precisa digitar um cpf" CssClass="RequiredField" ControlToValidate="txtCpf" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Font-Size="Smaller"
+                        runat="server" ErrorMessage="cpf precisa ser válido" CssClass="RegularExpression"
+                        ValidationExpression="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" ControlToValidate="txtCpf" ValidationGroup="valCadastro"></asp:RegularExpressionValidator>
+                    
 
                 <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control input-text" placeholder="endereco"
                         MaxLength="100"></asp:TextBox>
@@ -70,9 +78,7 @@
 
                 <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control input-text" placeholder="complemento"
                         MaxLength="100"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um complemento" CssClass="RequiredField" ControlToValidate="txtComplemento" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
-                
+                     
                 <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control input-text" placeholder="bairro"
                         MaxLength="100"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" Font-Size="Smaller" runat="server"
@@ -84,20 +90,26 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar uma cidade" CssClass="RequiredField" ControlToValidate="txtCidade" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
                 
-                <asp:TextBox ID="txtEstado" runat="server" CssClass="form-control input-text" placeholder="estado"
-                        MaxLength="100"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar um estado" CssClass="RequiredField" ControlToValidate="txtEstado" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
+
                 
+                <asp:DropDownList ID="dropEstados" runat="server" CssClass="form-control input-text">
+                    
+                </asp:DropDownList>
+
+                   
+            <asp:RequiredFieldValidator ID="reqState" runat="server" InitialValue="" ControlToValidate="dropEstados" ErrorMessage="você precisa escolher um estado"></asp:RequiredFieldValidator>                                                                   
+
+
                 <asp:TextBox ID="txtCep" runat="server" CssClass="form-control input-text" placeholder="CEP"
                         MaxLength="100"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma CEP" CssClass="RequiredField" ControlToValidate="txtCep" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
-                
+                        ErrorMessage="você precisa digitar um CEP" CssClass="RequiredField" ControlToValidate="txtCep" ValidationGroup="valCadastro"></asp:RequiredFieldValidator>
+                  
 
                 
-                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-info"
+                <asp:LinkButton ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-block margin-top marginbottom"
                         CausesValidation="true" ValidationGroup="valCadastro" OnClick="btnCadastrar_Click" >Cadastrar</asp:LinkButton>
+                 <a class="btn btn-primary btn-block" href="Login.aspx">Voltar</a>
                 </asp:Panel>
        
          

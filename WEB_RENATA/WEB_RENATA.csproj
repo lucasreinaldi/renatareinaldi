@@ -135,6 +135,7 @@
     <Content Include="CSS\font-awesome.min.css" />
     <Content Include="CSS\jquery.datetimepicker.css" />
     <Content Include="CSS\jquery.datetimepicker.min.css" />
+    <Content Include="CSS\login.css" />
     <Content Include="CSS\owl.carousel.css" />
     <Content Include="CSS\responsive.css" />
     <Content Include="CSS\style.css" />
@@ -168,7 +169,9 @@
     <Content Include="JS\NewFolder1\jquery.viewport.mini.js" />
     <Content Include="JS\NewFolder1\owl.carousel.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Loja.aspx" />
+    <Content Include="LojaProduto.aspx" />
     <Content Include="Noticias.aspx" />
     <Content Include="NoticiasArtigo.aspx" />
     <Content Include="packages.config" />
@@ -182,6 +185,7 @@
     <Content Include="FONTS\fontawesome-webfont.woff" />
     <Content Include="FONTS\fontawesome-webfont.woff2" />
     <Content Include="FONTS\FontAwesome.otf" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -327,12 +331,26 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Loja.aspx.cs">
       <DependentUpon>Loja.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Loja.aspx.designer.cs">
       <DependentUpon>Loja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LojaProduto.aspx.cs">
+      <DependentUpon>LojaProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LojaProduto.aspx.designer.cs">
+      <DependentUpon>LojaProduto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Noticias.aspx.cs">
       <DependentUpon>Noticias.aspx</DependentUpon>
@@ -376,6 +394,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

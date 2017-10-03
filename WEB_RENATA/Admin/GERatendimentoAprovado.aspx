@@ -12,7 +12,7 @@
 	<div class="container gerSquare">
     	<h2>Atendimentos Aprovados</h2>
 
-        <a href="GERatendimento.aspx" >
+         <a class="btn btn-primary" href="GERatendimento.aspx" >
                                Voltar ao gerenciador
                             </a>
 

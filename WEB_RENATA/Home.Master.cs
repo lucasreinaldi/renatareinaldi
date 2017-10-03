@@ -1,7 +1,10 @@
-﻿using System;
+﻿using DAL_RENATA;
+using REGRA_RENATA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -12,7 +15,8 @@ namespace WEB_RENATA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.ChecarPermissao();
+            
         }
 
 
@@ -62,6 +66,24 @@ namespace WEB_RENATA
             set;
         }
 
+        public int IdUsuario
+        {
+            get
+            {
+                int id = -1;
+                try
+                {
+                    id = Int32.Parse(Context.User.Identity.Name);
+                }
+                catch (Exception)
+                {
+                    return -1;
+                }
+                return id;
+            }
+        }
+
+
         public int ValidarQueryString(string queryString, string pagina)
         {
             try
@@ -98,15 +120,89 @@ namespace WEB_RENATA
 
         public void ChecarPermissao()
         {
-            if (Session["userName"] != null)
+            if (Session["nomeUsuario"] != null)
             {
                 //lnkWelcome.InnerText += Session["New"].ToString();
                 //FormsAuthentication.RedirectFromLoginPage(ToString(), true);
-
+                this.ConfigurarDadosUsuario();
             }
             else
             {
-                Response.Redirect("../Login.aspx");
+                login.Visible = true;
+                logout.Visible = false;
+                painel.Visible = false;
+                adm.Visible = false;
+
+            }
+        }
+
+        private void ConfigurarDadosUsuario()
+        {
+            if (Session["IdUsuario"] == null)
+            {
+                login.Visible = true;
+                logout.Visible = false;
+                painel.Visible = false;
+                adm.Visible = false;
+                carrinho.Visible = false;
+            }
+            else
+            {
+                UsuarioBO usuBO = new UsuarioBO();
+                Usuario usuario = usuBO.ConsultarPorId(Int32.Parse(Session["IdUsuario"].ToString()));
+
+                if (usuario.TipoUsuario == 1)
+                {
+                    carrinho.Visible = false;
+                    logout.Visible = true;
+                    adm.Visible = true;
+                    login.Visible = false;
+                    painel.Visible = false;
+
+                }
+                else
+                {
+                    if (usuario.TipoUsuario == 0)
+                    {
+                        logout.Visible = true;
+                        painel.Visible = true;
+                        login.Visible = false;
+                        adm.Visible = false;
+                        carrinho.Visible = true;
+                    }
+
+                }
+            }
+                
+        }
+
+        public void RecarregarSessao()
+        {
+            try
+            {
+                UsuarioBO usuBO = new UsuarioBO();
+                Usuario usuario = usuBO.ConsultarPorId(this.IdUsuario);
+
+                if (usuario != null)
+                {
+                    Session["userName"] = usuario.Nome;
+                }
+                else
+                {
+                    Session.Clear();
+                    Session.Abandon();
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("Logout.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Desloga o Usuario
+                Session.Clear();
+                Session.Abandon();
+                FormsAuthentication.SignOut();
+
+                throw ex;
             }
         }
 
@@ -126,9 +222,7 @@ namespace WEB_RENATA
             Session["msgTipo"] = null;
         }
 
-        #region Paginação
-
-        ///Monta a Páginação da Lista
+      
         public PagedDataSource MontarListaPaginada(PagedDataSource pageDs, Label lblCurrentPage, LinkButton lbtAnterior, LinkButton lbtProximo)
         {
             lblCurrentPage.Text = (CurrentPage + 1).ToString() + " de <b>"
@@ -157,10 +251,7 @@ namespace WEB_RENATA
             return pageDs;
         }
 
-        /// <summary>
-        /// Propriedade que manipula a página atual
-        /// </summary>
-        public int CurrentPage
+       public int CurrentPage
         {
             get
             {
@@ -177,75 +268,9 @@ namespace WEB_RENATA
             }
         }
 
-        #endregion
+       
 
-        #region Paginação Nova
-
-        /// <summary>
-        /// Método Público responsável por montar os números da paginação
-        /// </summary>
-        /// <returns></returns>
-        public static string PaginacaoWeb()
-        {
-            ltlpaginas = new Literal();
-
-            int indice = (Pagina / 10);
-            int indiceInicio = 0;
-            int indiceFinal = Totalpaginas;
-            int indiceCentral = 5;
-
-            if (indice >= indiceCentral && NumTotalPaginas > Totalpaginas)
-            {
-                int contDepois = (NumTotalPaginas - indice);
-                int contAntes = ((NumTotalPaginas - contDepois) + 1);
-
-                if (contAntes >= indiceCentral && contDepois >= indiceCentral)
-                {
-                    indiceInicio = (indice - indiceCentral);
-                    indiceFinal = (indice + indiceCentral);
-                }
-
-                if (contAntes >= indiceCentral && contDepois < indiceCentral)
-                {
-                    for (int k = 1; k <= contDepois; k++)
-                    {
-                        if (contDepois == k)
-                        {
-                            indiceInicio = indice - (Totalpaginas - k);
-                            indiceFinal = (indice + k);
-                            break;
-                        }
-                    }
-                }
-            }
-
-            for (int i = indiceInicio; i < indiceFinal; i++)
-            {
-                if (i >= NumTotalPaginas)
-                {
-                    break;
-                }
-                if (i >= 0)
-                {
-                    if ((i * 10) == Pagina)
-                    {
-                        ltlpaginas.Text += "<a class=\"linkPaginacao\" href=\"" + NomePagina + ".aspx?pagina=" + (i * 10) + "\">" + " [" + (i + 1) + "] " + "</a>";
-                    }
-                    else
-                    {
-                        ltlpaginas.Text += "<a class=\"linkPaginacao\" href=\"" + NomePagina + ".aspx?pagina=" + (i * 10) + "\">" + " " + (i + 1) + " " + "</a>";
-                    }
-                }
-            }
-
-            return ltlpaginas.Text;
-        }
-
-        /// <summary>
-        /// Método Público que monta o link Anterior ao número do índice atual da paginação
-        /// </summary>
-        /// <returns></returns>
-        public static string Anterior()
+       public static string Anterior()
         {
             Pagina = Pagina - 10;
 
@@ -256,11 +281,7 @@ namespace WEB_RENATA
 
             return ltlpaginas.Text = "";
         }
-
-        /// <summary>
-        /// Método Público que monta o Próximo link do número do índice atual da paginação
-        /// </summary>
-        /// <returns></returns>
+              
         public string Proximo()
         {
 
@@ -278,6 +299,6 @@ namespace WEB_RENATA
             return ltlpaginas.Text = "";
         }
 
-        #endregion
+       
     }
 }

@@ -16,13 +16,13 @@
                     <asp:Label ID="lblMsg" runat="server" Font-Bold="true"></asp:Label>  
                     <br />
                     <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="nome do serviço"
-                        MaxLength="50"></asp:TextBox>
+                        MaxLength="80"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
                     
 
                     <asp:TextBox TextMode="MultiLine" ID="txtDescricao" runat="server" CssClass="form-control input-text" placeholder="descrição do serviço"
-                        MaxLength="200"></asp:TextBox>
+                        MaxLength="500"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
             

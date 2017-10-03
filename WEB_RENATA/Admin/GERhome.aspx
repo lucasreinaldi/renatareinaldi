@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
     <section  > 
 	<div class="container gerServicos">
-    	<h2>Gerenciador da Home</h2>
+    	<h2 style="margin-top: 40px;" class="margin-top">Gerenciador da Home</h2>
         </div>
 
      <div class="container">
@@ -64,12 +64,12 @@
 	</div>
     <div class="portfolioContainer wow fadeInUp delay-04s">
             	<div class="padding-a col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" >
-                	 <img src="../img/home/Cliente1.jpg" alt=""> 
+                	 <img runat="server" id="carrousel1"  > 
                     
                 	 
                      
                 </div>
-        <div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
+        <div class="col-lg-6 col-lg-pull-2 col-md-6 col-md-pull-2 col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
         <asp:FileUpload class="marginbottom" ID="fupCliUm" Width="70%" ToolTip="Selecione a imagem" runat="server" />
                             <asp:LinkButton ID="btnCliUm" runat="server" CssClass="btn btn-primary marginbottom"
                                  OnClick="btnCliUm_Click"                         
@@ -85,7 +85,7 @@
                 	 
                      
                 </div>
-                <div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
+               <div class="col-lg-6 col-lg-pull-2 col-md-6 col-md-pull-2 col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
         <asp:FileUpload class="marginbottom" ID="fupCliDois" Width="70%" ToolTip="Selecione a imagem" runat="server" />
                             <asp:LinkButton ID="btnCliDois" runat="server" CssClass="btn btn-primary marginbottom"
                                  OnClick="btnCliDois_Click"                         
@@ -100,7 +100,7 @@
                 	 
                      
                 </div>
-                 <div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
+                 <div class="col-lg-6 col-lg-pull-2 col-md-6 col-md-pull-2 col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
         <asp:FileUpload class="marginbottom" ID="fupCliTres" Width="70%" ToolTip="Selecione a imagem" runat="server" />
                             <asp:LinkButton ID="btnCliTres" runat="server" CssClass="btn btn-primary marginbottom"
                                  OnClick="btnCliTres_Click"                         

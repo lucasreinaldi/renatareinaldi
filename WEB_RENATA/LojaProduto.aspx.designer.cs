@@ -7,153 +7,117 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WEB_RENATA.Admin {
+namespace WEB_RENATA {
     
     
-    public partial class GERhome {
+    public partial class LojaProduto {
         
         /// <summary>
-        /// carUm control.
+        /// imagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage carUm;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imagem;
         
         /// <summary>
-        /// fupCarUm control.
+        /// nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCarUm;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nome;
         
         /// <summary>
-        /// btnAlterarCarUm control.
+        /// descricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAlterarCarUm;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl descricao;
         
         /// <summary>
-        /// Img1 control.
+        /// preco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl preco;
         
         /// <summary>
-        /// fupCarDois control.
+        /// estoque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCarDois;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estoque;
         
         /// <summary>
-        /// btnAlterarCarDois control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAlterarCarDois;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Img2 control.
+        /// txtEstoque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img2;
+        protected global::System.Web.UI.WebControls.TextBox txtEstoque;
         
         /// <summary>
-        /// fupCarTres control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCarTres;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// btnAlterarCarTres control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAlterarCarTres;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// carrousel1 control.
+        /// txtData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage carrousel1;
+        protected global::System.Web.UI.WebControls.TextBox txtData;
         
         /// <summary>
-        /// fupCliUm control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCliUm;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// btnCliUm control.
+        /// btnAdicionar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCliUm;
-        
-        /// <summary>
-        /// fupCliDois control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCliDois;
-        
-        /// <summary>
-        /// btnCliDois control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCliDois;
-        
-        /// <summary>
-        /// fupCliTres control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupCliTres;
-        
-        /// <summary>
-        /// btnCliTres control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCliTres;
+        protected global::System.Web.UI.WebControls.LinkButton btnAdicionar;
     }
 }

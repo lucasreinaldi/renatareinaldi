@@ -50,8 +50,7 @@ namespace WEB_RENATA
 
             }
             this.MontarRepeater();
-            this.MontarRepeaterAprovados();
-            this.MontarRepeaterDesaprovados();
+             
         }
 
         private void Excluir(int id)
@@ -73,17 +72,7 @@ namespace WEB_RENATA
             }
         }
 
-        protected void Aprovar_Click(object sender, CommandEventArgs e)
-        {
-          
-
-
-        }
-
-        protected void Reprovar_Click(object sender, CommandEventArgs e)
-        {
-           
-        }
+         
 
         public List<Atendimento> ListarTodos()
         {
@@ -91,21 +80,7 @@ namespace WEB_RENATA
             List<Atendimento> lista = atendimentoBO.ConsultarTodos(null);
             return lista;
         }
-
-        public List<Atendimento> ListarAprovados()
-        {
-            AtendimentoBO atendimentoBO = new AtendimentoBO();
-            List<Atendimento> lista = atendimentoBO.ConsultarAprovados(null);
-            return lista;
-        }
-
-        public List<Atendimento> ListarDesaprovados()
-        {
-            AtendimentoBO atendimentoBO = new AtendimentoBO();
-            List<Atendimento> lista = atendimentoBO.ConsultarDesaprovados(null);
-            return lista;
-        }
-
+ 
 
 
         protected void lbtAnterior_Click(object sender, EventArgs e)
@@ -148,65 +123,17 @@ namespace WEB_RENATA
                 this.divResultado.Visible = true;
             }
         }
-
-        public void MontarRepeaterAprovados()
-        {
-            List<Atendimento> lista = new List<Atendimento>();
-            lista = ListarAprovados();
-
-            if (lista != null && lista.Count > 0)
-            {
-                this.rptAprovado.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptAprovado.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptAprovado.DataBind();
-            }
-            else
-            {
-                this.rptAprovado.Visible = false;
-            }
-            if (lista.Count == 0)
-            {
-                lbtAnterior.Visible = false;
-                lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
-                this.divResultado.Visible = true;
-            }
-        }
-
-        public void MontarRepeaterDesaprovados()
-        {
-            List<Atendimento> lista = new List<Atendimento>();
-            lista = ListarDesaprovados();
-
-            if (lista != null && lista.Count > 0)
-            {
-                this.rptDesaprovado.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptDesaprovado.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptDesaprovado.DataBind();
-            }
-            else
-            {
-                this.rptDesaprovado.Visible = false;
-            }
-            if (lista.Count == 0)
-            {
-                lbtAnterior.Visible = false;
-                lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
-                this.divResultado.Visible = true;
-            }
-        }
+ 
 
         private DataTable MontarDataTable(List<Atendimento> list)
         {
             DataTable tabela = new DataTable();
             tabela.Columns.Add("id");
             tabela.Columns.Add("servico");
-            tabela.Columns.Add("data");
+             
             tabela.Columns.Add("dataAtend");
             tabela.Columns.Add("comentario");
+            tabela.Columns.Add("resposta");
             tabela.Columns.Add("estado");
             tabela.Columns.Add("usuario");
 
@@ -234,8 +161,8 @@ namespace WEB_RENATA
 
                 row["id"] = atend.IdAtendimento;
                 row["servico"] = atend.FkServico;
-                row["data"] = atend.Data;
-               
+                row["dataAtend"] = atend.DataAtendimento;
+                row["resposta"] = atend.Resposta;
                 row["comentario"] = atend.Comentario;
                 row["estado"] = resultado;
                 row["usuario"] = "lol";

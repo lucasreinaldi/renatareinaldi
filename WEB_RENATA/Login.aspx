@@ -15,7 +15,7 @@
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
-    <link href="CSS/style2.css" rel="stylesheet" />
+    <link href="CSS/login.css" rel="stylesheet" />
     <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
     <script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -25,48 +25,66 @@
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/classie.js"></script>
     <script src="contactform/contactform.js"></script>
+
 </head>
 <body>
     <form runat="server">
-    <div id="divResultado" runat="server">
+    <div id="divResultado" class="formlinhamsg" runat="server">
         <div id="divLabel" runat="server">
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section runat="server" class="main-section paddind" id="Portfolio"><!--main-section-start-->
-	<div class="container">
-    	<h2>Login</h2>
+    <section  > 
+	 
+        <asp:Label ID="lblID" runat="server" Font-Bold="true"></asp:Label>  
+                    <asp:Label ID="lblMsg" runat="server" Font-Bold="true"></asp:Label>  
+                    <br />
+    	 
     	 
 
 
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogar">
-                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="e-mail"
-                        MaxLength="50"></asp:TextBox>
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogar" >
+            <div class="loginmodal-container">
+
+                <h1 class="marginbottom">Logue em sua conta</h1>
+
+
                     
-                    <asp:RegularExpressionValidator ID="validador2" Font-Size="Smaller"
-                        runat="server" ErrorMessage="o e-mail precisa ser válido" CssClass="RegularExpression"
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtNome" ValidationGroup="valServicos"></asp:RegularExpressionValidator>
+                    <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="email"
+                        MaxLength="80"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
+                        ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     
 
-                    <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input-text" placeholder="senha"
-                        MaxLength="50"></asp:TextBox>
+                   <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input-text" placeholder="senha"
+                        MaxLength="80"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar uma senha" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="valServicos"></asp:RequiredFieldValidator>
-            
+                        ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtSenha" ValidationGroup="validation"></asp:RequiredFieldValidator>
+                    
+            <br />
                      
-                <asp:LinkButton ID="btnLogar" runat="server" CssClass="btn btn-info"
-                        CausesValidation="true" OnClick="btnLogar_Click" ValidationGroup="valServicos" >Logar</asp:LinkButton>
-
-                <asp:LinkButton ID="btnCadastrar" runat="server" CssClass="btn btn-info"
-                        CausesValidation="false" OnClick="btnCadastrar_Click">Cadastrar</asp:LinkButton>
+                <asp:LinkButton ID="btnLogar" runat="server" CssClass="login loginmodal-submit"
+                        CausesValidation="true" ValidationGroup="validation" OnClick="btnLogar_Click">Logar</asp:LinkButton>
+                <div class="login-help">
+					<a href="Signup.aspx">registrar</a> 
+				  </div>
+                
+            </div>
                 </asp:Panel>
+
+
        
          
         
-	</div>
+	 
 
-        
-        </section>
+         
+					
+				  
+				
+      </section>
+
+
     </form>
 </body>
 </html>

@@ -58,7 +58,7 @@ namespace WEB_RENATA.Admin
         public List<Atendimento> ListarTodos()
         {
             AtendimentoBO atendimentoBO = new AtendimentoBO();
-            List<Atendimento> lista = atendimentoBO.ConsultarTodos(null);
+            List<Atendimento> lista = atendimentoBO.ConsultarTodosAprovacao(null);
             return lista;
         }
 

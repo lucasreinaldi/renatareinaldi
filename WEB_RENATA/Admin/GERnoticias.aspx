@@ -31,21 +31,21 @@
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
-                            <th style="width: 3%; text-align: center;">ID
+                            <th style="width: 2%; text-align: center;">ID
                             </th>
-                            <th style="width: 5%; text-align: center;">Titulo
+                            <th style="width: 5%; text-align: center;">Título
                             </th>
-                            <th style="width: 8%; text-align: center;">Descricao Breve
+                            <th style="width: 8%; text-align: center;">Descrição Breve
                             </th>
-                            <th style="width: 20%; text-align: center;">Conteudo
+                            <th style="width: 20%; text-align: center;">Conteúdo
                             </th>
                             <th style="width: 5%; text-align: center;">Data Publicação
                             </th>
-                            <th style="width: 15%; text-align: center;">Caminho
+                            <th style="width: 15%; text-align: center;">Imagem
                             </th>
-                            <th style="width: 3%; text-align: center;">Alterar
+                            <th style="width: 2%; text-align: center;">A
                             </th>
-                            <th style="width: 3%; text-align: center;">Deletar
+                            <th style="width: 2%; text-align: center;">D
                             </th>
                         </tr>
                     </div>

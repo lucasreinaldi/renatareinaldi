@@ -36,15 +36,7 @@ namespace WEB_RENATA
 
             divResultado.Visible = false;
 
-            if (!IsPostBack)
-            {
-                string mensagem = "Usuário ou senha inválidos. Tente novamente.";
-                lblResultado.Text = mensagem;
-                divResultado.Visible = true;
-
-                this.btnLogar.Focus();
-
-            }
+            
 
 
         }
@@ -66,9 +58,6 @@ namespace WEB_RENATA
 
                     Log log = new Log()
                     {
-
-
-
                         IdUsuario = Convert.ToInt32(mp.ID),
                         DataHora = DateTime.Now,
                         Mensagem = mensagem
@@ -99,6 +88,8 @@ namespace WEB_RENATA
                 if (UsuarioBO.CompararSenhas(senhaCripto, usuario.Senha))
                 {
                     Session.Add("nomeUsuario", usuario.Nome);
+                    Session.Add("loginUsuario", usuario.Email);
+                    Session.Add("IdUsuario", usuario.IdUsuario);
 
                     FormsAuthentication.RedirectFromLoginPage(usuario.IdUsuario.ToString(), false);
                     isAutenticado = true;
@@ -119,8 +110,9 @@ namespace WEB_RENATA
             if (!isAutenticado)
             {
 
-                Response.Redirect("Login.aspx");
-
+                string mensagem = "Usuário ou senha inválidos. Tente novamente.";
+                mp.DefinirMsgResultado(this.divResultado, this.lblResultado, mensagem, null);
+                 
 
             }
         }

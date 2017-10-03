@@ -65,7 +65,7 @@ namespace WEB_RENATA.Admin
 
                 if (noticiaBO.Excluir(noticia, pastaDestino, null) == true)
                 {
-                    mp.DefinirMsgResultado(divResultado, lblResultado, "Noticia excluida com sucesso!", null);
+                    mp.DefinirMsgResultado(divResultado, lblResultado, "Notícia excluida com sucesso!", null);
                     this.MontarRepeater();
                 }
             }

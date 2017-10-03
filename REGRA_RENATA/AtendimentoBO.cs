@@ -57,6 +57,36 @@ namespace REGRA_RENATA
             try
             {
 
+                var consulta = from Atendimento in DataContext.DataContext.Atendimentos  select Atendimento;
+                return consulta.ToList();
+
+
+            }
+            catch (Exception e)
+            {
+                msg = "Erro ao consultar todos atendimento. Erro: " + e.Message + " - " + e.Source;
+                log = new Log()
+                {
+                    DataHora = DateTime.Now,
+                    IdUsuario = idUsuarioLogado,
+                    Mensagem = msg
+                };
+
+                logBO.Salvar(log);
+
+                return null;
+            }
+        }
+
+        public List<Atendimento> ConsultarTodosAprovacao(int? idUsuarioLogado)
+        {
+            LogBO logBO = new LogBO();
+            Log log;
+            string msg;
+
+            try
+            {
+
                 var consulta = from Atendimento in DataContext.DataContext.Atendimentos where Atendimento.Estado == 0 select Atendimento;
                 return consulta.ToList();
 

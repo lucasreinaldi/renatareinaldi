@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-    <section class="main-section" id="Portfolio">
+    <section>
 	<div class="container gerSquare">
     	<h2>Gerenciador de Notícias</h2>
     	 
@@ -16,7 +16,7 @@
                     <asp:Label ID="lblMsg" runat="server" Font-Bold="true"></asp:Label>  
                     <br />
                     <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control input-text" placeholder="título"
-                        MaxLength="50"></asp:TextBox>
+                        MaxLength="80"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtTitulo" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     

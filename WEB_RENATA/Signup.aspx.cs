@@ -24,7 +24,7 @@ namespace WEB_RENATA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            PreencherEstados(dropEstados, true);
         }
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace WEB_RENATA
             end.Bairro = txtBairro.Text;
             end.CEP = txtCep.Text;
             end.Cidade = txtCidade.Text;
-            end.Estado = txtEstado.Text;
+            end.Estado = dropEstados.Text;
             end.Complemento = txtComplemento.Text;
             end.Endereco1 = txtEndereco.Text;
 
@@ -48,17 +48,60 @@ namespace WEB_RENATA
 
             usuario.Senha = UsuarioBO.CriptografarSenhaSHA1(txtSenha.Text);
 
-
-
             try
             {
-                usuarioBO.CriarUsuario(usuario, end);
-                Session.Add("userName", usuario.Nome);
-                Response.Redirect("Admin/Home.aspx");
+                if (usuarioBO.CriarUsuario(usuario, end))
+                {
+
+                    Session.Add("userName", usuario.Nome);
+                    Response.Redirect("Default.aspx");
+                }
+                else
+                {
+                    Session.Add("msgRes", "Erro ao criar usuário.");
+                    Response.Redirect("Login.aspx");
+                }
             }
             catch
             {
             }
+        }
+
+        public void PreencherEstados(DropDownList dropEstados, bool comLinhaInicial)
+        {
+            dropEstados.Items.Clear();
+
+            if (comLinhaInicial)
+            {
+                 
+            }
+            dropEstados.Items.Add(new ListItem("Acre", "AC"));
+            dropEstados.Items.Add(new ListItem("Alagoas", "AL"));
+            dropEstados.Items.Add(new ListItem("Amapá", "AP"));
+            dropEstados.Items.Add(new ListItem("Amazona", "AM"));
+            dropEstados.Items.Add(new ListItem("Bahia", "BA"));
+            dropEstados.Items.Add(new ListItem("Ceará", "CE"));
+            dropEstados.Items.Add(new ListItem("Distrito Federal", "DF"));
+            dropEstados.Items.Add(new ListItem("Espírito Santo", "ES"));
+            dropEstados.Items.Add(new ListItem("Goiás", "GO"));
+            dropEstados.Items.Add(new ListItem("Maranhão", "MA"));
+            dropEstados.Items.Add(new ListItem("Mato Grosso", "MT"));
+            dropEstados.Items.Add(new ListItem("Mato Grosso do Sul", "MS"));
+            dropEstados.Items.Add(new ListItem("Minas Gerais", "MG"));
+            dropEstados.Items.Add(new ListItem("Pará", "PA"));
+            dropEstados.Items.Add(new ListItem("Paraíba", "PB"));
+            dropEstados.Items.Add(new ListItem("Paraná", "PR"));
+            dropEstados.Items.Add(new ListItem("Pernambuco", "PE"));
+            dropEstados.Items.Add(new ListItem("Piauí", "PI"));
+            dropEstados.Items.Add(new ListItem("Rio de Janeiro", "RJ"));
+            dropEstados.Items.Add(new ListItem("Rio Grande do Norte", "RN"));
+            dropEstados.Items.Add(new ListItem("Rio Grande do Sul", "RS"));
+            dropEstados.Items.Add(new ListItem("Rondônia", "RO"));
+            dropEstados.Items.Add(new ListItem("Roraima", "RR"));
+            dropEstados.Items.Add(new ListItem("Santa Catarina", "SC"));
+            dropEstados.Items.Add(new ListItem("São Paulo", "SP"));
+            dropEstados.Items.Add(new ListItem("Sergipe", "SE"));
+            dropEstados.Items.Add(new ListItem("Tocantins", "TO"));
         }
     }
 }

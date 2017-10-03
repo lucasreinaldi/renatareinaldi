@@ -27,7 +27,7 @@
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
-                            <th style="width: 3%; text-align: center;">ID
+                            <th style="width: 2%; text-align: center;">ID
                             </th>
                             <th style="width: 7%; text-align: center;">IP
                             </th>
@@ -35,7 +35,7 @@
                             </th>
                             <th style="width: 15%; text-align: center;">Email
                             </th>
-                            <th style="width: 3%; text-align: center;">Deletar
+                            <th style="width: 2%; text-align: center;">D
                             </th>
                         </tr>
                     </div>

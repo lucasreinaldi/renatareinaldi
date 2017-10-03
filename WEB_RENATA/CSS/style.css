@@ -979,3 +979,13 @@ background: url(../img/regal.png) left top repeat;
 {
     padding: 20px;
 }
+
+.black{
+    color: black;
+    text-transform: none;
+}
+
+.margin-top
+{
+    margin-top: 20px;
+}

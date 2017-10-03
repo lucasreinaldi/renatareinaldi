@@ -12,7 +12,7 @@
     <section > 
 	<div class="container gerServicos">
         <br /><br />
-    	<h2>Gerenciador de Logs</h2>
+    	<h2 class="margin-top" >Gerenciador de Logs</h2>
     	 
 
          

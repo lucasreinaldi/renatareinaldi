@@ -40,13 +40,22 @@ namespace WEB_RENATA {
         protected global::System.Web.UI.WebControls.Label lblResultado;
         
         /// <summary>
-        /// Portfolio control.
+        /// lblID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Portfolio;
+        protected global::System.Web.UI.WebControls.Label lblID;
+        
+        /// <summary>
+        /// lblMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsg;
         
         /// <summary>
         /// Panel1 control.
@@ -67,13 +76,13 @@ namespace WEB_RENATA {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// validador2 control.
+        /// validador1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator validador2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validador1;
         
         /// <summary>
         /// txtSenha control.
@@ -101,14 +110,5 @@ namespace WEB_RENATA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnLogar;
-        
-        /// <summary>
-        /// btnCadastrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCadastrar;
     }
 }

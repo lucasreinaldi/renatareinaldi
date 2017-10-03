@@ -44,7 +44,7 @@ namespace WEB_RENATA
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 10;
+                pageDs.PageSize = 5;
 
 
 

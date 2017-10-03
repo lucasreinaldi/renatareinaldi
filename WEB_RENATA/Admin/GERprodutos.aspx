@@ -34,7 +34,7 @@
                             </th>
                             <th style="width: 5%; text-align: center;">Nome
                             </th>
-                            <th style="width: 15%; text-align: center;">Descricao
+                            <th style="width: 15%; text-align: center;">Descrição
                             </th>
                             <th style="width: 5%; text-align: center;">Valor
                             </th>
@@ -42,9 +42,9 @@
                             </th>
                             <th style="width: 15%; text-align: center;">Imagem
                             </th>
-                            <th style="width: 3%; text-align: center;">Alterar
+                            <th style="width: 2%; text-align: center;">A
                             </th>
-                            <th style="width: 3%; text-align: center;">Deletar
+                            <th style="width: 2%; text-align: center;">D
                             </th>
                         </tr>
                     </div>

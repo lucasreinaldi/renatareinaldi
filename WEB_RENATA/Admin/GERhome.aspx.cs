@@ -24,7 +24,7 @@ namespace WEB_RENATA.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            carrousel1.Src = "../img/home/Cliente1.jpg";
         }
 
         protected void btnCarUm_Click(Object sender, EventArgs e)
@@ -32,10 +32,11 @@ namespace WEB_RENATA.Admin
             HomeBO homeBO = new HomeBO();
             if (homeBO.AlterarCar(MapPath("../" + "img/home" + "/"), fupCarUm, 1))
             {
-                Response.Redirect("GERhome.aspx");
+                Response.Redirect("../Default.aspx");
+
             }
 
-            Response.Redirect("GERhome.aspx");
+            Response.Redirect("../Default.aspx");
         }
 
         protected void btnCarDois_Click(Object sender, EventArgs e)

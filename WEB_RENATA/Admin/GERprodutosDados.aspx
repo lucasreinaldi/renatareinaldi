@@ -16,25 +16,25 @@
                     <br />
 
                     <asp:TextBox ID="txtNome" runat="server" CssClass="form-control input-text" placeholder="nome"
-                        MaxLength="50"></asp:TextBox>
+                        MaxLength="80"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="validador1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtNome" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     
 
                     <asp:TextBox ID="txtDescricao" TextMode="MultiLine" runat="server" CssClass="form-control input-text" placeholder="descrição"
-                        MaxLength="200"></asp:TextBox>
+                        MaxLength="500"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar uma descrição" CssClass="RequiredField" ControlToValidate="txtDescricao" ValidationGroup="validation"></asp:RequiredFieldValidator>
             
                     <asp:TextBox ID="txtValor" runat="server" CssClass="form-control input-text" placeholder="valor"
-                        MaxLength="1500"></asp:TextBox>                    
+                        MaxLength="8"></asp:TextBox>                    
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator runat="server" ValidationExpression="[0-9]+(\.[0-9][0-9]?)?" ID="RequiredNumeric" Font-Size="Smaller" 
                         ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtValor" ValidationGroup="validation"></asp:RegularExpressionValidator>
 
                     <asp:TextBox ID="txtEstoque" runat="server" CssClass="form-control input-text" placeholder="estoque"
-                        MaxLength="1500"></asp:TextBox>                    
+                        MaxLength="3"></asp:TextBox>                    
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Font-Size="Smaller" runat="server"
                         ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtEstoque" ValidationGroup="validation"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator runat="server" ValidationExpression="^\d+$" ID="RegularExpressionValidator1" Font-Size="Smaller" 

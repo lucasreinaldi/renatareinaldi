@@ -38,9 +38,9 @@
                             </th>
                             <th style="width: 15%; text-align: center;">Imagem
                             </th>
-                            <th style="width: 3%; text-align: center;">A
+                            <th style="width: 2%; text-align: center;">A
                             </th>
-                            <th style="width: 3%; text-align: center;">D
+                            <th style="width: 2%; text-align: center;">D
                             </th>
                         </tr>
                     </div>

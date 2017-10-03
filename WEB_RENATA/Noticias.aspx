@@ -18,11 +18,11 @@
         <asp:Repeater ID="rptNoticias" runat="server">
             <ItemTemplate>
     	<div class="row marginbottom" >
-			<figure class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-1 col-sm-6 col-xs-offset-2 col-xs-8 wow fadeInLeft ">
+			<figure class="col-lg-3 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 wow fadeInLeft">
             	
                 <img src="<%#Eval("imagem")%>" class="imgMenor"/>
             </figure>
-        	<div class="col-lg-3 col-lg-pull-2 col-md-4 col-md-pull-2 col-sm-3 col-sm-offset-3 col-xs-offset-3 col-xs-8 featured-work">
+        	<div class="col-lg-3 col-lg-pull-1 col-md-4 col-md-pull-1 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 featured-work">
             	<h2><%#Eval("titulo") %></h2>
             	<P class="padding-b"><%#Eval("descricao") %></P>
                 <p class="padding-b">Publicado em: <%#Eval("data") %></p>
