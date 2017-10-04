@@ -49,6 +49,15 @@ namespace WEB_RENATA {
         protected global::System.Web.UI.WebControls.HiddenField hidID;
         
         /// <summary>
+        /// divTabela control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable divTabela;
+        
+        /// <summary>
         /// rptAtendimento control.
         /// </summary>
         /// <remarks>

@@ -53,7 +53,9 @@ namespace WEB_RENATA
                 if (usuarioBO.CriarUsuario(usuario, end))
                 {
 
-                    Session.Add("userName", usuario.Nome);
+                    Session.Add("nomeUsuario", usuario.Nome);
+                    Session.Add("IdUsuario", usuario.IdUsuario);
+                   
                     Response.Redirect("Default.aspx");
                 }
                 else

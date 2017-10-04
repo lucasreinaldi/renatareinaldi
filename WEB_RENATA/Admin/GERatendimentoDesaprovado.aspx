@@ -9,11 +9,11 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio"> 
+    <section> 
 	<div class="container gerSquare">
-    	<h2>Atendimentos Desaprovados</h2>
+    	<h2>Atendimentos Não Aprovados</h2>
 
-        <a href="GERatendimento.aspx" >
+        <a class="btn btn-primary" href="GERatendimento.aspx" >
                                Voltar ao gerenciador
                             </a>
 

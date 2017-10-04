@@ -44,9 +44,9 @@ namespace WEB_RENATA.Admin
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
-                pageDs.PageSize = 1;
+                pageDs.PageSize = 10;
 
-                //masterPage.ValidarQueryString(Request.QueryString["id"], "MidiaGer.aspx?pagina=0");
+                
 
             }
             this.MontarRepeaterAprovados();

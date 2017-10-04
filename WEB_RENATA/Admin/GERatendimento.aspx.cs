@@ -118,33 +118,7 @@ namespace WEB_RENATA.Admin
                 this.divResultado.Visible = true;
             }
         }
-/*
-        
 
-        public void MontarRepeaterDesaprovados()
-        {
-            List<Atendimento> lista = new List<Atendimento>();
-            lista = ListarDesaprovados();
-
-            if (lista != null && lista.Count > 0)
-            {
-                this.rptDesaprovado.Visible = true;
-                pageDs.DataSource = this.MontarDataTable(lista).DefaultView;
-                rptDesaprovado.DataSource = mp.MontarListaPaginada(pageDs, this.lblCurrentPage, this.lbtAnterior, this.lbtProximo);
-                rptDesaprovado.DataBind();
-            }
-            else
-            {
-                this.rptDesaprovado.Visible = false;
-            }
-            if (lista.Count == 0)
-            {
-                lbtAnterior.Visible = false;
-                lbtProximo.Visible = false;
-                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
-                this.divResultado.Visible = true;
-            }
-        }*/
 
         private DataTable MontarDataTable(List<Atendimento> list)
         {
@@ -177,11 +151,16 @@ namespace WEB_RENATA.Admin
                     resultado = "Desaprovado";
                 }
 
+                Servico servico = new Servico();
+                ServicoBO servicoBO = new ServicoBO();
+
+                servico = servicoBO.ConsultarPorId(atend.FkServico, null);
+
 
                 DataRow row = tabela.NewRow();
 
                 row["id"] = atend.IdAtendimento;
-                row["servico"] = atend.FkServico;
+                row["servico"] = servico.Nome;
                 row["data"] = atend.Data;
                 row["dataAtend"] = atend.DataAtendimento;
                 row["comentario"] = atend.Comentario;

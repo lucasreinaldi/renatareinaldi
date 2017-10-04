@@ -8,7 +8,7 @@
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </div>
-    <section class="main-section" id="Portfolio"> 
+    <section> 
 	<div class="container gerSquare">
     	<h2>Atendimentos Aprovados</h2>
 

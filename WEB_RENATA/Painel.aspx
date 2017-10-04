@@ -20,11 +20,11 @@
         <asp:HiddenField ID="hidID" runat="server" />
        <div id="divCentral">
          
-        <table id="divTabela">
+        <table id="divTabela" runat="server">
             <asp:Repeater ID="rptAtendimento" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
-                        <tr>
+                        <tr runat="server">
                             <th style="width: 3%; text-align: center;">Serviço
                             </th>
                             <th style="width: 5%; text-align: center;">Data
@@ -34,13 +34,15 @@
                             <th style="width: 15%; text-align: center;">Resposta
                             </th>
                             <th style="width: 7%; text-align: center;">Estado
-                            </th>                            
+                            </th> 
+                            <th runat="server" style="width: 3%; text-align: center;">Pagar
+                            </th>                             
                              
                         </tr>
                     </div>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tr class="linhaA">
+                    <tr class="linhaA" runat="server">
                         <td align="center">
                             <%#Eval("servico") %>
                         </td>
@@ -57,7 +59,11 @@
                         <td align="center">
                             <%#Eval("estado")%>
                         </td>
-                         
+                         <td runat="server" align="center">
+                           <a id="lols" runat="server" href="Admin/GERhome.aspx">ADM</a>
+                        </td>
+
+                        
                          
                     </tr>
                 </ItemTemplate>
@@ -83,6 +89,10 @@
         </div>
     </div> 	
                
+
+
+
+
 
 
 

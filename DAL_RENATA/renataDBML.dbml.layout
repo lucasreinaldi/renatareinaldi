@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 9.125" name="renataDBML">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 9" name="renataDBML">
   <DataContextMoniker Name="/renataDBMLDataContext" />
   <nestedChildShapes>
-    <classShape Id="0556332d-4cec-40c3-a4c5-e242a6baca32" absoluteBounds="5.875, 1.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/renataDBMLDataContext/Newsletter" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b042afd7-04cc-479c-b50b-73b5055baca1" absoluteBounds="5.89, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d89a3c94-891c-4653-af78-2b739fe7ac6b" absoluteBounds="0.75, 6.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/renataDBMLDataContext/Endereco" />
-      <nestedChildShapes>
-        <elementListCompartment Id="56e9fd71-3dff-4ca3-be19-0f0342fb277c" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="706be251-f42f-4305-9d40-ab8707f3cdd6" absoluteBounds="5.125, 6.375, 2, 1.9631982421875">
-      <DataClassMoniker Name="/renataDBMLDataContext/Noticia" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a2ac52d5-e847-4294-bcb5-2875ea10194b" absoluteBounds="5.14, 6.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ef01185b-43ed-442f-96b7-016679a2a965" absoluteBounds="4.625, 3.5, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/renataDBMLDataContext/Usuario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="23068eca-3d60-4b2a-92e4-c4bd17460ddf" absoluteBounds="4.64, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ceb9c8d3-7796-40c3-8aa2-11aa6ea02283" absoluteBounds="2.625, 0.875, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/renataDBMLDataContext/Servico" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9c4e5526-e16e-4fa0-9d15-afa41e63ea42" absoluteBounds="2.6399999999999997, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f654f402-c40a-4399-9c79-b07f39f2717f" absoluteBounds="1.875, 3.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/renataDBMLDataContext/Log" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f87137dd-d825-4a42-b6a1-a8c65ad27d9e" absoluteBounds="1.8900000000000001, 3.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0da9eff3-4ecc-4c6d-b262-04bb7139f871" absoluteBounds="9.125, 5.375, 2, 1.9631982421875">
-      <DataClassMoniker Name="/renataDBMLDataContext/Produto" />
-      <nestedChildShapes>
-        <elementListCompartment Id="313a63e7-9c34-4b6f-b4f8-d76d89813b44" absoluteBounds="9.14, 5.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="584a57b9-3c1b-4e87-9de2-baba12faee96" absoluteBounds="9.75, 1.875, 2, 2.5401025390625">
+    <classShape Id="ce0fe189-cf66-49b8-a683-a945319678f5" absoluteBounds="0.75, 0.75, 2, 2.5401025390625005">
       <DataClassMoniker Name="/renataDBMLDataContext/Atendimento" />
       <nestedChildShapes>
-        <elementListCompartment Id="95619217-f337-4131-9963-af0c4866b466" absoluteBounds="9.765, 2.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b3c26308-9265-4add-a236-bbe2a74a0a6d" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="828bb154-fa24-4997-96f1-ce57f4c703cf" absoluteBounds="7.875, 3.875, 2, 1.3862939453125">
+    <classShape Id="cb7ce69c-13d4-4d6b-86a5-392f5110e3d6" absoluteBounds="3.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/renataDBMLDataContext/Endereco" />
+      <nestedChildShapes>
+        <elementListCompartment Id="901d1c33-19d2-4077-814b-af8c9e29880b" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0601f80c-776d-44a3-b6e4-04d24157a243" absoluteBounds="3.75, 3.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/renataDBMLDataContext/Imagem" />
       <nestedChildShapes>
-        <elementListCompartment Id="07d2108a-0121-447d-a6b9-184e0cc6e398" absoluteBounds="7.89, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5d5959c7-1662-4c2c-9e9f-5125105231a2" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92c1470d-61a0-43ac-8f56-371ebae62c9a" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/renataDBMLDataContext/Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6904f404-ba2e-491a-ac38-3b875b68cc7a" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6507caf-2cc8-410a-90bc-eb49ca87a598" absoluteBounds="0.75, 6.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/renataDBMLDataContext/Newsletter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a33fa448-e396-4ee1-98f0-596e7ea2e887" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92cda9b1-876c-4b9a-8012-d24af9cf9469" absoluteBounds="6.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/renataDBMLDataContext/Noticia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aecfed81-5090-4856-af64-4af51ec03b43" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d90b863-0fc4-4ac2-9f2a-cdc110c63679" absoluteBounds="3.75, 6.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/renataDBMLDataContext/Produto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d16fb6f-f10a-4b30-862d-6efa11488ea7" absoluteBounds="3.765, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4799257-bb6d-4d99-8a7e-19484cfab6ae" absoluteBounds="6.75, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/renataDBMLDataContext/Servico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14283b2a-7f8a-4386-b4a2-bf3f651d26d1" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee416838-55e9-489f-a2de-9bda9686cee7" absoluteBounds="9.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/renataDBMLDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9e0bd58-44e5-4c35-a569-706780945c9d" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

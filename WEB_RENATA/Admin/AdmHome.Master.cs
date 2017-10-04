@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL_RENATA;
+using REGRA_RENATA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +14,7 @@ namespace WEB_RENATA.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // this.ChecarPermissao();
+            //this.ChecarPermissao();
         }
 
         public static int Totalpaginas
@@ -97,17 +99,23 @@ namespace WEB_RENATA.Admin
 
         public void ChecarPermissao()
         {
-            if (Session["userName"] != null)
+            if (Session["IdUsuario"] == null)
             {
-                //lnkWelcome.InnerText += Session["New"].ToString();
-                //FormsAuthentication.RedirectFromLoginPage(ToString(), true);
-
+                Response.Redirect("../Default.aspx");
             }
             else
             {
-                Response.Redirect("../Login.aspx");
+                UsuarioBO usuBO = new UsuarioBO();
+                Usuario usuario = usuBO.ConsultarPorId(Int32.Parse(Session["IdUsuario"].ToString()));
+                if (usuario.TipoUsuario != 1)
+                {
+                    Response.Redirect("../Default.aspx");
+
+                }
             }
         }
+
+     
 
         public void DefinirMsgResultado(HtmlGenericControl divResultado, Label lblMsg, string msg, LinkButton btnFoco)
         {

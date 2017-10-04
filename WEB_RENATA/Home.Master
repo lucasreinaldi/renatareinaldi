@@ -53,7 +53,7 @@
     <nav class="navbar navbar-inverse" id="test">
 	<div class="container-fluid">
         <ul class="main-nav">
-        	<li class="small-logo"><h4 class="">RENATA REINALDI</h4> </li>
+        	<li class="small-logo"><h4 class="">RENATA REINALDI</h4> <h4 runat="server" id="user"></h4> </li>
             <li><a href="Default.aspx">Home</a></li>
             <li><a href="Servicos.aspx">Serviços</a></li>
             <li><a href="Noticias.aspx">Notícias</a></li>                        

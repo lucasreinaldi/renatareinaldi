@@ -17,7 +17,7 @@
                             </a>
         <br />
         <a class="btn btn-primary" href="GERatendimentoDesaprovado.aspx" >
-                               Ver desaprovados
+                               Ver não aprovados
                             </a>
         
 	</div>
@@ -31,7 +31,7 @@
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
-                            <th style="width: 3%; text-align: center;">Serviço
+                            <th style="width: 5%; text-align: center;">Serviço
                             </th>
                             <th style="width: 4%; text-align: center;">Data
                             </th>

@@ -30,33 +30,33 @@ namespace DAL_RENATA
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertNewsletter(Newsletter instance);
-    partial void UpdateNewsletter(Newsletter instance);
-    partial void DeleteNewsletter(Newsletter instance);
-    partial void InsertEndereco(Endereco instance);
-    partial void UpdateEndereco(Endereco instance);
-    partial void DeleteEndereco(Endereco instance);
-    partial void InsertNoticia(Noticia instance);
-    partial void UpdateNoticia(Noticia instance);
-    partial void DeleteNoticia(Noticia instance);
-    partial void InsertUsuario(Usuario instance);
-    partial void UpdateUsuario(Usuario instance);
-    partial void DeleteUsuario(Usuario instance);
-    partial void InsertServico(Servico instance);
-    partial void UpdateServico(Servico instance);
-    partial void DeleteServico(Servico instance);
-    partial void InsertLog(Log instance);
-    partial void UpdateLog(Log instance);
-    partial void DeleteLog(Log instance);
-    partial void InsertProduto(Produto instance);
-    partial void UpdateProduto(Produto instance);
-    partial void DeleteProduto(Produto instance);
     partial void InsertAtendimento(Atendimento instance);
     partial void UpdateAtendimento(Atendimento instance);
     partial void DeleteAtendimento(Atendimento instance);
+    partial void InsertEndereco(Endereco instance);
+    partial void UpdateEndereco(Endereco instance);
+    partial void DeleteEndereco(Endereco instance);
     partial void InsertImagem(Imagem instance);
     partial void UpdateImagem(Imagem instance);
     partial void DeleteImagem(Imagem instance);
+    partial void InsertLog(Log instance);
+    partial void UpdateLog(Log instance);
+    partial void DeleteLog(Log instance);
+    partial void InsertNewsletter(Newsletter instance);
+    partial void UpdateNewsletter(Newsletter instance);
+    partial void DeleteNewsletter(Newsletter instance);
+    partial void InsertNoticia(Noticia instance);
+    partial void UpdateNoticia(Noticia instance);
+    partial void DeleteNoticia(Noticia instance);
+    partial void InsertProduto(Produto instance);
+    partial void UpdateProduto(Produto instance);
+    partial void DeleteProduto(Produto instance);
+    partial void InsertServico(Servico instance);
+    partial void UpdateServico(Servico instance);
+    partial void DeleteServico(Servico instance);
+    partial void InsertUsuario(Usuario instance);
+    partial void UpdateUsuario(Usuario instance);
+    partial void DeleteUsuario(Usuario instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -89,11 +89,11 @@ namespace DAL_RENATA
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Newsletter> Newsletters
+		public System.Data.Linq.Table<Atendimento> Atendimentos
 		{
 			get
 			{
-				return this.GetTable<Newsletter>();
+				return this.GetTable<Atendimento>();
 			}
 		}
 		
@@ -105,27 +105,11 @@ namespace DAL_RENATA
 			}
 		}
 		
-		public System.Data.Linq.Table<Noticia> Noticias
+		public System.Data.Linq.Table<Imagem> Imagems
 		{
 			get
 			{
-				return this.GetTable<Noticia>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Usuario> Usuarios
-		{
-			get
-			{
-				return this.GetTable<Usuario>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Servico> Servicos
-		{
-			get
-			{
-				return this.GetTable<Servico>();
+				return this.GetTable<Imagem>();
 			}
 		}
 		
@@ -137,6 +121,22 @@ namespace DAL_RENATA
 			}
 		}
 		
+		public System.Data.Linq.Table<Newsletter> Newsletters
+		{
+			get
+			{
+				return this.GetTable<Newsletter>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Noticia> Noticias
+		{
+			get
+			{
+				return this.GetTable<Noticia>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Produto> Produtos
 		{
 			get
@@ -145,92 +145,92 @@ namespace DAL_RENATA
 			}
 		}
 		
-		public System.Data.Linq.Table<Atendimento> Atendimentos
+		public System.Data.Linq.Table<Servico> Servicos
 		{
 			get
 			{
-				return this.GetTable<Atendimento>();
+				return this.GetTable<Servico>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Imagem> Imagems
+		public System.Data.Linq.Table<Usuario> Usuarios
 		{
 			get
 			{
-				return this.GetTable<Imagem>();
+				return this.GetTable<Usuario>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Newsletter")]
-	public partial class Newsletter : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Atendimento")]
+	public partial class Atendimento : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IdListaEmail;
-		
-		private string _Email;
+		private int _IdAtendimento;
 		
 		private System.Nullable<System.DateTime> _Data;
 		
-		private string _IP;
+		private int _FkServico;
+		
+		private System.Nullable<int> _FkUsuario;
+		
+		private int _FkAdmin;
+		
+		private System.Nullable<int> _Estado;
+		
+		private string _Comentario;
+		
+		private string _Resposta;
+		
+		private System.Nullable<System.DateTime> _DataAtendimento;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdListaEmailChanging(int value);
-    partial void OnIdListaEmailChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
+    partial void OnIdAtendimentoChanging(int value);
+    partial void OnIdAtendimentoChanged();
     partial void OnDataChanging(System.Nullable<System.DateTime> value);
     partial void OnDataChanged();
-    partial void OnIPChanging(string value);
-    partial void OnIPChanged();
+    partial void OnFkServicoChanging(int value);
+    partial void OnFkServicoChanged();
+    partial void OnFkUsuarioChanging(System.Nullable<int> value);
+    partial void OnFkUsuarioChanged();
+    partial void OnFkAdminChanging(int value);
+    partial void OnFkAdminChanged();
+    partial void OnEstadoChanging(System.Nullable<int> value);
+    partial void OnEstadoChanged();
+    partial void OnComentarioChanging(string value);
+    partial void OnComentarioChanged();
+    partial void OnRespostaChanging(string value);
+    partial void OnRespostaChanged();
+    partial void OnDataAtendimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataAtendimentoChanged();
     #endregion
 		
-		public Newsletter()
+		public Atendimento()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdListaEmail", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdListaEmail
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAtendimento", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdAtendimento
 		{
 			get
 			{
-				return this._IdListaEmail;
+				return this._IdAtendimento;
 			}
 			set
 			{
-				if ((this._IdListaEmail != value))
+				if ((this._IdAtendimento != value))
 				{
-					this.OnIdListaEmailChanging(value);
+					this.OnIdAtendimentoChanging(value);
 					this.SendPropertyChanging();
-					this._IdListaEmail = value;
-					this.SendPropertyChanged("IdListaEmail");
-					this.OnIdListaEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._IdAtendimento = value;
+					this.SendPropertyChanged("IdAtendimento");
+					this.OnIdAtendimentoChanged();
 				}
 			}
 		}
@@ -255,22 +255,142 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IP", DbType="VarChar(30)")]
-		public string IP
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkServico", DbType="Int NOT NULL")]
+		public int FkServico
 		{
 			get
 			{
-				return this._IP;
+				return this._FkServico;
 			}
 			set
 			{
-				if ((this._IP != value))
+				if ((this._FkServico != value))
 				{
-					this.OnIPChanging(value);
+					this.OnFkServicoChanging(value);
 					this.SendPropertyChanging();
-					this._IP = value;
-					this.SendPropertyChanged("IP");
-					this.OnIPChanged();
+					this._FkServico = value;
+					this.SendPropertyChanged("FkServico");
+					this.OnFkServicoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int")]
+		public System.Nullable<int> FkUsuario
+		{
+			get
+			{
+				return this._FkUsuario;
+			}
+			set
+			{
+				if ((this._FkUsuario != value))
+				{
+					this.OnFkUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._FkUsuario = value;
+					this.SendPropertyChanged("FkUsuario");
+					this.OnFkUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkAdmin", DbType="Int NOT NULL")]
+		public int FkAdmin
+		{
+			get
+			{
+				return this._FkAdmin;
+			}
+			set
+			{
+				if ((this._FkAdmin != value))
+				{
+					this.OnFkAdminChanging(value);
+					this.SendPropertyChanging();
+					this._FkAdmin = value;
+					this.SendPropertyChanged("FkAdmin");
+					this.OnFkAdminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
+		public System.Nullable<int> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comentario", DbType="VarChar(200)")]
+		public string Comentario
+		{
+			get
+			{
+				return this._Comentario;
+			}
+			set
+			{
+				if ((this._Comentario != value))
+				{
+					this.OnComentarioChanging(value);
+					this.SendPropertyChanging();
+					this._Comentario = value;
+					this.SendPropertyChanged("Comentario");
+					this.OnComentarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resposta", DbType="VarChar(200)")]
+		public string Resposta
+		{
+			get
+			{
+				return this._Resposta;
+			}
+			set
+			{
+				if ((this._Resposta != value))
+				{
+					this.OnRespostaChanging(value);
+					this.SendPropertyChanging();
+					this._Resposta = value;
+					this.SendPropertyChanged("Resposta");
+					this.OnRespostaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataAtendimento", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataAtendimento
+		{
+			get
+			{
+				return this._DataAtendimento;
+			}
+			set
+			{
+				if ((this._DataAtendimento != value))
+				{
+					this.OnDataAtendimentoChanging(value);
+					this.SendPropertyChanging();
+					this._DataAtendimento = value;
+					this.SendPropertyChanged("DataAtendimento");
+					this.OnDataAtendimentoChanged();
 				}
 			}
 		}
@@ -502,6 +622,384 @@ namespace DAL_RENATA
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Imagem")]
+	public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdImagem;
+		
+		private string _Titulo;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdImagemChanging(int value);
+    partial void OnIdImagemChanged();
+    partial void OnTituloChanging(string value);
+    partial void OnTituloChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Imagem()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImagem", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdImagem
+		{
+			get
+			{
+				return this._IdImagem;
+			}
+			set
+			{
+				if ((this._IdImagem != value))
+				{
+					this.OnIdImagemChanging(value);
+					this.SendPropertyChanging();
+					this._IdImagem = value;
+					this.SendPropertyChanged("IdImagem");
+					this.OnIdImagemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(200)")]
+		public string Titulo
+		{
+			get
+			{
+				return this._Titulo;
+			}
+			set
+			{
+				if ((this._Titulo != value))
+				{
+					this.OnTituloChanging(value);
+					this.SendPropertyChanging();
+					this._Titulo = value;
+					this.SendPropertyChanged("Titulo");
+					this.OnTituloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Log]")]
+	public partial class Log : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdLog;
+		
+		private System.Nullable<int> _IdUsuario;
+		
+		private string _Mensagem;
+		
+		private System.Nullable<System.DateTime> _DataHora;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdLogChanging(int value);
+    partial void OnIdLogChanged();
+    partial void OnIdUsuarioChanging(System.Nullable<int> value);
+    partial void OnIdUsuarioChanged();
+    partial void OnMensagemChanging(string value);
+    partial void OnMensagemChanged();
+    partial void OnDataHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataHoraChanged();
+    #endregion
+		
+		public Log()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLog", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdLog
+		{
+			get
+			{
+				return this._IdLog;
+			}
+			set
+			{
+				if ((this._IdLog != value))
+				{
+					this.OnIdLogChanging(value);
+					this.SendPropertyChanging();
+					this._IdLog = value;
+					this.SendPropertyChanged("IdLog");
+					this.OnIdLogChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int")]
+		public System.Nullable<int> IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this.OnIdUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._IdUsuario = value;
+					this.SendPropertyChanged("IdUsuario");
+					this.OnIdUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mensagem", DbType="VarChar(150)")]
+		public string Mensagem
+		{
+			get
+			{
+				return this._Mensagem;
+			}
+			set
+			{
+				if ((this._Mensagem != value))
+				{
+					this.OnMensagemChanging(value);
+					this.SendPropertyChanging();
+					this._Mensagem = value;
+					this.SendPropertyChanged("Mensagem");
+					this.OnMensagemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataHora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataHora
+		{
+			get
+			{
+				return this._DataHora;
+			}
+			set
+			{
+				if ((this._DataHora != value))
+				{
+					this.OnDataHoraChanging(value);
+					this.SendPropertyChanging();
+					this._DataHora = value;
+					this.SendPropertyChanged("DataHora");
+					this.OnDataHoraChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Newsletter")]
+	public partial class Newsletter : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdListaEmail;
+		
+		private string _Email;
+		
+		private System.Nullable<System.DateTime> _Data;
+		
+		private string _IP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdListaEmailChanging(int value);
+    partial void OnIdListaEmailChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnDataChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataChanged();
+    partial void OnIPChanging(string value);
+    partial void OnIPChanged();
+    #endregion
+		
+		public Newsletter()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdListaEmail", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdListaEmail
+		{
+			get
+			{
+				return this._IdListaEmail;
+			}
+			set
+			{
+				if ((this._IdListaEmail != value))
+				{
+					this.OnIdListaEmailChanging(value);
+					this.SendPropertyChanging();
+					this._IdListaEmail = value;
+					this.SendPropertyChanged("IdListaEmail");
+					this.OnIdListaEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this.OnDataChanging(value);
+					this.SendPropertyChanging();
+					this._Data = value;
+					this.SendPropertyChanged("Data");
+					this.OnDataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IP", DbType="VarChar(30)")]
+		public string IP
+		{
+			get
+			{
+				return this._IP;
+			}
+			set
+			{
+				if ((this._IP != value))
+				{
+					this.OnIPChanging(value);
+					this.SendPropertyChanging();
+					this._IP = value;
+					this.SendPropertyChanged("IP");
+					this.OnIPChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Noticia")]
 	public partial class Noticia : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -516,7 +1014,7 @@ namespace DAL_RENATA
 		
 		private string _Conteudo;
 		
-		private System.Nullable<System.DateTime> _DataPublicacao;
+		private System.DateTime _DataPublicacao;
 		
 		private string _CaminhoImagem;
 		
@@ -532,7 +1030,7 @@ namespace DAL_RENATA
     partial void OnDescricaoBreveChanged();
     partial void OnConteudoChanging(string value);
     partial void OnConteudoChanged();
-    partial void OnDataPublicacaoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataPublicacaoChanging(System.DateTime value);
     partial void OnDataPublicacaoChanged();
     partial void OnCaminhoImagemChanging(string value);
     partial void OnCaminhoImagemChanged();
@@ -563,7 +1061,7 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(80)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
 		public string Titulo
 		{
 			get
@@ -583,7 +1081,7 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescricaoBreve", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescricaoBreve", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
 		public string DescricaoBreve
 		{
 			get
@@ -603,7 +1101,7 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Conteudo", DbType="VarChar(1500)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Conteudo", DbType="VarChar(1500) NOT NULL", CanBeNull=false)]
 		public string Conteudo
 		{
 			get
@@ -623,8 +1121,8 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataPublicacao", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataPublicacao
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataPublicacao", DbType="DateTime NOT NULL")]
+		public System.DateTime DataPublicacao
 		{
 			get
 			{
@@ -639,6 +1137,346 @@ namespace DAL_RENATA
 					this._DataPublicacao = value;
 					this.SendPropertyChanged("DataPublicacao");
 					this.OnDataPublicacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Produto")]
+	public partial class Produto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdProduto;
+		
+		private string _Nome;
+		
+		private string _Descricao;
+		
+		private double _Preco;
+		
+		private int _Estoque;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdProdutoChanging(int value);
+    partial void OnIdProdutoChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnPrecoChanging(double value);
+    partial void OnPrecoChanged();
+    partial void OnEstoqueChanging(int value);
+    partial void OnEstoqueChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Produto()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdProduto
+		{
+			get
+			{
+				return this._IdProduto;
+			}
+			set
+			{
+				if ((this._IdProduto != value))
+				{
+					this.OnIdProdutoChanging(value);
+					this.SendPropertyChanging();
+					this._IdProduto = value;
+					this.SendPropertyChanged("IdProduto");
+					this.OnIdProdutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Float NOT NULL")]
+		public double Preco
+		{
+			get
+			{
+				return this._Preco;
+			}
+			set
+			{
+				if ((this._Preco != value))
+				{
+					this.OnPrecoChanging(value);
+					this.SendPropertyChanging();
+					this._Preco = value;
+					this.SendPropertyChanged("Preco");
+					this.OnPrecoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estoque", DbType="Int NOT NULL")]
+		public int Estoque
+		{
+			get
+			{
+				return this._Estoque;
+			}
+			set
+			{
+				if ((this._Estoque != value))
+				{
+					this.OnEstoqueChanging(value);
+					this.SendPropertyChanging();
+					this._Estoque = value;
+					this.SendPropertyChanged("Estoque");
+					this.OnEstoqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
+		public string CaminhoImagem
+		{
+			get
+			{
+				return this._CaminhoImagem;
+			}
+			set
+			{
+				if ((this._CaminhoImagem != value))
+				{
+					this.OnCaminhoImagemChanging(value);
+					this.SendPropertyChanging();
+					this._CaminhoImagem = value;
+					this.SendPropertyChanged("CaminhoImagem");
+					this.OnCaminhoImagemChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Servico")]
+	public partial class Servico : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdServicos;
+		
+		private string _Nome;
+		
+		private string _Descricao;
+		
+		private double _Valor;
+		
+		private string _CaminhoImagem;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdServicosChanging(int value);
+    partial void OnIdServicosChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnValorChanging(double value);
+    partial void OnValorChanged();
+    partial void OnCaminhoImagemChanging(string value);
+    partial void OnCaminhoImagemChanged();
+    #endregion
+		
+		public Servico()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdServicos", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdServicos
+		{
+			get
+			{
+				return this._IdServicos;
+			}
+			set
+			{
+				if ((this._IdServicos != value))
+				{
+					this.OnIdServicosChanging(value);
+					this.SendPropertyChanging();
+					this._IdServicos = value;
+					this.SendPropertyChanged("IdServicos");
+					this.OnIdServicosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Float NOT NULL")]
+		public double Valor
+		{
+			get
+			{
+				return this._Valor;
+			}
+			set
+			{
+				if ((this._Valor != value))
+				{
+					this.OnValorChanging(value);
+					this.SendPropertyChanging();
+					this._Valor = value;
+					this.SendPropertyChanged("Valor");
+					this.OnValorChanged();
 				}
 			}
 		}
@@ -865,844 +1703,6 @@ namespace DAL_RENATA
 					this._TipoUsuario = value;
 					this.SendPropertyChanged("TipoUsuario");
 					this.OnTipoUsuarioChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Servico")]
-	public partial class Servico : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdServicos;
-		
-		private string _Nome;
-		
-		private string _Descricao;
-		
-		private double _Valor;
-		
-		private string _CaminhoImagem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdServicosChanging(int value);
-    partial void OnIdServicosChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnDescricaoChanging(string value);
-    partial void OnDescricaoChanged();
-    partial void OnValorChanging(double value);
-    partial void OnValorChanged();
-    partial void OnCaminhoImagemChanging(string value);
-    partial void OnCaminhoImagemChanged();
-    #endregion
-		
-		public Servico()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdServicos", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdServicos
-		{
-			get
-			{
-				return this._IdServicos;
-			}
-			set
-			{
-				if ((this._IdServicos != value))
-				{
-					this.OnIdServicosChanging(value);
-					this.SendPropertyChanging();
-					this._IdServicos = value;
-					this.SendPropertyChanged("IdServicos");
-					this.OnIdServicosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(100)")]
-		public string Descricao
-		{
-			get
-			{
-				return this._Descricao;
-			}
-			set
-			{
-				if ((this._Descricao != value))
-				{
-					this.OnDescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._Descricao = value;
-					this.SendPropertyChanged("Descricao");
-					this.OnDescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Float NOT NULL")]
-		public double Valor
-		{
-			get
-			{
-				return this._Valor;
-			}
-			set
-			{
-				if ((this._Valor != value))
-				{
-					this.OnValorChanging(value);
-					this.SendPropertyChanging();
-					this._Valor = value;
-					this.SendPropertyChanged("Valor");
-					this.OnValorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
-		public string CaminhoImagem
-		{
-			get
-			{
-				return this._CaminhoImagem;
-			}
-			set
-			{
-				if ((this._CaminhoImagem != value))
-				{
-					this.OnCaminhoImagemChanging(value);
-					this.SendPropertyChanging();
-					this._CaminhoImagem = value;
-					this.SendPropertyChanged("CaminhoImagem");
-					this.OnCaminhoImagemChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Log]")]
-	public partial class Log : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdLog;
-		
-		private System.Nullable<int> _IdUsuario;
-		
-		private string _Mensagem;
-		
-		private System.Nullable<System.DateTime> _DataHora;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdLogChanging(int value);
-    partial void OnIdLogChanged();
-    partial void OnIdUsuarioChanging(System.Nullable<int> value);
-    partial void OnIdUsuarioChanged();
-    partial void OnMensagemChanging(string value);
-    partial void OnMensagemChanged();
-    partial void OnDataHoraChanging(System.Nullable<System.DateTime> value);
-    partial void OnDataHoraChanged();
-    #endregion
-		
-		public Log()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLog", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdLog
-		{
-			get
-			{
-				return this._IdLog;
-			}
-			set
-			{
-				if ((this._IdLog != value))
-				{
-					this.OnIdLogChanging(value);
-					this.SendPropertyChanging();
-					this._IdLog = value;
-					this.SendPropertyChanged("IdLog");
-					this.OnIdLogChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="Int")]
-		public System.Nullable<int> IdUsuario
-		{
-			get
-			{
-				return this._IdUsuario;
-			}
-			set
-			{
-				if ((this._IdUsuario != value))
-				{
-					this.OnIdUsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._IdUsuario = value;
-					this.SendPropertyChanged("IdUsuario");
-					this.OnIdUsuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mensagem", DbType="VarChar(150)")]
-		public string Mensagem
-		{
-			get
-			{
-				return this._Mensagem;
-			}
-			set
-			{
-				if ((this._Mensagem != value))
-				{
-					this.OnMensagemChanging(value);
-					this.SendPropertyChanging();
-					this._Mensagem = value;
-					this.SendPropertyChanged("Mensagem");
-					this.OnMensagemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataHora", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataHora
-		{
-			get
-			{
-				return this._DataHora;
-			}
-			set
-			{
-				if ((this._DataHora != value))
-				{
-					this.OnDataHoraChanging(value);
-					this.SendPropertyChanging();
-					this._DataHora = value;
-					this.SendPropertyChanged("DataHora");
-					this.OnDataHoraChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Produto")]
-	public partial class Produto : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdProduto;
-		
-		private string _Nome;
-		
-		private string _Descricao;
-		
-		private double _Preco;
-		
-		private int _Estoque;
-		
-		private string _CaminhoImagem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdProdutoChanging(int value);
-    partial void OnIdProdutoChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnDescricaoChanging(string value);
-    partial void OnDescricaoChanged();
-    partial void OnPrecoChanging(double value);
-    partial void OnPrecoChanged();
-    partial void OnEstoqueChanging(int value);
-    partial void OnEstoqueChanged();
-    partial void OnCaminhoImagemChanging(string value);
-    partial void OnCaminhoImagemChanged();
-    #endregion
-		
-		public Produto()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdProduto
-		{
-			get
-			{
-				return this._IdProduto;
-			}
-			set
-			{
-				if ((this._IdProduto != value))
-				{
-					this.OnIdProdutoChanging(value);
-					this.SendPropertyChanging();
-					this._IdProduto = value;
-					this.SendPropertyChanged("IdProduto");
-					this.OnIdProdutoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(200)")]
-		public string Descricao
-		{
-			get
-			{
-				return this._Descricao;
-			}
-			set
-			{
-				if ((this._Descricao != value))
-				{
-					this.OnDescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._Descricao = value;
-					this.SendPropertyChanged("Descricao");
-					this.OnDescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Float NOT NULL")]
-		public double Preco
-		{
-			get
-			{
-				return this._Preco;
-			}
-			set
-			{
-				if ((this._Preco != value))
-				{
-					this.OnPrecoChanging(value);
-					this.SendPropertyChanging();
-					this._Preco = value;
-					this.SendPropertyChanged("Preco");
-					this.OnPrecoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estoque", DbType="Int NOT NULL")]
-		public int Estoque
-		{
-			get
-			{
-				return this._Estoque;
-			}
-			set
-			{
-				if ((this._Estoque != value))
-				{
-					this.OnEstoqueChanging(value);
-					this.SendPropertyChanging();
-					this._Estoque = value;
-					this.SendPropertyChanged("Estoque");
-					this.OnEstoqueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
-		public string CaminhoImagem
-		{
-			get
-			{
-				return this._CaminhoImagem;
-			}
-			set
-			{
-				if ((this._CaminhoImagem != value))
-				{
-					this.OnCaminhoImagemChanging(value);
-					this.SendPropertyChanging();
-					this._CaminhoImagem = value;
-					this.SendPropertyChanged("CaminhoImagem");
-					this.OnCaminhoImagemChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Atendimento")]
-	public partial class Atendimento : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdAtendimento;
-		
-		private System.Nullable<System.DateTime> _Data;
-		
-		private System.Nullable<int> _FkServico;
-		
-		private System.Nullable<int> _FkUsuario;
-		
-		private System.Nullable<int> _FkAdmin;
-		
-		private System.Nullable<int> _Estado;
-		
-		private string _Comentario;
-		
-		private string _Resposta;
-		
-		private System.Nullable<System.DateTime> _DataAtendimento;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdAtendimentoChanging(int value);
-    partial void OnIdAtendimentoChanged();
-    partial void OnDataChanging(System.Nullable<System.DateTime> value);
-    partial void OnDataChanged();
-    partial void OnFkServicoChanging(System.Nullable<int> value);
-    partial void OnFkServicoChanged();
-    partial void OnFkUsuarioChanging(System.Nullable<int> value);
-    partial void OnFkUsuarioChanged();
-    partial void OnFkAdminChanging(System.Nullable<int> value);
-    partial void OnFkAdminChanged();
-    partial void OnEstadoChanging(System.Nullable<int> value);
-    partial void OnEstadoChanged();
-    partial void OnComentarioChanging(string value);
-    partial void OnComentarioChanged();
-    partial void OnRespostaChanging(string value);
-    partial void OnRespostaChanged();
-    partial void OnDataAtendimentoChanging(System.Nullable<System.DateTime> value);
-    partial void OnDataAtendimentoChanged();
-    #endregion
-		
-		public Atendimento()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAtendimento", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdAtendimento
-		{
-			get
-			{
-				return this._IdAtendimento;
-			}
-			set
-			{
-				if ((this._IdAtendimento != value))
-				{
-					this.OnIdAtendimentoChanging(value);
-					this.SendPropertyChanging();
-					this._IdAtendimento = value;
-					this.SendPropertyChanged("IdAtendimento");
-					this.OnIdAtendimentoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this.OnDataChanging(value);
-					this.SendPropertyChanging();
-					this._Data = value;
-					this.SendPropertyChanged("Data");
-					this.OnDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkServico", DbType="Int")]
-		public System.Nullable<int> FkServico
-		{
-			get
-			{
-				return this._FkServico;
-			}
-			set
-			{
-				if ((this._FkServico != value))
-				{
-					this.OnFkServicoChanging(value);
-					this.SendPropertyChanging();
-					this._FkServico = value;
-					this.SendPropertyChanged("FkServico");
-					this.OnFkServicoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int")]
-		public System.Nullable<int> FkUsuario
-		{
-			get
-			{
-				return this._FkUsuario;
-			}
-			set
-			{
-				if ((this._FkUsuario != value))
-				{
-					this.OnFkUsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._FkUsuario = value;
-					this.SendPropertyChanged("FkUsuario");
-					this.OnFkUsuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkAdmin", DbType="Int")]
-		public System.Nullable<int> FkAdmin
-		{
-			get
-			{
-				return this._FkAdmin;
-			}
-			set
-			{
-				if ((this._FkAdmin != value))
-				{
-					this.OnFkAdminChanging(value);
-					this.SendPropertyChanging();
-					this._FkAdmin = value;
-					this.SendPropertyChanged("FkAdmin");
-					this.OnFkAdminChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
-		public System.Nullable<int> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comentario", DbType="VarChar(200)")]
-		public string Comentario
-		{
-			get
-			{
-				return this._Comentario;
-			}
-			set
-			{
-				if ((this._Comentario != value))
-				{
-					this.OnComentarioChanging(value);
-					this.SendPropertyChanging();
-					this._Comentario = value;
-					this.SendPropertyChanged("Comentario");
-					this.OnComentarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resposta", DbType="VarChar(200)")]
-		public string Resposta
-		{
-			get
-			{
-				return this._Resposta;
-			}
-			set
-			{
-				if ((this._Resposta != value))
-				{
-					this.OnRespostaChanging(value);
-					this.SendPropertyChanging();
-					this._Resposta = value;
-					this.SendPropertyChanged("Resposta");
-					this.OnRespostaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataAtendimento", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataAtendimento
-		{
-			get
-			{
-				return this._DataAtendimento;
-			}
-			set
-			{
-				if ((this._DataAtendimento != value))
-				{
-					this.OnDataAtendimentoChanging(value);
-					this.SendPropertyChanging();
-					this._DataAtendimento = value;
-					this.SendPropertyChanged("DataAtendimento");
-					this.OnDataAtendimentoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Imagem")]
-	public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdImagem;
-		
-		private string _Titulo;
-		
-		private string _CaminhoImagem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdImagemChanging(int value);
-    partial void OnIdImagemChanged();
-    partial void OnTituloChanging(string value);
-    partial void OnTituloChanged();
-    partial void OnCaminhoImagemChanging(string value);
-    partial void OnCaminhoImagemChanged();
-    #endregion
-		
-		public Imagem()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImagem", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdImagem
-		{
-			get
-			{
-				return this._IdImagem;
-			}
-			set
-			{
-				if ((this._IdImagem != value))
-				{
-					this.OnIdImagemChanging(value);
-					this.SendPropertyChanging();
-					this._IdImagem = value;
-					this.SendPropertyChanged("IdImagem");
-					this.OnIdImagemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(200)")]
-		public string Titulo
-		{
-			get
-			{
-				return this._Titulo;
-			}
-			set
-			{
-				if ((this._Titulo != value))
-				{
-					this.OnTituloChanging(value);
-					this.SendPropertyChanging();
-					this._Titulo = value;
-					this.SendPropertyChanged("Titulo");
-					this.OnTituloChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
-		public string CaminhoImagem
-		{
-			get
-			{
-				return this._CaminhoImagem;
-			}
-			set
-			{
-				if ((this._CaminhoImagem != value))
-				{
-					this.OnCaminhoImagemChanging(value);
-					this.SendPropertyChanging();
-					this._CaminhoImagem = value;
-					this.SendPropertyChanged("CaminhoImagem");
-					this.OnCaminhoImagemChanged();
 				}
 			}
 		}

@@ -25,6 +25,8 @@ namespace WEB_RENATA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ChecarPermissao();
+
             string id = this.Request.QueryString["id"];
             
 
@@ -69,12 +71,13 @@ namespace WEB_RENATA
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = servicoBO.ConsultarPorId(Convert.ToInt32(id), null);
 
-            
+            int idUsuarioLogado = Int32.Parse(Session["IdUsuario"].ToString());
+
             Atendimento atendimento = new Atendimento();
 
             atendimento.FkServico = servico.IdServicos;
-            atendimento.FkUsuario = null;
-            atendimento.FkAdmin = 0;
+            atendimento.FkUsuario = idUsuarioLogado;
+            
             atendimento.Estado = 0;
             atendimento.Data = DateTime.Now;
             atendimento.DataAtendimento = Convert.ToDateTime(txtData.Text);
@@ -82,7 +85,7 @@ namespace WEB_RENATA
 
             AtendimentoBO atendimentoBO = new AtendimentoBO();
 
-            if (atendimentoBO.Agendar(atendimento, servico, 1, 0))
+            if (atendimentoBO.Agendar(atendimento, servico, idUsuarioLogado, 0))
             {
                 Session.Add("msgRes", "Serviço agendado com sucesso!");
                 Response.Redirect("Painel.aspx");
@@ -93,5 +96,20 @@ namespace WEB_RENATA
                 Response.Redirect("Servicos.aspx");
             }
         }
+
+        public void ChecarPermissao()
+        {
+            if (Session["nomeUsuario"] != null)
+            {
+                
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+
+            }
+        }
+
+        
     }
 }

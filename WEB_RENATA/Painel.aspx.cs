@@ -24,11 +24,13 @@ namespace WEB_RENATA
     {
         Home mp;
         public static PagedDataSource pageDs;
+        int idUsuarioLogado; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (Home)this.Master;
 
+            idUsuarioLogado = Int32.Parse(Session["IdUsuario"].ToString());
 
             if (!IsPostBack)
             {
@@ -76,8 +78,10 @@ namespace WEB_RENATA
 
         public List<Atendimento> ListarTodos()
         {
+
+
             AtendimentoBO atendimentoBO = new AtendimentoBO();
-            List<Atendimento> lista = atendimentoBO.ConsultarTodos(null);
+            List<Atendimento> lista = atendimentoBO.ConsultarTodosPorId(idUsuarioLogado);
             return lista;
         }
  
@@ -121,12 +125,15 @@ namespace WEB_RENATA
                 lbtProximo.Visible = false;
                 mp.DefinirMsgResultado(divResultado, lblResultado, "Não há atendimentos.", null);
                 this.divResultado.Visible = true;
+                
             }
         }
  
 
         private DataTable MontarDataTable(List<Atendimento> list)
         {
+            
+            
             DataTable tabela = new DataTable();
             tabela.Columns.Add("id");
             tabela.Columns.Add("servico");
@@ -143,29 +150,35 @@ namespace WEB_RENATA
                 Usuario usuario = new Usuario();
                 UsuarioBO usuarioBO = new UsuarioBO();
 
-                //usuario = usuarioBO.ConsultarPorId(atend.FkUsuario);
-
+                 
                 string resultado = "Em aprovação";
 
                 if (atend.Estado == 1)
                 {
                     resultado = "Aprovado";
+                     
+
+
                 }
                 if (atend.Estado == 2)
                 {
                     resultado = "Desaprovado";
                 }
 
+                Servico servico = new Servico();
+                ServicoBO servicoBO = new ServicoBO();
+
+                servico = servicoBO.ConsultarPorId(atend.FkServico, null);
 
                 DataRow row = tabela.NewRow();
 
                 row["id"] = atend.IdAtendimento;
-                row["servico"] = atend.FkServico;
+                row["servico"] = servico.Nome;
                 row["dataAtend"] = atend.DataAtendimento;
                 row["resposta"] = atend.Resposta;
                 row["comentario"] = atend.Comentario;
                 row["estado"] = resultado;
-                row["usuario"] = "lol";
+                 
 
 
 

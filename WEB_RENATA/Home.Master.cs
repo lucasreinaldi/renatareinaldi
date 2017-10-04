@@ -125,6 +125,8 @@ namespace WEB_RENATA
                 //lnkWelcome.InnerText += Session["New"].ToString();
                 //FormsAuthentication.RedirectFromLoginPage(ToString(), true);
                 this.ConfigurarDadosUsuario();
+
+                user.InnerHtml = "Bem vindo " + Session["nomeUsuario"].ToString();
             }
             else
             {
