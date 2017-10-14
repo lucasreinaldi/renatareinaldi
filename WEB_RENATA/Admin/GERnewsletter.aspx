@@ -4,8 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-    <section class="main-section" id="Portfolio"> 
-	<div class="container gerNewsletter">
+    <section> 
+	<div class="container gerSquare">
     	<h2>Base de dados de e-mails</h2>
     	 
 
@@ -17,7 +17,7 @@
          
         
 	</div>
-    <div class="container wow fadeInUp delay-04s tabela">
+    <div class="container wow fadeInUp delay-04s">
             
         <asp:HiddenField ID="hidID" runat="server" />
        <div >
@@ -27,21 +27,22 @@
                 <HeaderTemplate>
                     <div id="topoLista">
                         <tr>
-                            <th style="width: 2%; text-align: center;">ID
+                            <th style="  text-align: center;">ID
                             </th>
-                            <th style="width: 7%; text-align: center;">IP
+                            <th style=" text-align: center;">IP
                             </th>
-                            <th style="width: 15%; text-align: center;">Data
+                            <th style="text-align: center;">Data
                             </th>
-                            <th style="width: 15%; text-align: center;">Email
+                            <th style="text-align: center;">Email
                             </th>
-                            <th style="width: 2%; text-align: center;">D
+                            <th style="text-align: center;">D
                             </th>
+                            
                         </tr>
                     </div>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tr class="linhaA">
+                    <tr class="">
                         <td align="center">
                             <%#Eval("id") %>
                         </td>

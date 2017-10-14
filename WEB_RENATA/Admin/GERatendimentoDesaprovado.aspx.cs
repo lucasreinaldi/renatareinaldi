@@ -112,13 +112,16 @@ namespace WEB_RENATA.Admin
             tabela.Columns.Add("estado");
             tabela.Columns.Add("usuario");
 
-
             foreach (Atendimento atend in list)
             {
                 Usuario usuario = new Usuario();
                 UsuarioBO usuarioBO = new UsuarioBO();
 
-                //usuario = usuarioBO.ConsultarPorId(atend.FkUsuario);
+                Servico servico = new Servico();
+                ServicoBO servicoBO = new ServicoBO();
+                
+                usuario = usuarioBO.ConsultarPorId(atend.FkUsuario);
+                servico = servicoBO.ConsultarPorId(atend.FkServico, null);
 
                 string resultado = "Em aprovação";
 
@@ -131,19 +134,16 @@ namespace WEB_RENATA.Admin
                     resultado = "Desaprovado";
                 }
 
-
                 DataRow row = tabela.NewRow();
 
                 row["id"] = atend.IdAtendimento;
-                row["servico"] = atend.FkServico;
+                row["servico"] = servico.Nome;
                 row["data"] = atend.Data;
                 row["dataAtend"] = atend.DataAtendimento;
                 row["comentario"] = atend.Comentario;
                 row["resposta"] = atend.Resposta;
                 row["estado"] = resultado;
-                row["usuario"] = "lol";
-
-
+                row["usuario"] = usuario.Email;
 
                 tabela.Rows.Add(row);
             }

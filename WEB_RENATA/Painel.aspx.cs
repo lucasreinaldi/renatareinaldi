@@ -55,31 +55,12 @@ namespace WEB_RENATA
              
         }
 
-        private void Excluir(int id)
-        {
-            string pastaDestino = this.MapPath("..\\img\\produtos\\");
-
-            if (id > 0)
-            {
-                ProdutoBO produtoBO = new ProdutoBO();
-                Produto produto = new Produto();
-
-                produto.IdProduto = id;
-
-                if (produtoBO.Excluir(produto, pastaDestino, null) == true)
-                {
-                    mp.DefinirMsgResultado(divResultado, lblResultado, "Produto excluido com sucesso!", null);
-                    this.MontarRepeater();
-                }
-            }
-        }
+     
 
          
 
         public List<Atendimento> ListarTodos()
         {
-
-
             AtendimentoBO atendimentoBO = new AtendimentoBO();
             List<Atendimento> lista = atendimentoBO.ConsultarTodosPorId(idUsuarioLogado);
             return lista;

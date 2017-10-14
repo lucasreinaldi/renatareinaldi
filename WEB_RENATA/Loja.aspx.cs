@@ -48,11 +48,12 @@ namespace WEB_RENATA
                 pageDs.PageSize = 10;
 
                 // mp.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
-
+                ColetarSessao();
             }
 
 
             MontarRepeater();
+
         }
 
         private DataTable MontarDataTable(List<Produto> list)
@@ -108,11 +109,21 @@ namespace WEB_RENATA
             }
         }
 
+
+
         public List<Produto> ListarTodos()
         {
             ProdutoBO produtoBO = new ProdutoBO();
             List<Produto> lista = produtoBO.ConsultarTodos(null);
             return lista;
+        }
+
+        public void ColetarSessao()
+        {
+            ProdutoBO produtoBO = new ProdutoBO();
+            List<Produto> lista = produtoBO.ConsultarTodos(null);
+            Session["Carrinho"] = lista;
+
         }
 
         protected void lbtAnterior_Click(object sender, EventArgs e)

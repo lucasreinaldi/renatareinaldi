@@ -76,8 +76,9 @@
                 
 
 
-                <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control input-text" placeholder="complemento"
+                <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control input-text" style="margin-bottom: 30px;" placeholder="complemento (opcional)"
                         MaxLength="100"></asp:TextBox>
+            
                      
                 <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control input-text" placeholder="bairro"
                         MaxLength="100"></asp:TextBox>
@@ -107,7 +108,7 @@
                   
 
                 
-                <asp:LinkButton ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-block margin-top marginbottom"
+                <asp:LinkButton ID="btnCadastrar" runat="server" CssClass="login loginmodal-submit margin-top marginbottom"
                         CausesValidation="true" ValidationGroup="valCadastro" OnClick="btnCadastrar_Click" >Cadastrar</asp:LinkButton>
                  <a class="btn btn-primary btn-block" href="Login.aspx">Voltar</a>
                 </asp:Panel>

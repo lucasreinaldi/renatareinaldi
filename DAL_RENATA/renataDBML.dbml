@@ -1,16 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="renatadb" Class="renataDBMLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=NEBULUS_PC\SQLEXPRESS;Initial Catalog=renatadb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="renatadbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Senha" Type="System.Data.Linq.Binary" DbType="Binary(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fkEndereco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Atendimento" Member="Atendimentos">
     <Type Name="Atendimento">
       <Column Name="IdAtendimento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Data" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FkServico" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FkUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FkAdmin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FkUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Comentario" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Resposta" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DataAtendimento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataAtendimento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Endereco" Member="Enderecos">
@@ -22,13 +32,6 @@
       <Column Name="Cidade" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="CEP" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Imagem" Member="Imagems">
-    <Type Name="Imagem">
-      <Column Name="IdImagem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Titulo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="CaminhoImagem" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.[Log]" Member="Logs">
@@ -76,15 +79,12 @@
       <Column Name="CaminhoImagem" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Usuario" Member="Usuarios">
-    <Type Name="Usuario">
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Senha" Type="System.Data.Linq.Binary" DbType="Binary(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="CPF" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="fkEndereco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TipoUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.Venda" Member="Vendas">
+    <Type Name="Venda">
+      <Column Name="IdCompra" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FkUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subtotal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

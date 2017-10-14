@@ -121,11 +121,8 @@ namespace WEB_RENATA
         public void ChecarPermissao()
         {
             if (Session["nomeUsuario"] != null)
-            {
-                //lnkWelcome.InnerText += Session["New"].ToString();
-                //FormsAuthentication.RedirectFromLoginPage(ToString(), true);
+            {                
                 this.ConfigurarDadosUsuario();
-
                 user.InnerHtml = "Bem vindo " + Session["nomeUsuario"].ToString();
             }
             else
@@ -134,7 +131,6 @@ namespace WEB_RENATA
                 logout.Visible = false;
                 painel.Visible = false;
                 adm.Visible = false;
-
             }
         }
 
@@ -160,7 +156,6 @@ namespace WEB_RENATA
                     adm.Visible = true;
                     login.Visible = false;
                     painel.Visible = false;
-
                 }
                 else
                 {
@@ -172,10 +167,8 @@ namespace WEB_RENATA
                         adm.Visible = false;
                         carrinho.Visible = true;
                     }
-
                 }
-            }
-                
+            }                
         }
 
         public void RecarregarSessao()
@@ -214,12 +207,8 @@ namespace WEB_RENATA
             {
                 btnFoco.Focus();
             }
-
             divResultado.Attributes["class"] = "formlinhamsg";
-
-
             lblMsg.Text = msg;
-
             Session["msgRes"] = null;
             Session["msgTipo"] = null;
         }
@@ -229,9 +218,7 @@ namespace WEB_RENATA
         {
             lblCurrentPage.Text = (CurrentPage + 1).ToString() + " de <b>"
             + pageDs.PageCount.ToString() + "</b>";
-
             pageDs.CurrentPageIndex = CurrentPage;
-
             if (pageDs.PageCount == 1 && CurrentPage + 1 == 1)
             {
                 lblCurrentPage.Visible = false;
@@ -240,16 +227,13 @@ namespace WEB_RENATA
             {
                 lblCurrentPage.Visible = true;
             }
-
             lbtAnterior.Visible = !pageDs.IsFirstPage;
             lbtProximo.Visible = !pageDs.IsLastPage;
-
             if (pageDs.Count <= 0)
             {
                 lbtAnterior.Visible = false;
                 lbtProximo.Visible = false;
             }
-
             return pageDs;
         }
 
@@ -263,7 +247,6 @@ namespace WEB_RENATA
                 else
                     return (int)o;
             }
-
             set
             {
                 this.ViewState["_CurrentPage"] = value;
@@ -275,12 +258,10 @@ namespace WEB_RENATA
        public static string Anterior()
         {
             Pagina = Pagina - 10;
-
             if (Pagina >= 0)
             {
                 return ltlpaginas.Text = "<a class=\"linkPaginacao\" href=\"" + NomePagina + ".aspx?pagina=" + Pagina + "\"> <<< </a>";
             }
-
             return ltlpaginas.Text = "";
         }
               

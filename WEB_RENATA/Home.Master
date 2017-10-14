@@ -71,11 +71,15 @@
     <asp:ContentPlaceHolder ID="contentBody" runat="server">
     </asp:ContentPlaceHolder>
     <footer class="footer">
-    <div class="container">
-         
-        <span class="copyright">Renata Reinaldi Adestradora</span>
-        <div class="credits">            
-           
+    <div class="container text-center">
+         <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-skype"></i></a>
+        
+        <div class="margin-top credits">            
+           <span class="copyright">Renata Reinaldi Adestradora</span>
         </div>
     </div>
 </footer>

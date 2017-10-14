@@ -2,7 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-
+    <div id="divResultado" runat="server">
+        <div id="divLabel" runat="server">
+            <asp:Label ID="lblResultado" runat="server"></asp:Label>
+        </div>
+    </div>
     <section class="main-section alabaster">
 	<div class="container">
         
@@ -29,12 +33,7 @@
                         ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtEstoque" ValidationGroup="validation"></asp:RegularExpressionValidator>
 
                      
-                    <asp:TextBox ID="txtData" runat="server" CssClass="form-control input-text" placeholder="data"
-                       ></asp:TextBox>                    
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Size="Smaller" runat="server"
-                        ErrorMessage="você precisa digitar algo" CssClass="RequiredField" ControlToValidate="txtData" ValidationGroup="validation"></asp:RequiredFieldValidator>
-
-                     
+                   
 
 
                      <br />

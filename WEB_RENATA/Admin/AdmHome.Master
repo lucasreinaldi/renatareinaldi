@@ -47,6 +47,7 @@
         <ul class="main-nav">               
             <li><a href="GERhome.aspx">Alterar Home</a></li>
             <li><a href="GERatendimento.aspx">Atendimentos</a></li> 
+            <li><a href="GERvendas.aspx">Vendas</a></li> 
             <li><a href="GERlogs.aspx">Logs</a></li>  
             <li><a href="GERnewsletter.aspx">Newsletter</a></li>
             <li><a href="GERnoticias.aspx">Notícias</a></li> 

@@ -30,15 +30,15 @@ namespace DAL_RENATA
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertUsuario(Usuario instance);
+    partial void UpdateUsuario(Usuario instance);
+    partial void DeleteUsuario(Usuario instance);
     partial void InsertAtendimento(Atendimento instance);
     partial void UpdateAtendimento(Atendimento instance);
     partial void DeleteAtendimento(Atendimento instance);
     partial void InsertEndereco(Endereco instance);
     partial void UpdateEndereco(Endereco instance);
     partial void DeleteEndereco(Endereco instance);
-    partial void InsertImagem(Imagem instance);
-    partial void UpdateImagem(Imagem instance);
-    partial void DeleteImagem(Imagem instance);
     partial void InsertLog(Log instance);
     partial void UpdateLog(Log instance);
     partial void DeleteLog(Log instance);
@@ -54,9 +54,9 @@ namespace DAL_RENATA
     partial void InsertServico(Servico instance);
     partial void UpdateServico(Servico instance);
     partial void DeleteServico(Servico instance);
-    partial void InsertUsuario(Usuario instance);
-    partial void UpdateUsuario(Usuario instance);
-    partial void DeleteUsuario(Usuario instance);
+    partial void InsertVenda(Venda instance);
+    partial void UpdateVenda(Venda instance);
+    partial void DeleteVenda(Venda instance);
     #endregion
 		
 		public renataDBMLDataContext() : 
@@ -89,6 +89,14 @@ namespace DAL_RENATA
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Usuario> Usuarios
+		{
+			get
+			{
+				return this.GetTable<Usuario>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Atendimento> Atendimentos
 		{
 			get
@@ -102,14 +110,6 @@ namespace DAL_RENATA
 			get
 			{
 				return this.GetTable<Endereco>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Imagem> Imagems
-		{
-			get
-			{
-				return this.GetTable<Imagem>();
 			}
 		}
 		
@@ -153,11 +153,217 @@ namespace DAL_RENATA
 			}
 		}
 		
-		public System.Data.Linq.Table<Usuario> Usuarios
+		public System.Data.Linq.Table<Venda> Vendas
 		{
 			get
 			{
-				return this.GetTable<Usuario>();
+				return this.GetTable<Venda>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuario")]
+	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdUsuario;
+		
+		private string _Nome;
+		
+		private string _Email;
+		
+		private System.Data.Linq.Binary _Senha;
+		
+		private string _CPF;
+		
+		private System.Nullable<int> _fkEndereco;
+		
+		private int _TipoUsuario;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdUsuarioChanging(int value);
+    partial void OnIdUsuarioChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnSenhaChanging(System.Data.Linq.Binary value);
+    partial void OnSenhaChanged();
+    partial void OnCPFChanging(string value);
+    partial void OnCPFChanged();
+    partial void OnfkEnderecoChanging(System.Nullable<int> value);
+    partial void OnfkEnderecoChanged();
+    partial void OnTipoUsuarioChanging(int value);
+    partial void OnTipoUsuarioChanged();
+    #endregion
+		
+		public Usuario()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this.OnIdUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._IdUsuario = value;
+					this.SendPropertyChanged("IdUsuario");
+					this.OnIdUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="Binary(20) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Senha
+		{
+			get
+			{
+				return this._Senha;
+			}
+			set
+			{
+				if ((this._Senha != value))
+				{
+					this.OnSenhaChanging(value);
+					this.SendPropertyChanging();
+					this._Senha = value;
+					this.SendPropertyChanged("Senha");
+					this.OnSenhaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(100)")]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this.OnCPFChanging(value);
+					this.SendPropertyChanging();
+					this._CPF = value;
+					this.SendPropertyChanged("CPF");
+					this.OnCPFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fkEndereco", DbType="Int")]
+		public System.Nullable<int> fkEndereco
+		{
+			get
+			{
+				return this._fkEndereco;
+			}
+			set
+			{
+				if ((this._fkEndereco != value))
+				{
+					this.OnfkEnderecoChanging(value);
+					this.SendPropertyChanging();
+					this._fkEndereco = value;
+					this.SendPropertyChanged("fkEndereco");
+					this.OnfkEnderecoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoUsuario", DbType="Int NOT NULL")]
+		public int TipoUsuario
+		{
+			get
+			{
+				return this._TipoUsuario;
+			}
+			set
+			{
+				if ((this._TipoUsuario != value))
+				{
+					this.OnTipoUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._TipoUsuario = value;
+					this.SendPropertyChanged("TipoUsuario");
+					this.OnTipoUsuarioChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -170,13 +376,11 @@ namespace DAL_RENATA
 		
 		private int _IdAtendimento;
 		
-		private System.Nullable<System.DateTime> _Data;
+		private System.DateTime _Data;
 		
 		private int _FkServico;
 		
-		private System.Nullable<int> _FkUsuario;
-		
-		private int _FkAdmin;
+		private int _FkUsuario;
 		
 		private System.Nullable<int> _Estado;
 		
@@ -184,7 +388,7 @@ namespace DAL_RENATA
 		
 		private string _Resposta;
 		
-		private System.Nullable<System.DateTime> _DataAtendimento;
+		private System.DateTime _DataAtendimento;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -192,21 +396,19 @@ namespace DAL_RENATA
     partial void OnCreated();
     partial void OnIdAtendimentoChanging(int value);
     partial void OnIdAtendimentoChanged();
-    partial void OnDataChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataChanging(System.DateTime value);
     partial void OnDataChanged();
     partial void OnFkServicoChanging(int value);
     partial void OnFkServicoChanged();
-    partial void OnFkUsuarioChanging(System.Nullable<int> value);
+    partial void OnFkUsuarioChanging(int value);
     partial void OnFkUsuarioChanged();
-    partial void OnFkAdminChanging(int value);
-    partial void OnFkAdminChanged();
     partial void OnEstadoChanging(System.Nullable<int> value);
     partial void OnEstadoChanged();
     partial void OnComentarioChanging(string value);
     partial void OnComentarioChanged();
     partial void OnRespostaChanging(string value);
     partial void OnRespostaChanged();
-    partial void OnDataAtendimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataAtendimentoChanging(System.DateTime value);
     partial void OnDataAtendimentoChanged();
     #endregion
 		
@@ -235,8 +437,8 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Data
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
+		public System.DateTime Data
 		{
 			get
 			{
@@ -275,8 +477,8 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int")]
-		public System.Nullable<int> FkUsuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int NOT NULL")]
+		public int FkUsuario
 		{
 			get
 			{
@@ -291,26 +493,6 @@ namespace DAL_RENATA
 					this._FkUsuario = value;
 					this.SendPropertyChanged("FkUsuario");
 					this.OnFkUsuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkAdmin", DbType="Int NOT NULL")]
-		public int FkAdmin
-		{
-			get
-			{
-				return this._FkAdmin;
-			}
-			set
-			{
-				if ((this._FkAdmin != value))
-				{
-					this.OnFkAdminChanging(value);
-					this.SendPropertyChanging();
-					this._FkAdmin = value;
-					this.SendPropertyChanged("FkAdmin");
-					this.OnFkAdminChanged();
 				}
 			}
 		}
@@ -375,8 +557,8 @@ namespace DAL_RENATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataAtendimento", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataAtendimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataAtendimento", DbType="DateTime NOT NULL")]
+		public System.DateTime DataAtendimento
 		{
 			get
 			{
@@ -597,116 +779,6 @@ namespace DAL_RENATA
 					this._CEP = value;
 					this.SendPropertyChanged("CEP");
 					this.OnCEPChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Imagem")]
-	public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdImagem;
-		
-		private string _Titulo;
-		
-		private string _CaminhoImagem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdImagemChanging(int value);
-    partial void OnIdImagemChanged();
-    partial void OnTituloChanging(string value);
-    partial void OnTituloChanged();
-    partial void OnCaminhoImagemChanging(string value);
-    partial void OnCaminhoImagemChanged();
-    #endregion
-		
-		public Imagem()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImagem", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdImagem
-		{
-			get
-			{
-				return this._IdImagem;
-			}
-			set
-			{
-				if ((this._IdImagem != value))
-				{
-					this.OnIdImagemChanging(value);
-					this.SendPropertyChanging();
-					this._IdImagem = value;
-					this.SendPropertyChanged("IdImagem");
-					this.OnIdImagemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(200)")]
-		public string Titulo
-		{
-			get
-			{
-				return this._Titulo;
-			}
-			set
-			{
-				if ((this._Titulo != value))
-				{
-					this.OnTituloChanging(value);
-					this.SendPropertyChanging();
-					this._Titulo = value;
-					this.SendPropertyChanged("Titulo");
-					this.OnTituloChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CaminhoImagem", DbType="VarChar(1000)")]
-		public string CaminhoImagem
-		{
-			get
-			{
-				return this._CaminhoImagem;
-			}
-			set
-			{
-				if ((this._CaminhoImagem != value))
-				{
-					this.OnCaminhoImagemChanging(value);
-					this.SendPropertyChanging();
-					this._CaminhoImagem = value;
-					this.SendPropertyChanged("CaminhoImagem");
-					this.OnCaminhoImagemChanged();
 				}
 			}
 		}
@@ -1522,187 +1594,115 @@ namespace DAL_RENATA
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuario")]
-	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venda")]
+	public partial class Venda : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IdUsuario;
+		private int _IdCompra;
 		
-		private string _Nome;
+		private int _FkUsuario;
 		
-		private string _Email;
+		private double _Subtotal;
 		
-		private System.Data.Linq.Binary _Senha;
-		
-		private string _CPF;
-		
-		private System.Nullable<int> _fkEndereco;
-		
-		private int _TipoUsuario;
+		private System.DateTime _Data;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdUsuarioChanging(int value);
-    partial void OnIdUsuarioChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnSenhaChanging(System.Data.Linq.Binary value);
-    partial void OnSenhaChanged();
-    partial void OnCPFChanging(string value);
-    partial void OnCPFChanged();
-    partial void OnfkEnderecoChanging(System.Nullable<int> value);
-    partial void OnfkEnderecoChanged();
-    partial void OnTipoUsuarioChanging(int value);
-    partial void OnTipoUsuarioChanged();
+    partial void OnIdCompraChanging(int value);
+    partial void OnIdCompraChanged();
+    partial void OnFkUsuarioChanging(int value);
+    partial void OnFkUsuarioChanged();
+    partial void OnSubtotalChanging(double value);
+    partial void OnSubtotalChanged();
+    partial void OnDataChanging(System.DateTime value);
+    partial void OnDataChanged();
     #endregion
 		
-		public Usuario()
+		public Venda()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdUsuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCompra", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdCompra
 		{
 			get
 			{
-				return this._IdUsuario;
+				return this._IdCompra;
 			}
 			set
 			{
-				if ((this._IdUsuario != value))
+				if ((this._IdCompra != value))
 				{
-					this.OnIdUsuarioChanging(value);
+					this.OnIdCompraChanging(value);
 					this.SendPropertyChanging();
-					this._IdUsuario = value;
-					this.SendPropertyChanged("IdUsuario");
-					this.OnIdUsuarioChanged();
+					this._IdCompra = value;
+					this.SendPropertyChanged("IdCompra");
+					this.OnIdCompraChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FkUsuario", DbType="Int NOT NULL")]
+		public int FkUsuario
 		{
 			get
 			{
-				return this._Nome;
+				return this._FkUsuario;
 			}
 			set
 			{
-				if ((this._Nome != value))
+				if ((this._FkUsuario != value))
 				{
-					this.OnNomeChanging(value);
+					this.OnFkUsuarioChanging(value);
 					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
+					this._FkUsuario = value;
+					this.SendPropertyChanged("FkUsuario");
+					this.OnFkUsuarioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subtotal", DbType="Float NOT NULL")]
+		public double Subtotal
 		{
 			get
 			{
-				return this._Email;
+				return this._Subtotal;
 			}
 			set
 			{
-				if ((this._Email != value))
+				if ((this._Subtotal != value))
 				{
-					this.OnEmailChanging(value);
+					this.OnSubtotalChanging(value);
 					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._Subtotal = value;
+					this.SendPropertyChanged("Subtotal");
+					this.OnSubtotalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="Binary(20) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Senha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
+		public System.DateTime Data
 		{
 			get
 			{
-				return this._Senha;
+				return this._Data;
 			}
 			set
 			{
-				if ((this._Senha != value))
+				if ((this._Data != value))
 				{
-					this.OnSenhaChanging(value);
+					this.OnDataChanging(value);
 					this.SendPropertyChanging();
-					this._Senha = value;
-					this.SendPropertyChanged("Senha");
-					this.OnSenhaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(100)")]
-		public string CPF
-		{
-			get
-			{
-				return this._CPF;
-			}
-			set
-			{
-				if ((this._CPF != value))
-				{
-					this.OnCPFChanging(value);
-					this.SendPropertyChanging();
-					this._CPF = value;
-					this.SendPropertyChanged("CPF");
-					this.OnCPFChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fkEndereco", DbType="Int")]
-		public System.Nullable<int> fkEndereco
-		{
-			get
-			{
-				return this._fkEndereco;
-			}
-			set
-			{
-				if ((this._fkEndereco != value))
-				{
-					this.OnfkEnderecoChanging(value);
-					this.SendPropertyChanging();
-					this._fkEndereco = value;
-					this.SendPropertyChanged("fkEndereco");
-					this.OnfkEnderecoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoUsuario", DbType="Int NOT NULL")]
-		public int TipoUsuario
-		{
-			get
-			{
-				return this._TipoUsuario;
-			}
-			set
-			{
-				if ((this._TipoUsuario != value))
-				{
-					this.OnTipoUsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._TipoUsuario = value;
-					this.SendPropertyChanged("TipoUsuario");
-					this.OnTipoUsuarioChanged();
+					this._Data = value;
+					this.SendPropertyChanged("Data");
+					this.OnDataChanged();
 				}
 			}
 		}

@@ -129,6 +129,8 @@
     <Content Include="Admin\GERservicos.aspx" />
     <Content Include="Admin\GERservicosDados.aspx" />
     <Content Include="Admin\GERusuarios.aspx" />
+    <Content Include="Admin\GERvendas.aspx" />
+    <Content Include="Carrinho.aspx" />
     <Content Include="CSS\animate.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\font-awesome.css" />
@@ -150,7 +152,7 @@
     <Content Include="img\home\defaultCar.jpg" />
     <Content Include="img\home\defaultCarrousel.jpg" />
     <Content Include="img\home\defaultCliente.jpg" />
-    <Content Include="img\regal.png" />
+    <Content Include="img\bg.png" />
     <Content Include="JS\jquery.datetimepicker.full.js" />
     <Content Include="JS\jquery.js" />
     <Content Include="JS\NewFolder1\all.js" />
@@ -185,7 +187,6 @@
     <Content Include="FONTS\fontawesome-webfont.woff" />
     <Content Include="FONTS\fontawesome-webfont.woff2" />
     <Content Include="FONTS\FontAwesome.otf" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,6 +311,20 @@
     <Compile Include="Admin\GERusuarios.aspx.designer.cs">
       <DependentUpon>GERusuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\GERvendas.aspx.cs">
+      <DependentUpon>GERvendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GERvendas.aspx.designer.cs">
+      <DependentUpon>GERvendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrinho.aspx.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrinho.aspx.designer.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -394,13 +409,6 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

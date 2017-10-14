@@ -12,15 +12,9 @@
 	<div class="container gerSquare">
     	<h2>Atendimentos</h2>
     	 
-
-        
-	</div>
-    <div class="container fadeInUp delay-04s tabelaServicos">
-            
-        <asp:HiddenField ID="hidID" runat="server" />
-       <div id="divCentral">
+         <div id="divCentral">
          
-        <table id="divTabela" runat="server">
+        <table id="divTabela">
             <asp:Repeater ID="rptAtendimento" runat="server">
                 <HeaderTemplate>
                     <div id="topoLista">
@@ -70,6 +64,12 @@
             </asp:Repeater>
         </table>
     </div>
+        
+	</div>
+    <div class="container fadeInUp delay-04s tabelaServicos">
+            
+        <asp:HiddenField ID="hidID" runat="server" />
+      
 
  
         

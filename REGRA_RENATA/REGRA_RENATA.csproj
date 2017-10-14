@@ -120,6 +120,7 @@
     <Compile Include="ServicoBO.cs" />
     <Compile Include="UsuarioBO.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="VendaBO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL_RENATA\DAL_RENATA.csproj">

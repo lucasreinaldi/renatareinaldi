@@ -207,7 +207,6 @@ namespace REGRA_RENATA
         {
             System.Web.HttpContext context = System.Web.HttpContext.Current;
             string ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-
             if (!string.IsNullOrEmpty(ipAddress))
             {
                 string[] addresses = ipAddress.Split(',');
@@ -218,7 +217,5 @@ namespace REGRA_RENATA
             }
             return context.Request.ServerVariables["REMOTE_ADDR"];
         }
-
-
     }
 }

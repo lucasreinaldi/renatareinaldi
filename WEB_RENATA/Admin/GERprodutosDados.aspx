@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
-    <section class="main-section" id="Portfolio">
+    <section>
 	<div class="container gerSquare">
     	<h2>Gerenciador de Produtos</h2>
     	 

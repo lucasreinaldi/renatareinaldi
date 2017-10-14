@@ -198,24 +198,18 @@ namespace REGRA_RENATA
             }
         }
 
-        public bool Agendar(Atendimento atendimento, Servico servico, int? idUsuarioLogado, int estado)
+        public bool Agendar(Atendimento atendimento, Servico servico, int? idUsuarioLogado)
         {
             LogBO logBO = new LogBO();
             Log log = new Log();
-            string msg = "";
-
-            
+            string msg = "";            
             try
             {
-
                 DataContext.BeginTransaction();
                 DataContext.DataContext.Atendimentos.InsertOnSubmit(atendimento);
                 DataContext.DataContext.SubmitChanges();
-
-
                 DataContext.CommitTransaction();
                 msg = "Serviço " + servico.IdServicos + "consumido! Usuário: " + idUsuarioLogado;
-
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -226,13 +220,11 @@ namespace REGRA_RENATA
             catch (Exception e)
             {
                 msg = "Erro ao consumir o serviço. [" + e.Message + "][" + e.Source + "]";
-
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
                     Mensagem = msg
                 };
-
                 logBO.Salvar(log);
                 DataContext.RollbackTransaction();
                 return false;
@@ -256,7 +248,7 @@ namespace REGRA_RENATA
                 novo.Data = atendimento.Data;
                 novo.DataAtendimento = atendimento.DataAtendimento;
                 novo.Estado = 1;
-                novo.FkAdmin = atendimento.FkAdmin;
+                 
                 novo.FkServico = atendimento.FkServico;
                 novo.FkUsuario = atendimento.FkUsuario;
                 novo.IdAtendimento = atendimento.IdAtendimento;
@@ -309,7 +301,7 @@ namespace REGRA_RENATA
                 novo.Data = atendimento.Data;
                 novo.DataAtendimento = atendimento.DataAtendimento;
                 novo.Estado = 2;
-                novo.FkAdmin = atendimento.FkAdmin;
+              
                 novo.FkServico = atendimento.FkServico;
                 novo.FkUsuario = atendimento.FkUsuario;
                 novo.IdAtendimento = atendimento.IdAtendimento;

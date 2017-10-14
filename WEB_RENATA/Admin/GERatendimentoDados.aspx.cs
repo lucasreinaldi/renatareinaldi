@@ -57,7 +57,7 @@ namespace WEB_RENATA.Admin
 
             if (atendimento != null)
             {
-                this.lblID.Text = atendimento.IdAtendimento.ToString();
+                
                  
 
             }

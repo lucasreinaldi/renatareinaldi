@@ -156,6 +156,8 @@ namespace WEB_RENATA.Admin
 
                 servico = servicoBO.ConsultarPorId(atend.FkServico, null);
 
+                
+                usuario = usuarioBO.ConsultarPorId(atend.FkUsuario);
 
                 DataRow row = tabela.NewRow();
 
@@ -166,7 +168,7 @@ namespace WEB_RENATA.Admin
                 row["comentario"] = atend.Comentario;
                 row["resposta"] = atend.Resposta;
                 row["estado"] = resultado;
-                row["usuario"] = "lol";
+                row["usuario"] = usuario.Email;
 
 
 

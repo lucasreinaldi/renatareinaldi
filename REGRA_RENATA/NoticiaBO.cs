@@ -30,19 +30,16 @@ namespace REGRA_RENATA
             LogBO logBO = new LogBO();
             Log log = new Log();
             string msg = "";
-
             try
             {
                 noticia.CaminhoImagem = " ";
                 DataContext.BeginTransaction();
                 DataContext.DataContext.Noticias.InsertOnSubmit(noticia);
                 DataContext.DataContext.SubmitChanges();
-
                 string caminhoCompleto = pastaDestino + "Noticia_" + noticia.IdNoticia + extensao;
                 if (fup.HasFile)
                 {
                     Util.UploadArquivo(fup, caminhoCompleto);
-
                     if (Util.ArquivoExists(caminhoCompleto, null, null))
                     {
                         Noticia noticiaAlterar = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
@@ -60,10 +57,8 @@ namespace REGRA_RENATA
                     noticiaAlterar.CaminhoImagem = "Default.jpg";
                     DataContext.DataContext.SubmitChanges();
                 }
-
                 DataContext.CommitTransaction();
                 msg = "Notícia inserida com sucesso. id: " + noticia.IdNoticia;
-
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
@@ -74,13 +69,11 @@ namespace REGRA_RENATA
             catch (Exception e)
             {
                 msg = "Erro ao inserir a notícia. [" + e.Message + "][" + e.Source + "]";
-
                 log = new Log()
                 {
                     IdUsuario = idUsuarioLogado,
                     Mensagem = msg
                 };
-
                 logBO.Salvar(log);
                 DataContext.RollbackTransaction();
                 return false;
@@ -94,28 +87,20 @@ namespace REGRA_RENATA
             string msg = "";
             bool ok = false;
             string oldPath;
-
             try
             {
                 DataContext.BeginTransaction();
-
                 Noticia novoObj = this.ConsultarPorId(noticia.IdNoticia, idUsuarioLogado);
                 novoObj.Titulo = noticia.Titulo;
                 novoObj.DescricaoBreve = noticia.DescricaoBreve;
                 novoObj.Conteudo = noticia.Conteudo;
                 novoObj.DataPublicacao = noticia.DataPublicacao;
-
-
                 oldPath = noticia.CaminhoImagem;
-
-
                 if (fup.HasFile)
                 {
                     novoObj.CaminhoImagem = novoObj.CaminhoImagem;
-
                     if ((fup.FileName != null) && (fup.FileName != "") && (pastaDestino != null) && (pastaDestino != ""))
                     {
-
                         if (Util.ExcluirArquivo(pastaDestino + oldPath, null, null))
                         {
                             ok = true;
@@ -136,34 +121,26 @@ namespace REGRA_RENATA
                 {
                     ok = true;
                 }
-
                 if (ok)
                 {
                     DataContext.DataContext.SubmitChanges();
                     DataContext.CommitTransaction();
                     msg = "A notícia foi alterada com sucesso.";
-
                     log = new Log()
                     {
-
                         IdUsuario = idUsuarioLogado,
                         Mensagem = msg
                     };
                     logBO.Salvar(log);
-
                     return true;
                 }
-
                 DataContext.RollbackTransaction();
                 msg = "Erro ao alterar a notícia.";
-
                 log = new Log()
                 {
-
                     IdUsuario = idUsuarioLogado,
                     Mensagem = msg
                 };
-
                 return false;
             }
             catch (Exception e)

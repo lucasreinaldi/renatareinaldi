@@ -85,7 +85,7 @@ namespace WEB_RENATA
 
             AtendimentoBO atendimentoBO = new AtendimentoBO();
 
-            if (atendimentoBO.Agendar(atendimento, servico, idUsuarioLogado, 0))
+            if (atendimentoBO.Agendar(atendimento, servico, idUsuarioLogado))
             {
                 Session.Add("msgRes", "Serviço agendado com sucesso!");
                 Response.Redirect("Painel.aspx");
