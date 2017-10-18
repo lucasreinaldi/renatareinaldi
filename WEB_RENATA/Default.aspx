@@ -43,15 +43,15 @@
         
 	
     <div class="portfolioContainer wow fadeInUp delay-04s">
-            	<div class="padding-a col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" >
+            	<div class="padding-a col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 " >
                 	<img src="img/home/Cliente1.jpg" />
                  
                 </div>
-              <div class="padding-a col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" >
+              <div class="padding-a col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 " >
                 	<img src="img/home/Cliente2.jpg" />
                 	  
                 </div>
-                <div class="padding-a col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" >
+                <div class="padding-a col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 " >
                 	<img src="img/home/Cliente3.jpg" />
                 </div>
                 

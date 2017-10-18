@@ -50,10 +50,10 @@
         <elementListCompartment Id="8fe5a4dd-2ae7-4752-bbb5-74cc047028ba" absoluteBounds="7.1400000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9ecd8b0b-b717-4d49-ba05-60c689979eba" absoluteBounds="5, 3.875, 2, 1.5785953776041666">
+    <classShape Id="fe884fe5-cac0-4f1d-bb53-b117040fcc26" absoluteBounds="5, 3.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/renataDBMLDataContext/Venda" />
       <nestedChildShapes>
-        <elementListCompartment Id="b633cae4-d912-4744-aba3-65b553adf313" absoluteBounds="5.015, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="41050f33-b0d5-4ca1-8ca8-2d7099418c41" absoluteBounds="5.015, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

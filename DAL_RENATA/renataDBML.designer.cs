@@ -1594,13 +1594,13 @@ namespace DAL_RENATA
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venda")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vendas")]
 	public partial class Venda : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IdCompra;
+		private int _IdVenda;
 		
 		private int _FkUsuario;
 		
@@ -1612,8 +1612,8 @@ namespace DAL_RENATA
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdCompraChanging(int value);
-    partial void OnIdCompraChanged();
+    partial void OnIdVendaChanging(int value);
+    partial void OnIdVendaChanged();
     partial void OnFkUsuarioChanging(int value);
     partial void OnFkUsuarioChanged();
     partial void OnSubtotalChanging(double value);
@@ -1627,22 +1627,22 @@ namespace DAL_RENATA
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCompra", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IdCompra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVenda", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdVenda
 		{
 			get
 			{
-				return this._IdCompra;
+				return this._IdVenda;
 			}
 			set
 			{
-				if ((this._IdCompra != value))
+				if ((this._IdVenda != value))
 				{
-					this.OnIdCompraChanging(value);
+					this.OnIdVendaChanging(value);
 					this.SendPropertyChanging();
-					this._IdCompra = value;
-					this.SendPropertyChanged("IdCompra");
-					this.OnIdCompraChanged();
+					this._IdVenda = value;
+					this.SendPropertyChanged("IdVenda");
+					this.OnIdVendaChanged();
 				}
 			}
 		}

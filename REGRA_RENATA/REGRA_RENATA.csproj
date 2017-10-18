@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtendimentoBO.cs" />
+    <Compile Include="CarrinhoSESSION.cs" />
     <Compile Include="HomeBO.cs" />
     <Compile Include="LogBO.cs" />
     <Compile Include="NewsletterBO.cs" />

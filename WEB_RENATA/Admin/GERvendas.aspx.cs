@@ -127,7 +127,7 @@ namespace WEB_RENATA.Admin
 
                 DataRow row = tabela.NewRow();
 
-                row["id"] = venda.IdCompra;
+                row["id"] = venda.IdVenda;
                 row["usuario"] = usuario.Email;
                 row["data"] = venda.Data;
                 row["subtotal"] = venda.Subtotal;

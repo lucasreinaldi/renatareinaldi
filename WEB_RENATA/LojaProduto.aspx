@@ -33,15 +33,12 @@
                         ErrorMessage="você precisa digitar um número" CssClass="RequiredField" ControlToValidate="txtEstoque" ValidationGroup="validation"></asp:RegularExpressionValidator>
 
                      
-                   
-
-
                      <br />
             <br />
 
                     
             
-                <asp:LinkButton ID="btnAdicionar" runat="server" CssClass="btn btn-info"
+                <asp:LinkButton ID="btnAdicionar" runat="server" CssClass="btn btn-info btn-block"
                         CausesValidation="true" ValidationGroup="validation" OnClick="btnAdicionar_Click" >Adicionar ao carrinho</asp:LinkButton>
                 </asp:Panel>
                 

@@ -33,7 +33,7 @@ namespace REGRA_RENATA
 
             try
             {
-                return DataContext.DataContext.Vendas.Single(Venda => Venda.IdCompra == id);
+                return DataContext.DataContext.Vendas.Single(Venda => Venda.IdVenda == id);
             }
 
             catch (Exception e)
@@ -78,7 +78,100 @@ namespace REGRA_RENATA
                 return null;
             }
         }
- 
+
+        public bool Finalizar(Venda venda)
+        {
+            LogBO logBO = new LogBO();
+            Log log = new Log();
+            string msg = "";
+            try
+            {
+                DataContext.BeginTransaction();
+                DataContext.DataContext.Vendas.InsertOnSubmit(venda);
+                DataContext.DataContext.SubmitChanges();
+                DataContext.CommitTransaction();
+                msg = "Venda efetuada. " + venda.IdVenda;
+                log = new Log()
+                {
+                     
+                    Mensagem = msg
+                };
+                return true;
+            }
+            catch (Exception e)
+            {
+                msg = "Erro ao efetuar venda. [" + e.Message + "][" + e.Source + "]";
+                log = new Log()
+                {
+                     
+                    Mensagem = msg
+                };
+                logBO.Salvar(log);
+                DataContext.RollbackTransaction();
+                return false;
+            }
+        }
+
+        private bool Alterar(Produto produto, int estoque)
+        {
+            LogBO logBO = new LogBO();
+            Log log;
+            string msg = "";
+            bool ok = false;
+            
+            try
+            {
+                ProdutoBO produtoBO = new ProdutoBO();
+
+                DataContext.BeginTransaction();
+
+                Produto novoObj = produtoBO.ConsultarPorId(produto.IdProduto, null);
+                novoObj.Nome = produto.Nome;
+                novoObj.Descricao = produto.Descricao;
+                novoObj.Estoque = estoque;
+                novoObj.Preco = produto.Preco;
+
+                ok = true;
+
+                if (ok)
+                {
+                    DataContext.DataContext.SubmitChanges();
+                    DataContext.CommitTransaction();
+                    msg = "Estoque alterado com sucesso.";
+
+                    log = new Log()
+                    {
+
+                        Mensagem = msg
+                    };
+                    logBO.Salvar(log);
+
+                    return true;
+                }
+
+                DataContext.RollbackTransaction();
+                msg = "Erro ao alterar o estoque.";
+
+                log = new Log()
+                {
+                    Mensagem = msg
+                };
+
+                return false;
+            }
+            catch (Exception e)
+            {
+                DataContext.RollbackTransaction();
+                msg = "Erro ao alterar o estoque. [Erro ao carregar servico do bd]";
+                log = new Log()
+                {
+                    
+                    Mensagem = msg
+                };
+                logBO.Salvar(log);
+                return false;
+            }
+        }
 
     }
 }

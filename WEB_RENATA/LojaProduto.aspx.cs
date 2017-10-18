@@ -23,16 +23,16 @@ namespace WEB_RENATA
 {
     public partial class LojaProduto : System.Web.UI.Page
     {
-        AdmHome mp;
+        Home mp;
         public static PagedDataSource pageDs;
+                
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            mp = (AdmHome)this.Master;
-            this.Page.Title = "Produto";
 
-            List<Produto> produtos;
-
+            ChecarPermissao();
+            mp = (Home)this.Master;
+ 
             string id = this.Request.QueryString["id"];
 
             if (id != null)
@@ -45,21 +45,11 @@ namespace WEB_RENATA
                         mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
                     }
                     Session["msgRes"] = null;
-
                     Session.Remove("msgRes");
 
                     if (Int32.Parse(id) > 0)
                     {
-                        MapearObjetosParaCampos(Convert.ToInt32(id));
-                        ProdutoBO produtoBO = new ProdutoBO();
-                        Produto produto = produtoBO.ConsultarPorId(Int32.Parse(id), null);
-
-                        produtos = (List<Produto>)Session["Carrinho"];
-
-                        List<Produto> listprodutos;
-
-                        foreach (Produto c in produtos)
-                            listprodutos = produtos;
+                        MapearObjetosParaCampos(Convert.ToInt32(id));                        
                     }
                 }
             }
@@ -67,30 +57,33 @@ namespace WEB_RENATA
             {
                 Response.Redirect("Loja.aspx");
             }
-            
         }
 
 
         public void MapearObjetosParaCampos(int id)
         {
-
+            int qtidade = 0;
             ProdutoBO produtoBO = new ProdutoBO();
-            Produto produto = produtoBO.ConsultarPorId(id, null);
+            Produto produto = new Produto();
 
-            List<Produto> produtos = (List<Produto>)Session["Carrinho"];
-
-            Produto listprodutos;
-
-            foreach (Produto c in produtos)
-                //listprodutos = produtos;
-
+            List<Produto> produtos = (List<Produto>)Session["TodosProdutos"];
             
+            foreach (Produto lista in produtos)
+            {
+                if (lista.IdProduto == id)
+                {
+                    qtidade = lista.Estoque;
+                    produto = lista;
+                }
+                    
+            }
+                        
             if (produto != null)
             {
                 this.nome.InnerText = produto.Nome.ToString();
                 this.descricao.InnerText = produto.Descricao.ToString();
                 this.preco.InnerText = "valor: " + produto.Preco.ToString() + " R$";
-             //   this.estoque.InnerText = "qtd: " + listprodutos.IdProduto + " un.";
+                this.estoque.InnerText = "qtd: " + qtidade + " un.";
 
                 this.imagem.Src = "img\\produtos\\" + produto.CaminhoImagem.ToString();
             }
@@ -98,20 +91,83 @@ namespace WEB_RENATA
 
         protected void btnAdicionar_Click(Object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(this.Request.QueryString["id"]);
+            List<Produto> produtos = new List<Produto>();
+            int qtidadeSelecionada = Convert.ToInt32(txtEstoque.Text);
+            produtos = (List<Produto>)Session["TodosProdutos"];
 
-            int qtidade = (int)Session["qtd"];
-            int id = (int)Session["IdProduto"];
+            Produto produto = new Produto();
+            ProdutoBO produtoBO = new ProdutoBO();
 
-            if (Convert.ToInt32(txtEstoque.Text) > qtidade)
+            foreach (Produto produtoSession in produtos)
+            {
+                if (produtoSession.IdProduto == id)
+                    produto = produtoSession;
+            }
+            int qtidade = produto.Estoque;
+            if (qtidadeSelecionada > qtidade)
             {
                 Session.Add("msgRes", "Estoque insuficiente.");
-                Response.Redirect("LojaProduto.aspx");
+                Response.Redirect("LojaProduto.aspx?id=" + id);
             }
             else
             {
                 qtidade = qtidade - Convert.ToInt32(txtEstoque.Text);
-                Session["qtd"] = qtidade;
-                Response.Redirect("LojaProduto.aspx");
+                if (Session["Carrinho"] == null)
+                {
+                    List<CarrinhoSESSION> carrinho = new List<CarrinhoSESSION>();
+
+                    CarrinhoSESSION items = new CarrinhoSESSION
+                        (produto.IdProduto, produto.Nome, produto.Preco,
+                        qtidadeSelecionada, produto.CaminhoImagem);
+
+                    carrinho.Add(items);
+                    Session["Carrinho"] = null;
+                    Session.Remove("Carrinho");
+                    Session["Carrinho"] = carrinho;
+
+                    foreach (Produto prod in produtos)
+                    {
+                        if (prod.IdProduto == id)
+                            prod.Estoque = qtidade;
+                    }
+
+                    Session["TodosProdutos"] = null;
+                    Session.Remove("TodosProdutos");
+                    Session["TodosProdutos"] = produtos;
+                }
+                else
+                {
+                    List<CarrinhoSESSION> carrinho = (List<CarrinhoSESSION>)Session["Carrinho"];
+
+                    CarrinhoSESSION items = new CarrinhoSESSION(produto.IdProduto, produto.Nome,
+                        produto.Preco, qtidadeSelecionada, produto.CaminhoImagem);
+                    carrinho.Add(items);
+                    Session["Carrinho"] = null;
+                    Session.Remove("Carrinho");
+                    Session["Carrinho"] = carrinho;
+                    foreach (Produto prod in produtos)
+                    {
+                        if (prod.IdProduto == id)
+                            prod.Estoque = qtidade;
+                    }
+                    Session["TodosProdutos"] = null;
+                    Session.Remove("TodosProdutos");
+                    Session["TodosProdutos"] = produtos;
+                }
+                Response.Redirect("Carrinho.aspx");
+            }
+        }
+        public void ChecarPermissao()
+        {
+            if (Session["nomeUsuario"] != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+
             }
         }
     }

@@ -179,6 +179,36 @@ namespace REGRA_RENATA
             }
         }
 
+        private bool AtualizarEstoqueBanco(Produto produto, int estoque)
+        {
+            LogBO logBO = new LogBO();
+            Log log;
+            string msg = "";            
+            try
+            {
+                Produto novoObj = this.ConsultarPorId(produto.IdProduto, null);
+                novoObj.Nome = produto.Nome;
+                novoObj.Descricao = produto.Descricao;
+                novoObj.Estoque = estoque;
+                novoObj.Preco = produto.Preco;
+                novoObj.CaminhoImagem = produto.CaminhoImagem;
+                DataContext.DataContext.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                DataContext.RollbackTransaction();
+                msg = "Erro ao alterar o produto. [Erro ao carregar servico do bd]";
+                log = new Log()
+                {
+                    IdUsuario = null,
+                    Mensagem = msg
+                };
+                logBO.Salvar(log);
+                return false;
+            }
+        }
+
         public bool Salvar(Produto produto, string pastaDestino, string extensao, FileUpload fup, int? idUsuarioLogado)
         {
             if (produto.IdProduto <= 0)
@@ -283,11 +313,8 @@ namespace REGRA_RENATA
 
             try
             {
-
                 var consulta = from Produto in DataContext.DataContext.Produtos select Produto;
                 return consulta.ToList();
-
-
             }
             catch (Exception e)
             {
@@ -305,6 +332,24 @@ namespace REGRA_RENATA
             }
         }
 
+        public bool AlterarEstoque(List<Produto> estoqueSession)
+        {
+            List<Produto> estoqueBanco = ConsultarTodos(null);
+            DataContext.BeginTransaction();
 
+            foreach (Produto banco in estoqueBanco)
+            {
+                foreach (Produto session in estoqueSession)
+                {
+                    if (session.IdProduto == banco.IdProduto)
+                    {
+                        AtualizarEstoqueBanco(banco, session.Estoque);
+                        
+                    }
+                }
+            }
+            DataContext.CommitTransaction();
+            return true;
+        }
     }
 }

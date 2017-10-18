@@ -36,7 +36,8 @@ namespace WEB_RENATA
 
             divResultado.Visible = false;
 
-            
+            this.divLabel.Visible = false;
+            this.divResultado.Visible = false;
 
 
         }
@@ -111,8 +112,11 @@ namespace WEB_RENATA
             {
 
                 string mensagem = "Usuário ou senha inválidos. Tente novamente.";
-                mp.DefinirMsgResultado(this.divResultado, this.lblResultado, mensagem, null);
-                 
+               
+                this.divLabel.Visible = true;
+                this.divResultado.Visible = true;
+                this.divLabel.InnerHtml = mensagem;
+
 
             }
         }

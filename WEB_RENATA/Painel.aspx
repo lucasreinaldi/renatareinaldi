@@ -70,12 +70,38 @@
             
         <asp:HiddenField ID="hidID" runat="server" />
       
-
- 
-        
-        
-        
          
+    </div>
+
+        <div class="container gerSquare">
+    	<h2>Compras</h2>
+    	 
+         <div id="divCentral">
+         
+        <table id="divTabela">
+            <asp:Repeater ID="rptVenda" runat="server">
+                <HeaderTemplate>
+                    <div id="topoLista">
+                        <tr runat="server">
+                            <th style="width: 3%; text-align: center;">Data
+                            </th>
+                            <th style="width: 5%; text-align: center;">Valor Total
+                            </th>                              
+                        </tr>
+                    </div>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr class="linhaA" runat="server">
+                        <td align="center">
+                            <%#Eval("data") %>
+                        </td>
+                        <td align="center">
+                            <%#Eval("total") %>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+        </table>
     </div>
 
 

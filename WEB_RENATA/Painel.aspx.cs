@@ -30,7 +30,11 @@ namespace WEB_RENATA
         {
             mp = (Home)this.Master;
 
-            idUsuarioLogado = Int32.Parse(Session["IdUsuario"].ToString());
+            if (Session["IdUsuario"] == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
+                idUsuarioLogado = Int32.Parse(Session["IdUsuario"].ToString());
 
             if (!IsPostBack)
             {
@@ -52,12 +56,17 @@ namespace WEB_RENATA
 
             }
             this.MontarRepeater();
-             
+            this.MontarRepeaterVendas();
         }
 
-     
 
-         
+        public List<Venda> ListarTodasVendas()
+        {
+            VendaBO vendaBO = new VendaBO();
+            List<Venda> lista = vendaBO.ConsultarTodos(idUsuarioLogado);
+            return lista;
+        }
+
 
         public List<Atendimento> ListarTodos()
         {
@@ -66,7 +75,6 @@ namespace WEB_RENATA
             return lista;
         }
  
-
 
         protected void lbtAnterior_Click(object sender, EventArgs e)
         {
@@ -109,12 +117,37 @@ namespace WEB_RENATA
                 
             }
         }
- 
+
+        public void MontarRepeaterVendas()
+        {
+            List<Venda> lista = new List<Venda>();
+            lista = ListarTodasVendas();
+
+            if (lista != null && lista.Count > 0)
+            {
+                this.rptVenda.Visible = true;
+                rptVenda.DataSource = this.MontarDataTableVenda(lista).DefaultView;
+                
+                rptVenda.DataBind();
+
+               
+            }
+            else
+            {
+                this.rptVenda.Visible = false;
+            }
+            if (lista.Count == 0)
+            {
+                 
+                mp.DefinirMsgResultado(divResultado, lblResultado, "Não há vendas.", null);
+                this.divResultado.Visible = true;
+
+            }
+        }
+
 
         private DataTable MontarDataTable(List<Atendimento> list)
         {
-            
-            
             DataTable tabela = new DataTable();
             tabela.Columns.Add("id");
             tabela.Columns.Add("servico");
@@ -160,14 +193,28 @@ namespace WEB_RENATA
                 row["comentario"] = atend.Comentario;
                 row["estado"] = resultado;
                  
-
-
-
                 tabela.Rows.Add(row);
             }
             return tabela;
         }
 
 
+        private DataTable MontarDataTableVenda(List<Venda> list)
+        {
+            DataTable tabela = new DataTable();
+            tabela.Columns.Add("total");
+            tabela.Columns.Add("data");
+             
+
+            foreach (Venda venda in list)
+            {
+                DataRow row = tabela.NewRow();
+
+                row["total"] = venda.Subtotal;
+                row["data"] = venda.Data;
+                tabela.Rows.Add(row);
+            }
+            return tabela;
+        }
     }
 }

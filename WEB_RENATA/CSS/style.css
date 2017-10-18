@@ -810,7 +810,7 @@ border: 2px solid #fff;
 }
 
 .res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
-	color: #7cc576 !important;
+	color: #dddddd  !important;
 }
 
 .portfolioContainer{
@@ -1003,3 +1003,62 @@ background: url(../img/bg.png) left top repeat;
     color: white;
 }
 
+#divCarrinho{
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#divCarrinho > div > h4
+{
+    display: block;
+}
+
+#divCarrinho > div
+{
+    margin-top: 30px;
+}
+
+#contentBody_total
+{
+        padding: 20px 0 30px 0;
+    margin-bottom: 0px;
+}
+
+#contentBody_btnFinalizar
+{
+    float: right;
+}
+
+#form1 > section:nth-child(9) > div > div > div
+
+     {
+         margin-left: 60px;
+     }
+
+@media only screen and (max-width: 767px) {
+  
+     #divCarrinho > div > div > p
+{
+    display: block;
+    text-align: center;
+}
+     #divCarrinho > div > h4
+     {
+         text-align: center;
+     }
+
+     #contentBody_btnFinalizar, #contentBody_btnEsvaziar
+     {
+         width: 100%;
+     }
+
+     #contentBody_total
+     {
+         margin-top: -40px;
+         font-size: 25px;
+     }
+
+     
+
+}

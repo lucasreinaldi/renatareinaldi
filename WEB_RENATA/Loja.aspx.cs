@@ -24,36 +24,40 @@ namespace WEB_RENATA
     {
         Home mp;
         public static PagedDataSource pageDs;
+        public static List<Produto> produtos;
+
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             mp = (Home)this.Master;
 
-
             if (!IsPostBack)
             {
                 if (Session["msgRes"] != null)
                 {
-
                     mp.DefinirMsgResultado(divResultado, lblResultado, (string)Session["msgRes"], null);
+                }
+                if (Session["TodosProdutos"] == null)
+                {
+                    ColetarSessao();
                 }
                 Session["msgRes"] = null;
 
                 Session.Remove("msgRes");
-
-
 
                 pageDs = new PagedDataSource();
                 pageDs.AllowPaging = true;
                 pageDs.PageSize = 10;
 
                 // mp.ValidarQueryString(Request.QueryString["pagina"], "MidiaGer.aspx?pagina=0");
-                ColetarSessao();
+                
+                if (Session["TodosProdutos"] != null)
+                {
+                    produtos = (List<Produto>)Session["TodosProdutos"];
+                    MontarRepeater(produtos);
+                }
             }
-
-
-            MontarRepeater();
-
         }
 
         private DataTable MontarDataTable(List<Produto> list)
@@ -84,10 +88,8 @@ namespace WEB_RENATA
         }
 
 
-        public void MontarRepeater()
+        public void MontarRepeater(List<Produto> lista)
         {
-            List<Produto> lista = new List<Produto>();
-            lista = ListarTodos();
 
             if (lista != null && lista.Count > 0)
             {
@@ -122,7 +124,7 @@ namespace WEB_RENATA
         {
             ProdutoBO produtoBO = new ProdutoBO();
             List<Produto> lista = produtoBO.ConsultarTodos(null);
-            Session["Carrinho"] = lista;
+            Session["TodosProdutos"] = lista;
 
         }
 

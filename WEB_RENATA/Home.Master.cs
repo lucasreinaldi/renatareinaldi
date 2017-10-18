@@ -13,6 +13,8 @@ namespace WEB_RENATA
 {
     public partial class Home : System.Web.UI.MasterPage
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ChecarPermissao();
@@ -131,6 +133,7 @@ namespace WEB_RENATA
                 logout.Visible = false;
                 painel.Visible = false;
                 adm.Visible = false;
+                carrinho.Visible = false;
             }
         }
 
